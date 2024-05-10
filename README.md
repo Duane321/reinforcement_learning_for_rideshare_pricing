@@ -1,1 +1,3 @@
-# reinforcement_learning_for_rideshare_pricing
+# Reinforcement Learning for Pricing Simulated Ridesharing
+
+TBD
