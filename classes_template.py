@@ -132,18 +132,19 @@ class LyftSimulation:
 
     def process_rider_request(self, timestamp, data):
         rider_id, pickup_location, dropoff_location = data
-        driver_id = self.find_a_driver(pickup_location)
+        # TODO - later add a pickup_location based matching function
+        driver_id = self.find_a_driver()
         if driver_id:
             # Calculate ride details
-            ride_minutes = self.estimate_ride_duration(pickup_location, dropoff_location)
-            ride_miles = self.estimate_ride_distance(pickup_location, dropoff_location)
+            ride_minutes, ride_miles = self.estimate_trip_distance_duration(pickup_location, dropoff_location)
             
             # Prepare input features for the pricing model
-            time_of_week = self.get_time_of_week(timestamp)
-            model_input = np.array([pickup_location[0], pickup_location[1], time_of_week])
+            day, hour, minute = self.get_time_of_week(timestamp)
+            model_input = np.array([pickup_location[0], pickup_location[1], day, hour, minute])
             
-            # Calculate price_of_ride using the linear model
+            # Calculate price_of_ride using the linear model # pricing_params=[c, p_per_min, p_per_mile]
             price_of_ride = np.dot(self.pricing_params, model_input)
+            price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
             
             # Calculate acceptance probabilities for riders and drivers
             rider_acceptance_prob = sigmoid(self.a_r + self.b_r * price_of_ride)
@@ -180,17 +181,31 @@ class LyftSimulation:
     def get_time_of_week(timestamp):
         #get time of a week based on timestamp
 
-        pass
+        day_of_week = timestamp//(60*24),
+        mins_elapsed = day_of_week*60*24,
+        mins_today = timestamp - mins_elapsed,
+        hour_of_day = mins_today // 60
 
-    def find_a_driver(self, pickup_location):
+        return day_of_week, hour_of_day, mins_today
+
+    def find_a_driver(self):
         # randomly assign an idle driver
-        
-        pass
 
-    def estimate_trip_duration(self, pickup_location, dropoff_location):
+        idle_drive_lst = [driver_id for driver_id, loc, status in self.drivers.items() if status == 0]
+
+        return random.choice(idle_drive_lst)
+        
+        
+
+    def estimate_trip_distance_duration(self, pickup_location, dropoff_location, driver_speed=0.5):
+        # driver_speed is calculated by 30miles/hour(1mile/min), and 0.1 in the grid means 1 mile
         # Estimate the trip duration based on the pickup location and dropoff location
         # Return the estimated duration in seconds
-        pass
+        start_x, start_y, end_x, end_y = pickup_location[0], pickup_location[1], dropoff_location[0], dropoff_location[1]
+        euclidean_distance = np.sqrt((start_x - end_x)**2 + (start_y - end_y)**2) * 10
+        trip_duration = np.round(euclidean_distance / driver_speed)
+
+        return trip_duration, euclidean_distance
 
     def generate_rider_id(self):
         # Generate a unique rider ID
