@@ -146,7 +146,7 @@ class LyftSimulation:
         timestamp = request_day * (hour * 60 + minute)
         return timestamp
 
-    def process_rider_request(self, timestamp, data):
+    def process_rider_request(self, timestamp, data, rider_reject_effect=1):
         rider_id, pickup_location, dropoff_location = data
         # TODO - later add a pickup_location based matching function
         driver_id = self.find_a_driver()
@@ -161,9 +161,12 @@ class LyftSimulation:
             # Calculate price_of_ride using the linear model # pricing_params=[c, p_per_min, p_per_mile]
             price_of_ride = np.dot(self.pricing_params, model_input)
             price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
+
+            num_rejects_this_week = self.riders[rider_id]['num_rejects_by_rider']
+            acceptance_prob_adjust = np.exp(-rider_reject_effect*num_rejects_this_week)
             
             # Calculate acceptance probabilities for riders and drivers
-            rider_acceptance_prob = utils.sigmoid(self.a_r + self.b_r * price_of_ride)
+            rider_acceptance_prob = utils.sigmoid(self.a_r + self.b_r * price_of_ride) * acceptance_prob_adjust
             driver_acceptance_prob = utils.sigmoid(self.a_d + self.b_d * price_of_ride)
 
             # Determine if the ride is accepted by both rider and driver
