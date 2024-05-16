@@ -1,15 +1,36 @@
 import math
 import heapq
-
+import itertools
 import random
 #since we use rejection sampling, the sampled locations won't be exactly the same for each round of simulation
 random.seed(42)
-
+from tqdm import tqdm
+import json
 import numpy as np
 from collections import defaultdict, namedtuple
 import utils
 
-Event = namedtuple('Event', ['timestamp', 'type', 'data'])
+#Event = namedtuple('Event', ['timestamp', 'type', 'data'])
+
+class Event:
+    def __init__(self, timestamp, event_type, data):
+        self.timestamp = timestamp
+        self.event_type = event_type
+        self.data = data
+    
+    def __lt__(self, other):
+        return self.timestamp < other.timestamp
+    
+    def to_dict(self):
+        return {
+            "timestamp": self.timestamp,
+            "event_type": self.event_type,
+            "data": self.data
+        }
+    
+    @classmethod
+    def from_dict(cls, event_dict):
+        return cls(event_dict["timestamp"], event_dict["event_type"], event_dict["data"])
 
 #x, y, radius, density for each location
 city_locations = [(0.1, 0.1, 0.2, 5.0), (0.5, 0.9, 0.2, 5.0)]
@@ -52,6 +73,12 @@ class LyftSimulation:
             'party_goer': 2,  # Average requests per week for party-goers
             'sporadic': 1  # Average requests per week for sporadic riders
         }
+
+        self.rider_requests_cap = {
+            'commuter': 10,  # Average requests per week for commuters
+            'party_goer': 7,  # Average requests per week for party-goers
+            'sporadic': 3  # Average requests per week for sporadic riders
+        }
         
 
     def initialize_drivers(self):
@@ -63,7 +90,7 @@ class LyftSimulation:
                 # 0 for idle, 1 for busy
                 'status': 0
             }
-        return self.drivers
+        #return self.drivers
     
     # def set_drivers(self, from_filename=None):
     #     if not from_filename:
@@ -72,7 +99,7 @@ class LyftSimulation:
     #         self.drivers = utils.read_json(from_filename)
 
     def initialize_riders(self):
-        for i in range(self.num_riders):
+        for _ in range(self.num_riders):
             rider_id = utils.generate_rider_id()
             rider_type = self.sample_rider_type()
             work_address = utils.generate_random_location(probability_density) if rider_type=='commuter' else None
@@ -83,12 +110,19 @@ class LyftSimulation:
                 'work_address': work_address,
                 'requests': []
             }
+
+
+        #return self.riders
+    
+    def add_requests(self):
         #need to setup requests with addresses when every rider's id and address is created
-        for rider_id in list(self.riders.keys()):
+        rider_id_lst = list(self.riders.keys())
+        for rider_id in tqdm(rider_id_lst):
+            #print(f'rider_id:{rider_id}')
+            rider_type = self.riders[rider_id]['type']
             self.riders[rider_id]['requests'] = self.generate_rider_requests(rider_id, rider_type)
 
-
-        return self.riders
+        #return self.riders
     
     # def set_riders(self, from_filename=None):
     #     if not from_filename:
@@ -114,22 +148,30 @@ class LyftSimulation:
         """
         #draw a sample from poisson distn (type: int)
         num_requests = np.random.poisson(self.rider_request_rates[rider_type])
+        num_requests = min(num_requests, self.rider_requests_cap[rider_type])
         
         requests = []
+        request_types = ['leave', 'return']
 
         if rider_type=='commuter':
-            day_and_trip_type = set()
+            #random.choices(request_days_types, num_requests), sample with replacement from cartesian products of request_day * request_type
+            request_days = list(range(1, 6))
+            
+            request_days_types = list(itertools.product(request_days, request_types))
+            sampled_days_types = random.choices(request_days_types, k=num_requests)
+            hours_dict = {
+                'leave': [6, 7, 8, 9, 10],
+                'return': [16, 17, 18]
+            }
 
-            for _ in range(num_requests):
+            for request_day, request_type in sampled_days_types:
                 pickup_location, dropoff_location = [], []
-                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
-                if (request_day, request_type) not in day_and_trip_type:
-                    day_and_trip_type.add((request_day, request_type))
-                else:
-                    while (request_day, request_type) in day_and_trip_type:
-                        request_time, request_day, request_type = self.generate_a_request_time(rider_type)
-                    day_and_trip_type.add((request_day, request_type))
 
+                minute = random.randint(0, 59)
+                request_time = request_day * (random.choice(hours_dict[request_type]) * 60 + minute)
+                
+                #print(f'ith request:{i}')
+                #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
                 #request_type should be either 'leave' or 'return' for a 'commuter'
                 if request_type=='leave':
                     pickup_location, dropoff_location = self.riders[rider_id]['home_address'], self.riders[rider_id]['work_address']
@@ -140,42 +182,48 @@ class LyftSimulation:
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
         
         elif rider_type=='party_goer':
-            day_and_trip_type = set()
-            party_address = {}
+            request_days = list(range(1, 8))
+            request_days_types = list(itertools.product(request_days, request_types))
+            sampled_days_types = random.choices(request_days_types, k=num_requests)
+            hours_dict = {
+                'leave': [18, 19, 20, 21, 22, 23],
+                'return': [0, 1, 2, 3, 4, 5]
+            }
+
             others_addresses_lst = [v['home_address'] for k, v in self.riders.items() if k!=rider_id]
+            #one random party address for each day in a week
+            party_address = random.choices(others_addresses_lst, k=len(request_days))
 
-            for _ in range(num_requests):
+            for request_day, request_type in sampled_days_types:
                 pickup_location, dropoff_location = [], []
-                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
-                if (request_day, request_type) not in day_and_trip_type:
-                    day_and_trip_type.add((request_day, request_type))
-                else:
-                    while (request_day, request_type) in day_and_trip_type:
-                        request_time, request_day, request_type = self.generate_a_request_time(rider_type)
-                    day_and_trip_type.add((request_day, request_type))
-
-                #one random party address for each day in a week
-                if request_day not in party_address:
-                    sampled_address = random.choice(others_addresses_lst)
-                    party_address[request_day]['address'] = sampled_address
+                minute = random.randint(0, 59)
+                request_time = request_day * (random.choice(hours_dict[request_type]) * 60 + minute)
                 
-
+                #print(f'ith request:{i}')
+                #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
                 #request_type should be either 'leave' or 'return' for a 'party_goer'
                 if request_type=='leave':
-                    pickup_location, dropoff_location = self.riders[rider_id]['home_address'], party_address[request_day]['address']
+                    pickup_location, dropoff_location = self.riders[rider_id]['home_address'], party_address[request_day-1]
                 elif request_type=='return':
-                    pickup_location, dropoff_location = party_address[request_day]['address'], self.riders[rider_id]['home_address']
+                    pickup_location, dropoff_location = party_address[request_day-1], self.riders[rider_id]['home_address']
             
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
         else:
-            for _ in range(num_requests):
+            for i in range(num_requests):
                 pickup_location, dropoff_location = [], []
                 random_walk_generator = np.random.rand()
-                
-                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+                request_day = random.randint(1, 8) # sample a random day (both sides included)
+                request_type = random.choice(request_types)
 
+
+                hour = random.randint(0, 23)
+                minute = random.randint(0, 59)
+                request_time = request_day * (hour * 60 + minute)
+                
+                #print(f'ith request:{i}')
+                #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
                 if random_walk_generator < 0.5:
                     #50% of time the rider request a ride from two random locations(ignore request_type returned)
                     pickup_location, dropoff_location = utils.generate_random_location(probability_density), utils.generate_random_location(probability_density)
@@ -218,12 +266,12 @@ class LyftSimulation:
         return requests
     
     
-    def generate_a_request_time(self, rider_type):
+    def generate_a_request_time_deprecated(self, rider_type):
         # DONE TODO - later we may fix each commuters ride and time in each week(only sample once per week instead of per day)
         # only sample once on each start of week(in initialize_riders)
         trip_type = ''
         if rider_type == 'commuter':
-            request_day = random.randint(0, 4) # sample a random day during week days (both sides included)
+            request_day = random.randint(1, 5) # sample a random day during week days (both sides included)
             
             timerange_selector = np.random.rand()
             if timerange_selector < 0.5:
@@ -237,7 +285,7 @@ class LyftSimulation:
             #hour = random.randint(peak_hour[0], peak_hour[1]), both are O(1)
             minute = random.randint(0, 59)
         elif rider_type == 'party_goer':
-            party_day = [0, 1, 2, 3] + [4, 5, 6] * 3 #put more weights on Fri. Sat. and Sun.
+            party_day = [1, 2, 3, 4] + [5, 6, 7] * 3 #put more weights on Fri. Sat. and Sun.
             request_day = random.choice(party_day) # sample a random day 
             timerange_selector = np.random.rand()
             if timerange_selector < 0.5:
@@ -250,7 +298,7 @@ class LyftSimulation:
             hour = random.choice(party_hours)
             minute = random.randint(0, 59)
         else:
-            request_day = random.randint(0, 6) # sample a random day (both sides included)
+            request_day = random.randint(1, 7) # sample a random day (both sides included)
             # Generate request time uniformly across the week
             hour = random.randint(0, 23)
             minute = random.randint(0, 59)
