@@ -1,9 +1,9 @@
 import math
-import uuid
 import heapq
 import random
 import numpy as np
 from collections import defaultdict, namedtuple
+import utils
 
 # TODO - put utility functions in a utility.py if there are too many of them
 def sigmoid(x):
@@ -51,9 +51,9 @@ class LyftSimulation:
     def initialize_drivers(self):
         drivers = {}
         for i in range(self.num_drivers):
-            driver_id = self.generate_driver_id()
+            driver_id = utils.generate_driver_id()
             drivers[driver_id] = {
-                'cur_loc': self.generate_random_location(),
+                'cur_loc': utils.generate_random_location(),
                 # 0 for idle, 1 for busy
                 'status': 0
             }
@@ -62,7 +62,7 @@ class LyftSimulation:
     def initialize_riders(self):
         riders = {}
         for i in range(self.num_riders):
-            rider_id = self.generate_rider_id()
+            rider_id = utils.generate_rider_id()
             rider_type = self.sample_rider_type()
             riders[rider_id] = {
                 'type': rider_type,
@@ -87,12 +87,12 @@ class LyftSimulation:
 
         # TODO - sample both pickup_location and dropoff_location in city area for commuters
         if rider_type=='commuter':
-            pickup_location, dropoff_location = self.generate_random_location(), self.generate_random_location()
+            pickup_location, dropoff_location = utils.generate_random_location(), utils.generate_random_location()
         for _ in range(num_requests):
             request_time = self.generate_request_time(rider_type)
             requests.append(request_time)
             if rider_type!='commuter':
-                pickup_location, dropoff_location = self.generate_random_location(), self.generate_random_location()
+                pickup_location, dropoff_location = utils.generate_random_location(), utils.generate_random_location()
             self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
         return requests
     
@@ -153,7 +153,7 @@ class LyftSimulation:
             # Determine if the ride is accepted by both rider and driver
             if np.random.rand() < rider_acceptance_prob and np.random.rand() < driver_acceptance_prob:
                 # Create a new trip when both accepted
-                trip_id = self.generate_trip_id()
+                trip_id = utils.generate_trip_id()
                 start_timestamp = timestamp
                 self.trips[(start_timestamp, trip_id)] = {
                     'rider_id': rider_id,
@@ -207,23 +207,7 @@ class LyftSimulation:
 
         return trip_duration, euclidean_distance
 
-    def generate_rider_id(self):
-        # Generate a unique rider ID
-        # 128-bit numbers typically presented in hexadecimal form, resulting in a 32-character string
-        return uuid.uuid4()
 
-    def generate_driver_id(self):
-        # Generate a unique driver ID
-        return uuid.uuid4()
-
-    def generate_trip_id(self):
-        # Generate a unique trip ID
-        return uuid.uuid4()
-
-    # TODO - put irregularity (e.g. city and airport) on the grid
-    def generate_random_location(self):
-        # Generate a random location (i. e., x, y coordinates each from (0, 1))
-        return (np.random.rand(), np.random.rand())
 
 
     def run_simulation(self):
