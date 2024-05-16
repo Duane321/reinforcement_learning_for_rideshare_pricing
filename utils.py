@@ -44,7 +44,7 @@ def generate_random_location():
 
 def create_probability_density(city_locations, airport_locations):
     """
-    returns a density function with a list of city and airport as inputs
+    Returns a density function with a list of city and airport as inputs
     """
     #x, y, radius, density
     #city_locations = [(0.1, 0.1, 0.2, 5.0)]
@@ -77,11 +77,11 @@ def create_probability_density(city_locations, airport_locations):
 
 def generate_random_location(probability_density, density_divider=20.0):
     """
-    use rejection sampling to generate random a location x & y based on the given density function
+    Use rejection sampling to generate random a location x & y based on the given density function
     """
     while True:
-        x = np.random.uniform(0, 1)
-        y = np.random.uniform(0, 1)
+        x = np.random.rand()
+        y = np.random.rand()
         density = probability_density(x, y)
-        if np.random.uniform(0, 1) < density / density_divider:  # Adjust the acceptance threshold as needed
+        if np.random.rand() < density / density_divider:  # Adjust the acceptance threshold as needed
             return x, y

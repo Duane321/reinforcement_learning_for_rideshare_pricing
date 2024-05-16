@@ -2,6 +2,7 @@ import math
 import heapq
 
 import random
+#since we use rejection sampling, the sampled locations won't be exactly the same for each round of simulation
 random.seed(42)
 
 import numpy as np
@@ -54,38 +55,46 @@ class LyftSimulation:
         
 
     def initialize_drivers(self):
-        drivers = {}
         for i in range(self.num_drivers):
             driver_id = utils.generate_driver_id()
-            drivers[driver_id] = {
+            self.drivers[driver_id] = {
                 # TODO - Drivers sit in a subgrid (e.g. x=[.1, .2], y=[.4,.5]) and wait for ride requests.
                 'cur_loc': utils.generate_random_location(probability_density),
                 # 0 for idle, 1 for busy
                 'status': 0
             }
-        return drivers
+        return self.drivers
     
-    def set_drivers(self, from_filename=None):
-        if not from_filename:
-            self.drivers = self.initialize_drivers()
-        else:
-            self.drivers = utils.read_json(from_filename)
+    # def set_drivers(self, from_filename=None):
+    #     if not from_filename:
+    #         self.drivers = self.initialize_drivers()
+    #     else:
+    #         self.drivers = utils.read_json(from_filename)
 
     def initialize_riders(self):
-        riders = {}
         for i in range(self.num_riders):
             rider_id = utils.generate_rider_id()
             rider_type = self.sample_rider_type()
             work_address = utils.generate_random_location(probability_density) if rider_type=='commuter' else None
-            riders[rider_id] = {
+            self.riders[rider_id] = {
                 'type': rider_type,
-                'requests': [],
-                #'requests': self.generate_rider_requests(rider_id, rider_type),
                 'num_rejects_by_rider': 0,
                 'home_address': utils.generate_random_location(probability_density),
-                'work_address': work_address
+                'work_address': work_address,
+                'requests': []
             }
-        return riders
+        #need to setup requests with addresses when every rider's id and address is created
+        for rider_id in list(self.riders.keys()):
+            self.riders[rider_id]['requests'] = self.generate_rider_requests(rider_id, rider_type)
+
+
+        return self.riders
+    
+    # def set_riders(self, from_filename=None):
+    #     if not from_filename:
+    #         self.riders = self.initialize_riders()
+    #     else:
+    #         self.riders = utils.read_json(from_filename)
     
     # TODO - vectorize by generating a (1, 1000) vector with values 0-1
     def sample_rider_type(self):
@@ -93,9 +102,105 @@ class LyftSimulation:
     
     def add_event(self, timestamp, event_type, data):
         heapq.heappush(self.events, Event(timestamp, event_type, data))
+
+    #add event on a file
+    #def add_event_backtest(self, timestamp, event_type, data):
+
+    
+    def generate_rider_requests(self, rider_id, rider_type):
+        """
+        given a list of requests with day, hour, trip_type(leave, return),
+        generate start and end locations for each trip request
+        """
+        #draw a sample from poisson distn (type: int)
+        num_requests = np.random.poisson(self.rider_request_rates[rider_type])
+        
+        requests = []
+
+        if rider_type=='commuter':
+            day_and_trip_type = set()
+
+            for _ in range(num_requests):
+                pickup_location, dropoff_location = [], []
+                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+                if (request_day, request_type) not in day_and_trip_type:
+                    day_and_trip_type.add((request_day, request_type))
+                else:
+                    while (request_day, request_type) in day_and_trip_type:
+                        request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+                    day_and_trip_type.add((request_day, request_type))
+
+                #request_type should be either 'leave' or 'return' for a 'commuter'
+                if request_type=='leave':
+                    pickup_location, dropoff_location = self.riders[rider_id]['home_address'], self.riders[rider_id]['work_address']
+                elif request_type=='return':
+                    pickup_location, dropoff_location = self.riders[rider_id]['work_address'], self.riders[rider_id]['home_address']
+                
+                requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
+                self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
+        
+        elif rider_type=='party_goer':
+            day_and_trip_type = set()
+            party_address = {}
+            others_addresses_lst = [v['home_address'] for k, v in self.riders.items() if k!=rider_id]
+
+            for _ in range(num_requests):
+                pickup_location, dropoff_location = [], []
+                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+                if (request_day, request_type) not in day_and_trip_type:
+                    day_and_trip_type.add((request_day, request_type))
+                else:
+                    while (request_day, request_type) in day_and_trip_type:
+                        request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+                    day_and_trip_type.add((request_day, request_type))
+
+                #one random party address for each day in a week
+                if request_day not in party_address:
+                    sampled_address = random.choice(others_addresses_lst)
+                    party_address[request_day]['address'] = sampled_address
+                
+
+                #request_type should be either 'leave' or 'return' for a 'party_goer'
+                if request_type=='leave':
+                    pickup_location, dropoff_location = self.riders[rider_id]['home_address'], party_address[request_day]['address']
+                elif request_type=='return':
+                    pickup_location, dropoff_location = party_address[request_day]['address'], self.riders[rider_id]['home_address']
+            
+                requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
+                self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
+
+        else:
+            for _ in range(num_requests):
+                pickup_location, dropoff_location = [], []
+                random_walk_generator = np.random.rand()
+                
+                request_time, request_day, request_type = self.generate_a_request_time(rider_type)
+
+                if random_walk_generator < 0.5:
+                    #50% of time the rider request a ride from two random locations(ignore request_type returned)
+                    pickup_location, dropoff_location = utils.generate_random_location(probability_density), utils.generate_random_location(probability_density)
+
+                else:
+                    #25% of time the rider request a ride from home_address
+                    if request_type=='leave':
+                        pickup_location, dropoff_location = self.riders[rider_id]['home_address'], utils.generate_random_location(probability_density)
+                    #25% of time the rider request a ride to home_address
+                    elif request_type=='return':
+                        pickup_location, dropoff_location = utils.generate_random_location(probability_density), self.riders[rider_id]['home_address']
+                        
+                requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
+                self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
+
+        assert(num_requests==len(requests))
+
+        return requests
+    
+ 
+
+
     
     # TODO - sanity check on the generated rider requests(kde plots on each type of riders; a json file of all the rides)
-    def generate_rider_requests(self, rider_id, rider_type):
+    def generate_rider_requests_deprecated(self, rider_id, rider_type):
         #draw a sample from poisson distn (type: int)
         num_requests = np.random.poisson(self.rider_request_rates[rider_type])
         
@@ -113,40 +218,58 @@ class LyftSimulation:
         return requests
     
     
-    def generate_request_time(self, rider_type):
-        # TODO - later we may fix each commuters ride and time in each week(only sample once per week instead of per day)
+    def generate_a_request_time(self, rider_type):
+        # DONE TODO - later we may fix each commuters ride and time in each week(only sample once per week instead of per day)
+        # only sample once on each start of week(in initialize_riders)
+        trip_type = ''
         if rider_type == 'commuter':
             request_day = random.randint(0, 4) # sample a random day during week days (both sides included)
-            if random.random() < 0.8:  # 80% chance of requesting during peak hours
-                # Generate request time based on commuting hours
-                peak_hours = [6, 7, 8, 9, 10, 16, 17, 18]  # Morning and evening peak hours
-                hour = random.choice(peak_hours)
-                #hour = random.randint(peak_hour[0], peak_hour[1])
+            
+            timerange_selector = np.random.rand()
+            if timerange_selector < 0.5:
+                peak_hours = [6, 7, 8, 9, 10] # morning peak hours
+                trip_type='leave'
             else:
-                hour = random.randint(0, 23)
+                peak_hours = [16, 17, 18] # evening peak hours
+                trip_type='return'
+            # Generate request time based on commuting hours
+            hour = random.choice(peak_hours)
+            #hour = random.randint(peak_hour[0], peak_hour[1]), both are O(1)
             minute = random.randint(0, 59)
         elif rider_type == 'party_goer':
             party_day = [0, 1, 2, 3] + [4, 5, 6] * 3 #put more weights on Fri. Sat. and Sun.
             request_day = random.choice(party_day) # sample a random day 
-            if random.random() < 0.8:  # 80% chance of requesting during party hours
-                # Generate request time based on party ending hours
-                party_hours = [22, 23, 0, 1, 2, 3, 4, 5]
-                hour = random.choice(party_hours)
-                #hour = random.randint(peak_hour[0], peak_hour[1])
+            timerange_selector = np.random.rand()
+            if timerange_selector < 0.5:
+                party_hours = [18, 19, 20, 21, 22, 23] 
+                trip_type='leave'
             else:
-                hour = random.randint(0, 23)
+                party_hours = [0, 1, 2, 3, 4, 5]
+                trip_type='return'
+            # Generate request time based on party ending hours
+            hour = random.choice(party_hours)
             minute = random.randint(0, 59)
         else:
             request_day = random.randint(0, 6) # sample a random day (both sides included)
             # Generate request time uniformly across the week
             hour = random.randint(0, 23)
             minute = random.randint(0, 59)
+            # for simplicity, assume the sporadic rider leaves home from 6am to 3pm and returns otherwise
+            if 6<=hour<=15:
+                trip_type='leave'
+            else:
+                trip_type='return'
 
         # Convert hour and minute to timestamp
         timestamp = request_day * (hour * 60 + minute)
-        return timestamp
+
+
+        return timestamp, request_day, trip_type
 
     def process_rider_request(self, timestamp, data, rider_reject_effect=1):
+        """
+        Handle trip matching, pricing and trip update
+        """
         rider_id, pickup_location, dropoff_location = data
         # TODO - later add a pickup_location based matching function
         driver_id = self.find_a_driver()
@@ -170,7 +293,9 @@ class LyftSimulation:
             driver_acceptance_prob = utils.sigmoid(self.a_d + self.b_d * price_of_ride)
 
             # Determine if the ride is accepted by both rider and driver
-            if np.random.rand() < rider_acceptance_prob and np.random.rand() < driver_acceptance_prob:
+            rider_acceptance_generator = np.random.rand()
+            driver_acceptance_generator = np.random.rand()
+            if rider_acceptance_generator < rider_acceptance_prob and driver_acceptance_generator < driver_acceptance_prob:
                 # Create a new trip when both accepted
                 trip_id = utils.generate_trip_id()
                 start_timestamp = timestamp
@@ -185,10 +310,10 @@ class LyftSimulation:
                 # Add a trip end event to the queue
                 trip_duration = self.estimate_trip_duration(pickup_location, dropoff_location)
                 self.add_event(timestamp + trip_duration, 'trip_end', (start_timestamp, trip_id))
-            else:
-                # TODO - change request parameters based on num_rejects_by_rider in a week
+            elif rider_acceptance_generator >= rider_acceptance_prob:
+                # DONE TODO - change request parameters based on num_rejects_by_rider in a week
                 self.riders[rider_id]['num_rejects_by_rider'] += 1
-        # For simplicity, if the ride request is not accepted, the rider takes Uber instead
+        # For simplicity, if the ride request is not accepted, the rider takes Uber instead, so no resending the requests
 
     def process_trip_end(self, data):
         start_timestamp, trip_id = data
@@ -208,9 +333,9 @@ class LyftSimulation:
         return day_of_week, hour_of_day, mins_today
 
     def find_a_driver(self):
-        # randomly assign an idle driver
+        # randomly assign an idle driver, could be optimized later
 
-        idle_drive_lst = [driver_id for driver_id, loc, status in self.drivers.items() if status == 0]
+        idle_drive_lst = [driver_id for driver_id, val in self.drivers.items() if val['status'] == 0]
 
         return random.choice(idle_drive_lst)
         
