@@ -1,15 +1,20 @@
 import math
 import heapq
+
 import random
+random.seed(42)
+
 import numpy as np
 from collections import defaultdict, namedtuple
 import utils
 
-# TODO - put utility functions in a utility.py if there are too many of them
-def sigmoid(x):
-  return 1 / (1 + math.exp(-x))
-
 Event = namedtuple('Event', ['timestamp', 'type', 'data'])
+
+#x, y, radius, density for each location
+city_locations = [(0.1, 0.1, 0.2, 5.0), (0.5, 0.9, 0.2, 5.0)]
+airport_locations = [(0.9, 0.1, 0.05, 10.0)]
+probability_density = utils.create_probability_density(city_locations, airport_locations)
+
 
 class LyftSimulation:
     #simulate for a week
@@ -31,7 +36,7 @@ class LyftSimulation:
         self.b_d = -0.05  # Driver acceptance probability parameter
 
         self.num_drivers = 100
-        self.drivers = self.initialize_drivers()
+        
 
         self.num_riders = 1000
         
@@ -46,28 +51,39 @@ class LyftSimulation:
             'party_goer': 2,  # Average requests per week for party-goers
             'sporadic': 1  # Average requests per week for sporadic riders
         }
-        self.riders = self.initialize_riders()
+        
 
     def initialize_drivers(self):
         drivers = {}
         for i in range(self.num_drivers):
             driver_id = utils.generate_driver_id()
             drivers[driver_id] = {
-                'cur_loc': utils.generate_random_location(),
+                # TODO - Drivers sit in a subgrid (e.g. x=[.1, .2], y=[.4,.5]) and wait for ride requests.
+                'cur_loc': utils.generate_random_location(probability_density),
                 # 0 for idle, 1 for busy
                 'status': 0
             }
         return drivers
+    
+    def set_drivers(self, from_filename=None):
+        if not from_filename:
+            self.drivers = self.initialize_drivers()
+        else:
+            self.drivers = utils.read_json(from_filename)
 
     def initialize_riders(self):
         riders = {}
         for i in range(self.num_riders):
             rider_id = utils.generate_rider_id()
             rider_type = self.sample_rider_type()
+            work_address = utils.generate_random_location(probability_density) if rider_type=='commuter' else None
             riders[rider_id] = {
                 'type': rider_type,
-                'requests': self.generate_rider_requests(rider_id, rider_type),
-                'num_rejects_by_rider': 0
+                'requests': [],
+                #'requests': self.generate_rider_requests(rider_id, rider_type),
+                'num_rejects_by_rider': 0,
+                'home_address': utils.generate_random_location(probability_density),
+                'work_address': work_address
             }
         return riders
     
@@ -147,8 +163,8 @@ class LyftSimulation:
             price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
             
             # Calculate acceptance probabilities for riders and drivers
-            rider_acceptance_prob = sigmoid(self.a_r + self.b_r * price_of_ride)
-            driver_acceptance_prob = sigmoid(self.a_d + self.b_d * price_of_ride)
+            rider_acceptance_prob = utils.sigmoid(self.a_r + self.b_r * price_of_ride)
+            driver_acceptance_prob = utils.sigmoid(self.a_d + self.b_d * price_of_ride)
 
             # Determine if the ride is accepted by both rider and driver
             if np.random.rand() < rider_acceptance_prob and np.random.rand() < driver_acceptance_prob:

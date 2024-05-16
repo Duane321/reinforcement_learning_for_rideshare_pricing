@@ -1,33 +1,42 @@
 import uuid
+import math
+import json
 import numpy as np
 
-
-
-
-
-
-
-def generate_rider_id(self):
+def generate_rider_id():
     """
     Generate a unique rider ID
     128-bit numbers typically presented in hexadecimal form, resulting in a 32-character string
     """
-    return uuid.uuid4()
+    return str(uuid.uuid4())
 
-def generate_driver_id(self):
+def generate_driver_id():
     """
     Generate a unique driver ID
     """
-    return uuid.uuid4()
+    return str(uuid.uuid4())
 
-def generate_trip_id(self):
+def generate_trip_id():
     """
     Generate a unique trip ID
     """
-    return uuid.uuid4()
+    return str(uuid.uuid4())
+
+def sigmoid(x):
+  return 1 / (1 + math.exp(-x))
+
+def save_dict_to_json(d, filename):
+    with open(filename, 'w') as fp:
+        json.dump(d, fp, indent=4)
+
+def read_json(filename):
+    with open(filename, 'r') as fp:
+        d = json.load(fp)
+
+    return d
 
 # TODO - put irregularity (e.g. city and airport) on the grid
-def generate_random_location(self):
+def generate_random_location():
     """
     Generate a random location (i. e., x, y coordinates each from (0, 1))
     """
