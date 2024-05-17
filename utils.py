@@ -75,7 +75,7 @@ def create_probability_density(city_locations, airport_locations):
 
 
 
-def generate_random_location(probability_density, density_divider=20.0):
+def generate_random_location(probability_density, density_divider=11.0):
     """
     Use rejection sampling to generate random a location x & y based on the given density function
     """
