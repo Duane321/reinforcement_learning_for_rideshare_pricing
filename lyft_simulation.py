@@ -166,9 +166,9 @@ class LyftSimulation:
 
             for request_day, request_type in sampled_days_types:
                 pickup_location, dropoff_location = [], []
-
+                hour = random.choice(hours_dict[request_type])
                 minute = random.randint(0, 59)
-                request_time = request_day * (random.choice(hours_dict[request_type]) * 60 + minute)
+                request_time = (request_day-1) * 24 * 60 + hour * 60 + minute
                 
                 #print(f'ith request:{i}')
                 #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
@@ -180,6 +180,9 @@ class LyftSimulation:
                 
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
+
+                if request_time>10080:
+                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
         
         elif rider_type=='party_goer':
             request_days = list(range(1, 8))
@@ -196,8 +199,9 @@ class LyftSimulation:
 
             for request_day, request_type in sampled_days_types:
                 pickup_location, dropoff_location = [], []
+                hour = random.choice(hours_dict[request_type])
                 minute = random.randint(0, 59)
-                request_time = request_day * (random.choice(hours_dict[request_type]) * 60 + minute)
+                request_time = (request_day-1) * 24 * 60 + hour * 60 + minute
                 
                 #print(f'ith request:{i}')
                 #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
@@ -210,17 +214,20 @@ class LyftSimulation:
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
+                if request_time>10080:
+                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
+
         else:
             for i in range(num_requests):
                 pickup_location, dropoff_location = [], []
                 random_walk_generator = np.random.rand()
-                request_day = random.randint(1, 8) # sample a random day (both sides included)
+                request_day = random.randint(1, 7) # sample a random day (both sides included)
                 request_type = random.choice(request_types)
 
 
                 hour = random.randint(0, 23)
                 minute = random.randint(0, 59)
-                request_time = request_day * (hour * 60 + minute)
+                request_time = (request_day-1) * 24 * 60 + hour * 60 + minute
                 
                 #print(f'ith request:{i}')
                 #print(f'request_time, request_day, request_type:{(request_time, request_day, request_type)}')
@@ -239,7 +246,12 @@ class LyftSimulation:
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
+                if request_time>10080:
+                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
+
         assert(num_requests==len(requests))
+
+        
 
         return requests
     
