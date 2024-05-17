@@ -154,11 +154,11 @@ class LyftSimulation:
         request_types = ['leave', 'return']
 
         if rider_type=='commuter':
-            #random.choices(request_days_types, num_requests), sample with replacement from cartesian products of request_day * request_type
+            #random.choices(request_days_types, num_requests), sample without replacement from cartesian products of request_day * request_type
             request_days = list(range(1, 6))
             
             request_days_types = list(itertools.product(request_days, request_types))
-            sampled_days_types = random.choices(request_days_types, k=num_requests)
+            sampled_days_types = random.sample(request_days_types, k=num_requests)
             hours_dict = {
                 'leave': [6, 7, 8, 9, 10],
                 'return': [16, 17, 18]
@@ -181,13 +181,13 @@ class LyftSimulation:
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
-                if request_time>10080:
-                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
+                # if request_time>10080:
+                #     print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
         
         elif rider_type=='party_goer':
             request_days = list(range(1, 8))
             request_days_types = list(itertools.product(request_days, request_types))
-            sampled_days_types = random.choices(request_days_types, k=num_requests)
+            sampled_days_types = random.sample(request_days_types, k=num_requests)
             hours_dict = {
                 'leave': [18, 19, 20, 21, 22, 23],
                 'return': [0, 1, 2, 3, 4, 5]
@@ -195,7 +195,7 @@ class LyftSimulation:
 
             others_addresses_lst = [v['home_address'] for k, v in self.riders.items() if k!=rider_id]
             #one random party address for each day in a week
-            party_address = random.choices(others_addresses_lst, k=len(request_days))
+            party_address = random.sample(others_addresses_lst, k=len(request_days))
 
             for request_day, request_type in sampled_days_types:
                 pickup_location, dropoff_location = [], []
@@ -214,8 +214,8 @@ class LyftSimulation:
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
-                if request_time>10080:
-                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
+                # if request_time>10080:
+                #     print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
 
         else:
             for i in range(num_requests):
@@ -246,8 +246,8 @@ class LyftSimulation:
                 requests.append([request_time, request_day, request_type, pickup_location, dropoff_location])
                 self.add_event(request_time, 'rider_request', (rider_id, pickup_location, dropoff_location))
 
-                if request_time>10080:
-                    print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
+                # if request_time>10080:
+                #     print(f'request_time, request_day, hour, minute:{request_time, request_day, hour, minute}')
 
         assert(num_requests==len(requests))
 
