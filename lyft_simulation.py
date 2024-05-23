@@ -61,11 +61,15 @@ class WeeklySimulation:
         D[:,0] gives all the timestamps(from 0 to 24*60-1) of the ride_requests, 
         D[:,1] gives the x_start, D[:,2] gives the y_start, D[:,3] gives the x_end and D[:,4] gives the y_end
         """
+        # each rider's number of request on this day e.g. [0., 2., 1.]
         daily_num_requests = torch.poisson(self.lambda_riders).clamp(max=self.daily_max_requests)
+        # sequential ID for total number of rides
         request_indices = torch.arange(daily_num_requests.sum().int())
 
-        # rider index for each request
+        # rider index repeats each rider's sequential ID according to the number of requests for that rider.
         rider_indices = torch.repeat_interleave(torch.arange(self.num_riders), daily_num_requests.int())
+
+        # sequential ID for total number of riders
         indices = torch.arange(self.num_riders)
         mask1 = indices < self.part_size
         mask2 = (indices >= self.part_size) & (indices < 2 * self.part_size)
@@ -90,7 +94,7 @@ class WeeklySimulation:
         start_locations = torch.rand(len(request_indices), 2)
         end_locations = torch.rand(len(request_indices), 2)
 
-        riders = torch.cat((request_times, start_locations, end_locations), 1)
+        riders = torch.cat((request_times, start_locations, end_locations, rider_indices.unsqueeze(1)), 1)
 
         return riders
     
