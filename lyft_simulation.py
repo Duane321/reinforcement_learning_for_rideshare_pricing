@@ -11,6 +11,15 @@ class WeeklySimulation:
 
 
     def __init__(self, learning_rate, initial_pricing_params):
+        self.lr = learning_rate # lr for SGD
+        self.pricing_params = initial_pricing_params
+
+        # Initialize acceptance probability parameters
+        self.a_r = 1.0  # Rider acceptance probability parameter
+        self.b_r = -0.1  # Rider acceptance probability parameter
+        self.a_d = 1.0  # Driver acceptance probability parameter
+        self.b_d = -0.05  # Driver acceptance probability parameter
+
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
         self.daily_max_requests = 5
@@ -23,6 +32,8 @@ class WeeklySimulation:
 
         # on avg. a driver can work for 3hrs
         self.mean_idle_time = 180
+
+        self.match_interval_time = 30
 
         #number of different distributions for request time
         self.num_components = 3 
@@ -60,6 +71,7 @@ class WeeklySimulation:
         return:
         D[:,0] gives all the timestamps(from 0 to 24*60-1) of the ride_requests, 
         D[:,1] gives the x_start, D[:,2] gives the y_start, D[:,3] gives the x_end and D[:,4] gives the y_end
+        D[:, 5] gives each request's rider_idx which could be used to indicate the rider type.
         """
         # each rider's number of request on this day e.g. [0., 2., 1.]
         daily_num_requests = torch.poisson(self.lambda_riders).clamp(max=self.daily_max_requests)
@@ -94,9 +106,10 @@ class WeeklySimulation:
         start_locations = torch.rand(len(request_indices), 2)
         end_locations = torch.rand(len(request_indices), 2)
 
-        riders = torch.cat((request_times, start_locations, end_locations, rider_indices.unsqueeze(1)), 1)
+        self.riders = torch.cat((request_times, start_locations, end_locations
+                                 , rider_indices.unsqueeze(1)), 1)
 
-        return riders
+        return self.riders
     
 
     def simulate_drivers(self):
@@ -135,9 +148,12 @@ class WeeklySimulation:
         exponential_dist = torch.distributions.exponential.Exponential(torch.tensor(1.0 / self.mean_idle_time))
         idle_duration = exponential_dist.sample((self.num_drivers,)).clamp(min=1, max=24 * 60).int().long()
 
-        drivers = torch.cat((idle_starttime.unsqueeze(1), idle_duration.unsqueeze(1), driver_positions), 1)
+        driver_indices = torch.arange(self.num_drivers)
 
-        return drivers
+        self.drivers = torch.cat((idle_starttime.unsqueeze(1), idle_duration.unsqueeze(1)
+                                  , driver_positions, driver_indices.unsqueeze(1)), 1)
+
+        return self.drivers
     
 
     def get_subblock_index(self, x, y):
@@ -149,3 +165,101 @@ class WeeklySimulation:
         subgrid_index = subgrid_x * self.num_subgrids_per_dim + subgrid_y
 
         return subgrid_index
+    
+    def estimate_trip_distance_duration(self, pickup_dropoff_locations, driver_speed=0.5):
+        # driver_speed is calculated by 30miles/hour(1mile/min), and 0.1 in the grid means 1 mile
+        # Estimate the trip duration based on the pickup location and dropoff location
+        # Return the estimated duration in seconds
+        start_x, start_y, end_x, end_y = pickup_dropoff_locations[0], pickup_dropoff_locations[1], pickup_dropoff_locations[0], pickup_dropoff_locations[1]
+        euclidean_distance = np.sqrt((start_x - end_x)**2 + (start_y - end_y)**2) * 10
+        trip_duration = np.round(euclidean_distance / driver_speed)
+
+        return trip_duration, euclidean_distance
+
+    ### WIP
+    def request_driver_matching(self):
+        """
+        self.drivers: (num_drivers) * (idle_start_time_timestamps, idle_duration, idle_start_x, idle_start_y, 
+                                        driver_idx, idle_start_subblock_id, idle_status)
+
+        self.riders: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
+                                        rider_idx, req_start_subblock_id, req_end_subblock_id)
+        """
+        for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
+            for square_index in range(self.num_subgrids_per_dim ** 2): 
+                idle_status_mask = self.drivers[:, 6]==0
+                idle_time_mask_left = self.drivers[:, 0]<(interval_idx+1)*self.match_interval_time
+                idle_time_mask_right = interval_idx*self.match_interval_time<=self.drivers[:, 0]+self.drivers[:, 1]
+                idle_location_mask = self.drivers[:, 5]==square_index
+
+                drivers_subblock = self.drivers[idle_status_mask & idle_time_mask_left & idle_time_mask_right & idle_location_mask]
+
+
+                # if len(drivers_subblock)==0:
+                #     #print(f'no idle driver in this sub-block:{square_index}')
+                #     continue
+                # else:
+                #     print(f'at least one idle driver in this sub-block:{square_index}')
+
+
+                request_time_mask_left = interval_idx*self.match_interval_time<=self.riders[:, 0]
+                request_time_mask_right = self.riders[:, 0]<(interval_idx+1)*self.match_interval_time
+                request_location_mask = self.riders[:, 6]==square_index
+
+                riders_subblock = self.riders[request_time_mask_left & request_time_mask_right \
+                                                & request_location_mask]
+                
+                if len(riders_subblock)==0:
+                    #print(f'no idle driver in this sub-block:{square_index}')
+                    continue
+                else:
+                    print(f'at least one rider request in this sub-block:{square_index}')
+
+                #have to iterate through every rider in the given time interval and the sub-block is both rider and driver are valid
+
+                for valid_request_id in range(riders_subblock.shape[0]):
+                    valid_driver = drivers_subblock.shape[0]
+                    selected_driver = drivers_subblock[torch.randint(0, valid_driver, (1,)).item()] if valid_driver>1 else drivers_subblock
+
+                    ride_minutes, ride_miles = self.estimate_trip_distance_duration(riders_subblock[valid_request_id][1:5])
+                    price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
+
+
+                    rider_acceptance_prob = torch.sigmoid(self.a_r + self.b_r * price_of_ride)
+                    driver_acceptance_prob = torch.sigmoid(self.a_d + self.b_d * price_of_ride)
+
+                    # Determine if the ride is accepted by both rider and driver
+                    rider_acceptance_generator = np.random.rand()
+                    driver_acceptance_generator = np.random.rand()
+                    if rider_acceptance_generator < rider_acceptance_prob and driver_acceptance_generator < driver_acceptance_prob:
+                        driver_idx = selected_driver[4]
+                        #set the idle status to busy
+                        self.drivers[driver_idx][6]==1
+                        #remove busy the driver in drivers_subblock
+                        #no need to set idle_start time because we have the idle status
+                        drivers_subblock = drivers_subblock[drivers_subblock[:, 5]!=1]
+                        #update driver's idle sub-block id to the trip destination
+                        self.drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
+
+                        #update their idle_start_timestamp to request_time+trip_duration 
+                        prev_idle_start_timestamp = self.drivers[driver_idx][0]
+                        self.drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + ride_minutes
+                        #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
+                        self.drivers[driver_idx][1] = max(0, self.drivers[driver_idx][1] - self.drivers[driver_idx][0] - prev_idle_start_timestamp)
+
+
+                        
+
+                    elif rider_acceptance_generator >= rider_acceptance_prob:
+                        #TODO - update rider_rejects vector
+                        pass
+
+
+                    elif driver_acceptance_generator >= driver_acceptance_prob:
+                        #TODO - update driver_rejects vector
+                        pass
+                
+            if len(riders_subblock)!=0 and len(drivers_subblock)!=0:
+                #print(f'no idle driver in this sub-block:{square_index}')
+                break
+            
