@@ -34,23 +34,56 @@ class WeeklySimulation:
 
         self.match_interval_time = 30
 
+        # sequential ID for total number of riders
+        self.indices = torch.arange(self.num_riders)
+        self.mask1 = self.indices < self.part_size
+        self.mask2 = (self.indices >= self.part_size) & (self.indices < 2 * self.part_size)
+        self.mask3 = (self.indices >= 2 * self.part_size) & (self.indices < 3 * self.part_size)
+        #mask4 = indices >= 3 * self.part_size
+
         #number of different distributions for request time
         self.num_components = 3 
         #480, 1080, 1320, total 1440, 0 is placeholder for uniform distribution
         self.request_times_means = torch.tensor([8 * 60, 18 * 60, 22 * 60, 0])
         self.request_times_stds = torch.tensor([60, 60, 60, 0])
 
-        self.lambda_commuter, self.lambda_party_goer, self.lambda_sporadic = 1.5, 1, 1
-
         #there are two types of commuters(morning and evening),each with 25% probability
         self.commuter_percentage, self.party_goer_percentage, self.sporadic_rider_percentage = 0.25, 0.25, 0.25
 
+        self.daily_rider_accepts = torch.zeros(self.num_riders)
+        self.daily_num_requests = torch.zeros(self.num_riders)
 
+        self.alphas_commuters = torch.ones(int(self.num_riders * self.commuter_percentage * 2), )
+        self.betas_commuters = torch.ones(int(self.num_riders * self.commuter_percentage * 2), )
+        self.alphas_party_goers = torch.ones(int(self.num_riders * self.party_goer_percentage), ) * 0.75
+        self.betas_party_goers = torch.ones(int(self.num_riders * self.party_goer_percentage), ) * 0.75
+        self.alphas_sporadic = torch.ones(int(self.num_riders * self.sporadic_rider_percentage), ) * 0.75
+        self.betas_sporadic = torch.ones(int(self.num_riders * self.sporadic_rider_percentage), ) * 0.75
+
+        # self.alpha_riders = torch.cat([
+        #     self.alphas_commuters,
+        #     self.alphas_party_goers,
+        #     self.alphas_sporadic
+        # ])
+
+        # self.beta_riders = torch.cat([
+        #     self.betas_commuters,
+        #     self.betas_party_goers,
+        #     self.betas_sporadic
+        # ])
+
+        self.gamma_dist_commuters = torch.distributions.Gamma(self.alphas_commuters, self.betas_commuters)
+        self.gamma_dist_party_goers = torch.distributions.Gamma(self.alphas_party_goers, self.betas_party_goers)
+        self.gamma_dist_sporadic = torch.distributions.Gamma(self.alphas_sporadic, self.betas_sporadic)
+
+        #make the lambdas of Poisson sampled from Gamma distributions as conjugate priors for Bayesian updates
         self.lambda_riders = torch.cat([
-            torch.full((int(self.num_riders * self.commuter_percentage * 2),), self.lambda_commuter),
-            torch.full((int(self.num_riders * self.party_goer_percentage),), self.lambda_party_goer),
-            torch.full((int(self.num_riders * self.sporadic_rider_percentage),), self.lambda_sporadic)
+            self.gamma_dist_commuters.sample(),
+            self.gamma_dist_party_goers.sample(),
+            self.gamma_dist_sporadic.sample()
         ])
+
+
 
         self.subgrid_bounds = torch.zeros(self.num_subgrids, 2, 2)
         for i in range(self.num_subgrids_per_dim):
@@ -71,26 +104,23 @@ class WeeklySimulation:
         D[:,0] gives all the timestamps(from 0 to 24*60-1) of the ride_requests, 
         D[:,1] gives the x_start, D[:,2] gives the y_start, D[:,3] gives the x_end and D[:,4] gives the y_end
         D[:, 5] gives each request's rider_idx which could be used to indicate the rider type.
+        D[:,6] gives the sub-block id for each request trip start position
+        D[:,7] gives the sub-block id for each request trip end position
         """
         # each rider's number of request on this day e.g. [0., 2., 1.]
-        daily_num_requests = torch.poisson(self.lambda_riders)
+        self.daily_num_requests = torch.poisson(self.lambda_riders)
         # sequential ID for total number of rides
-        request_indices = torch.arange(daily_num_requests.sum().int())
+        request_indices = torch.arange(self.daily_num_requests.sum().int())
 
         # rider index repeats each rider's sequential ID according to the number of requests for that rider.
-        rider_indices = torch.repeat_interleave(torch.arange(self.num_riders), daily_num_requests.int())
+        rider_indices = torch.repeat_interleave(torch.arange(self.num_riders), self.daily_num_requests.int())
 
-        # sequential ID for total number of riders
-        indices = torch.arange(self.num_riders)
-        mask1 = indices < self.part_size
-        mask2 = (indices >= self.part_size) & (indices < 2 * self.part_size)
-        mask3 = (indices >= 2 * self.part_size) & (indices < 3 * self.part_size)
-        #mask4 = indices >= 3 * self.part_size
+        
         request_times = torch.zeros(len(request_indices))
 
-        request_times[mask1[rider_indices]] = torch.normal(self.request_times_means[0], self.request_times_stds[0], size=(mask1[rider_indices].sum(),))
-        request_times[mask2[rider_indices]] = torch.normal(self.request_times_means[1], self.request_times_stds[1], size=(mask2[rider_indices].sum(),))
-        request_times[mask3[rider_indices]] = torch.normal(self.request_times_means[2], self.request_times_stds[2], size=(mask3[rider_indices].sum(),))
+        request_times[self.mask1[rider_indices]] = torch.normal(self.request_times_means[0], self.request_times_stds[0], size=(self.mask1[rider_indices].sum(),))
+        request_times[self.mask2[rider_indices]] = torch.normal(self.request_times_means[1], self.request_times_stds[1], size=(self.mask2[rider_indices].sum(),))
+        request_times[self.mask3[rider_indices]] = torch.normal(self.request_times_means[2], self.request_times_stds[2], size=(self.mask3[rider_indices].sum(),))
 
         # Resample values outside the valid range, assume always resample from commuter type 1 for simplicity
         invalid_mask = (request_times < 0) | (request_times >= 24 * 60)
@@ -99,15 +129,20 @@ class WeeklySimulation:
             invalid_mask = (request_times < 0) | (request_times >= 24 * 60)
 
         # Fill in random values for the remaining indices
-        remaining_mask = ~(mask1[rider_indices] | mask2[rider_indices] | mask3[rider_indices])
+        remaining_mask = ~(self.mask1[rider_indices] | self.mask2[rider_indices] | self.mask3[rider_indices])
         request_times[remaining_mask] = torch.randint(0, 24 * 60, size=(remaining_mask.sum(),), dtype=torch.float)
 
 
         start_locations = torch.rand(len(request_indices), 2)
         end_locations = torch.rand(len(request_indices), 2)
 
-        self.D_Requests = torch.cat((request_times, start_locations, end_locations
+        self.D_Requests = torch.cat((request_times.unsqueeze(1), start_locations, end_locations
                                  , rider_indices.unsqueeze(1)), 1)
+        
+        self.D_Requests = torch.concat((self.D_Requests
+                                , self.get_subblock_index(self.D_Requests[:, 1], self.D_Requests[:, 2]).unsqueeze(1)
+                                , self.get_subblock_index(self.D_Requests[:, 3], self.D_Requests[:, 4]).unsqueeze(1))
+                                , 1)
 
         return self.D_Requests
     
@@ -119,7 +154,11 @@ class WeeklySimulation:
         S[:,0] gives idle start time timestamps(from 0 to 24*60-1) which the driver begins to be matched to ride requests, 
         S[:,1] gives the idle duration(number of minutes the driver can be matched), 
         S[:,2] gives the x idle start position, S[:,3] gives the y idle start position
+        S[:,4] gives the driver index(0 to 99)
+        S[:,5] gives the sub-block id for each idle start position
         """
+        #self.
+
         # Assign each driver to a subgrid
         driver_subgrids = torch.randint(0, self.num_subgrids, (self.num_drivers,))
 
@@ -152,6 +191,13 @@ class WeeklySimulation:
 
         self.S_Drivers = torch.cat((idle_starttime.unsqueeze(1), idle_duration.unsqueeze(1)
                                   , driver_positions, driver_indices.unsqueeze(1)), 1)
+        
+        self.S_Drivers = torch.concat((self.S_Drivers
+                                 , self.get_subblock_index(self.S_Drivers[:, 2], self.S_Drivers[:, 3]).unsqueeze(1)
+                                    )
+                                 , 1)
+
+
         #just throw away those trips not finished by the end of the day
         return self.S_Drivers
     
@@ -179,12 +225,14 @@ class WeeklySimulation:
     ### WIP
     def request_driver_matching(self):
         """
+        match requests on drivers for every match_interval_time(30mins) and for each sub-block id
         self.S_Drivers: (num_drivers) * (idle_start_time_timestamps, idle_duration, idle_start_x, idle_start_y, 
-                                        driver_idx, idle_start_subblock_id, idle_status)
+                                        driver_idx, idle_start_subblock_id)
 
         self.D_Requests: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
+        # TODO - figure out how to speed up, may do parallelization on the sub-blocks
         for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
             for square_index in range(self.num_subgrids_per_dim ** 2): 
                 #replace idle_status_mask with checking on the idle_time
@@ -195,11 +243,11 @@ class WeeklySimulation:
                 drivers_subblock = self.S_Drivers[idle_time_mask_left & idle_time_mask_right & idle_location_mask]
 
 
-                # if len(drivers_subblock)==0:
-                #     #print(f'no idle driver in this sub-block:{square_index}')
-                #     continue
-                # else:
-                #     print(f'at least one idle driver in this sub-block:{square_index}')
+                if len(drivers_subblock)==0:
+                    #print(f'no idle driver in this sub-block:{square_index}')
+                    continue
+                else:
+                    print(f'at least one idle driver in this sub-block:{square_index}')
 
 
                 request_time_mask_left = interval_idx*self.match_interval_time<=self.D_Requests[:, 0]
@@ -231,35 +279,52 @@ class WeeklySimulation:
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
                     driver_acceptance_generator = np.random.rand()
-                    if rider_acceptance_generator < rider_acceptance_prob and driver_acceptance_generator < driver_acceptance_prob:
-                        driver_idx = selected_driver[4]
-                        #remove the current busy driver in drivers_subblock
-                        drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
-                        if len(drivers_subblock)==0:
-                             #no more valid drivers, exit the loop right away
-                             break
-                        #update driver's idle sub-block id to the trip destination
-                        self.S_Drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
+                    if rider_acceptance_generator < rider_acceptance_prob:
+                        rider_id = riders_subblock[valid_request_id][5]
+                        self.daily_rider_accepts[rider_id] += 1
 
-                        #update their idle_start_timestamp to request_time+trip_duration 
-                        prev_idle_start_timestamp = self.S_Drivers[driver_idx][0]
-                        self.S_Drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + ride_minutes
-                        #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
-                        self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
+                        if driver_acceptance_generator < driver_acceptance_prob:
+                            driver_idx = selected_driver[4]
+                            #remove the current busy driver in drivers_subblock
+                            drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
+                            if len(drivers_subblock)==0:
+                                #no more valid drivers, exit the loop right away
+                                break
+                            #update driver's idle sub-block id to the trip destination
+                            self.S_Drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
 
-
-                        
-
-                    elif rider_acceptance_generator >= rider_acceptance_prob:
-                        #TODO - update rider_rejects vector
-                        pass
+                            #update their idle_start_timestamp to request_time+trip_duration 
+                            prev_idle_start_timestamp = self.S_Drivers[driver_idx][0]
+                            self.S_Drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + ride_minutes
+                            #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
+                            self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
 
 
-                    elif driver_acceptance_generator >= driver_acceptance_prob:
-                        #TODO - update driver_rejects vector
-                        pass
+                        else:
+                            #driver_acceptance_generator >= driver_acceptance_prob
+                            #TODO - update driver_rejects vector, not sure how we will use it in later days
+                            pass
                 
             if len(riders_subblock)!=0 and len(drivers_subblock)!=0:
                 #print(f'no idle driver in this sub-block:{square_index}')
                 break
+
+
+    def update_gamma_distns(self):
+        """
+        update the alphas and betas in the gamma priors for poisson based on number of accepts and number of requests
+        """
+        self.alphas_commuters += self.daily_rider_accepts[self.mask1]
+        self.betas_commuters += self.daily_num_requests[self.mask1]
+
+        self.alphas_party_goers += self.daily_rider_accepts[self.mask2]
+        self.betas_party_goers += self.daily_num_requests[self.mask2]
+
+        self.alphas_sporadic += self.daily_rider_accepts[self.mask3]
+        self.betas_sporadic += self.daily_num_requests[self.mask3]
+
+
+        self.gamma_dist_commuters = torch.distributions.Gamma(self.alphas_commuters, self.betas_commuters)
+        self.gamma_dist_party_goers = torch.distributions.Gamma(self.alphas_party_goers, self.betas_party_goers)
+        self.gamma_dist_sporadic = torch.distributions.Gamma(self.alphas_sporadic, self.betas_sporadic)
             
