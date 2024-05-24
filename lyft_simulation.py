@@ -187,12 +187,13 @@ class WeeklySimulation:
         """
         for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
             for square_index in range(self.num_subgrids_per_dim ** 2): 
-                idle_status_mask = self.drivers[:, 6]==0
+                #replace idle_status_mask with checking on the idle_time
+                #idle_status_mask = self.drivers[:, 6]==0
                 idle_time_mask_left = self.drivers[:, 0]<(interval_idx+1)*self.match_interval_time
                 idle_time_mask_right = interval_idx*self.match_interval_time<=self.drivers[:, 0]+self.drivers[:, 1]
                 idle_location_mask = self.drivers[:, 5]==square_index
 
-                drivers_subblock = self.drivers[idle_status_mask & idle_time_mask_left & idle_time_mask_right & idle_location_mask]
+                drivers_subblock = self.drivers[idle_time_mask_left & idle_time_mask_right & idle_location_mask]
 
 
                 # if len(drivers_subblock)==0:
@@ -233,11 +234,11 @@ class WeeklySimulation:
                     driver_acceptance_generator = np.random.rand()
                     if rider_acceptance_generator < rider_acceptance_prob and driver_acceptance_generator < driver_acceptance_prob:
                         driver_idx = selected_driver[4]
-                        #set the idle status to busy
-                        self.drivers[driver_idx][6]==1
-                        #remove busy the driver in drivers_subblock
-                        #no need to set idle_start time because we have the idle status
-                        drivers_subblock = drivers_subblock[drivers_subblock[:, 5]!=1]
+                        #remove the current busy driver in drivers_subblock
+                        drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
+                        if len(drivers_subblock)==0:
+                             #no more valid drivers, exit the loop right away
+                             break
                         #update driver's idle sub-block id to the trip destination
                         self.drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
 
