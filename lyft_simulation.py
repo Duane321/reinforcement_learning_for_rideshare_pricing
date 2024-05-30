@@ -83,7 +83,7 @@ class WeeklySimulation:
             self.gamma_dist_sporadic.sample()
         ])
 
-
+        self.daily_driver_rejects = torch.zeros(self.num_drivers)
 
         self.subgrid_bounds = torch.zeros(self.num_subgrids, 2, 2)
         for i in range(self.num_subgrids_per_dim):
@@ -95,7 +95,8 @@ class WeeklySimulation:
         self.D_Requests = None
         self.S_Drivers = None
 
-        self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
+        #self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
+        #no need to do so as we update each driver's idle_start_time based on trips
 
     def simulate_demand(self):
         """
@@ -233,7 +234,7 @@ class WeeklySimulation:
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
-        for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
+        for interval_idx, match_interval in tqdm(enumerate(range(0, 24*60-1, self.match_interval_time))):
             for square_index in range(self.num_subgrids_per_dim ** 2): 
                 #replace idle_status_mask with checking on the idle_time
                 idle_time_mask_left = self.S_Drivers[:, 0]<(interval_idx+1)*self.match_interval_time
@@ -247,7 +248,8 @@ class WeeklySimulation:
                     #print(f'no idle driver in this sub-block:{square_index}')
                     continue
                 else:
-                    print(f'at least one idle driver in this sub-block:{square_index}')
+                    #print(f'at least one idle driver in this sub-block:{square_index}')
+                    pass
 
 
                 request_time_mask_left = interval_idx*self.match_interval_time<=self.D_Requests[:, 0]
@@ -261,14 +263,18 @@ class WeeklySimulation:
                     #print(f'no idle driver in this sub-block:{square_index}')
                     continue
                 else:
-                    print(f'at least one rider request in this sub-block:{square_index}')
+                    #print(f'at least one rider request in this sub-block:{square_index}')
+                    pass
 
                 #have to iterate through every rider in the given time interval and the sub-block is both rider and driver are valid
 
                 for valid_request_id in range(riders_subblock.shape[0]):
                     valid_driver = drivers_subblock.shape[0]
-                    selected_driver = drivers_subblock[torch.randint(0, valid_driver, (1,)).item()] if valid_driver>1 else drivers_subblock
-
+                    
+                    selected_driver = drivers_subblock[torch.randint(0, valid_driver, (1,)).item(), :][0] if valid_driver>1 else drivers_subblock[0]
+                    if valid_driver==0 or selected_driver.dim()==0:
+                        #print('no more valid driver to be matched!')
+                        break
                     ride_minutes, ride_miles = self.estimate_trip_distance_duration(riders_subblock[valid_request_id][1:5])
                     price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
 
@@ -279,12 +285,17 @@ class WeeklySimulation:
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
                     driver_acceptance_generator = np.random.rand()
+                    rider_id = int(riders_subblock[valid_request_id][5])
+                    driver_idx = int(selected_driver[4])
+
+                    #the rider accepts the trip
                     if rider_acceptance_generator < rider_acceptance_prob:
-                        rider_id = riders_subblock[valid_request_id][5]
                         self.daily_rider_accepts[rider_id] += 1
 
+                        #the driver accepts the trip, update the trip info
                         if driver_acceptance_generator < driver_acceptance_prob:
-                            driver_idx = selected_driver[4]
+                            #print(f'selected_driver:{selected_driver}')
+                            
                             #remove the current busy driver in drivers_subblock
                             drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
                             if len(drivers_subblock)==0:
@@ -299,30 +310,34 @@ class WeeklySimulation:
                             #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
                             self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
 
-
+                        #the driver rejects the trip
                         else:
                             #driver_acceptance_generator >= driver_acceptance_prob
-                            #TODO - update driver_rejects vector, not sure how we will use it in later days
-                            pass
+                            #TODO - not sure how we will use it in later days
+                            self.daily_driver_rejects[driver_idx] += 1
+
+                    #the rider rejects the trip, do nothing as we update the accepts only
+                    #else:
                 
-            if len(riders_subblock)!=0 and len(drivers_subblock)!=0:
-                #print(f'no idle driver in this sub-block:{square_index}')
-                break
+                # if len(riders_subblock)!=0 and len(drivers_subblock)!=0:
+                #     #for debugging only, display a non-empty riders_subblock and drivers_subblock
+                #     #print(f'no idle driver in this sub-block:{square_index}')
+                #     break
 
 
     def update_gamma_distns(self):
         """
-        update the alphas and betas in the gamma priors for poisson based on number of accepts and number of requests
+        daily update on the alphas and betas in the gamma priors for poisson based on number of accepts and number of requests
         """
-        self.alphas_commuters += self.daily_rider_accepts[self.mask1]
-        self.betas_commuters += self.daily_num_requests[self.mask1]
+        self.alphas_commuters += self.daily_rider_accepts[self.mask1 | self.mask2]
+        self.betas_commuters += self.daily_num_requests[self.mask1 | self.mask2]
 
-        self.alphas_party_goers += self.daily_rider_accepts[self.mask2]
-        self.betas_party_goers += self.daily_num_requests[self.mask2]
+        self.alphas_party_goers += self.daily_rider_accepts[self.mask3]
+        self.betas_party_goers += self.daily_num_requests[self.mask3]
 
-        self.alphas_sporadic += self.daily_rider_accepts[self.mask3]
-        self.betas_sporadic += self.daily_num_requests[self.mask3]
-
+        remaining_mask = ~(self.mask1 | self.mask2 | self.mask3)
+        self.alphas_sporadic += self.daily_rider_accepts[remaining_mask]
+        self.betas_sporadic += self.daily_num_requests[remaining_mask]
 
         self.gamma_dist_commuters = torch.distributions.Gamma(self.alphas_commuters, self.betas_commuters)
         self.gamma_dist_party_goers = torch.distributions.Gamma(self.alphas_party_goers, self.betas_party_goers)
