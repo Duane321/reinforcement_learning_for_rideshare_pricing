@@ -3,7 +3,7 @@ import itertools
 from tqdm import tqdm
 import json
 import numpy as np
-#import utils
+import utils
 
 import torch
 
@@ -11,6 +11,10 @@ class WeeklySimulation:
 
 
     def __init__(self, learning_rate, initial_pricing_params):
+        #self.current_day will be updated on the outer main function
+        self.current_day = 0
+
+
         self.lr = learning_rate # lr for SGD
         self.pricing_params = initial_pricing_params
 
@@ -59,18 +63,6 @@ class WeeklySimulation:
         self.betas_party_goers = torch.ones(int(self.num_riders * self.party_goer_percentage), ) * 0.75
         self.alphas_sporadic = torch.ones(int(self.num_riders * self.sporadic_rider_percentage), ) * 0.75
         self.betas_sporadic = torch.ones(int(self.num_riders * self.sporadic_rider_percentage), ) * 0.75
-
-        # self.alpha_riders = torch.cat([
-        #     self.alphas_commuters,
-        #     self.alphas_party_goers,
-        #     self.alphas_sporadic
-        # ])
-
-        # self.beta_riders = torch.cat([
-        #     self.betas_commuters,
-        #     self.betas_party_goers,
-        #     self.betas_sporadic
-        # ])
 
         self.gamma_dist_commuters = torch.distributions.Gamma(self.alphas_commuters, self.betas_commuters)
         self.gamma_dist_party_goers = torch.distributions.Gamma(self.alphas_party_goers, self.betas_party_goers)
@@ -158,7 +150,6 @@ class WeeklySimulation:
         S[:,4] gives the driver index(0 to 99)
         S[:,5] gives the sub-block id for each idle start position
         """
-        #self.
 
         # Assign each driver to a subgrid
         driver_subgrids = torch.randint(0, self.num_subgrids, (self.num_drivers,))
@@ -217,7 +208,8 @@ class WeeklySimulation:
         # driver_speed is calculated by 30miles/hour(1mile/min), and 0.1 in the grid means 1 mile
         # Estimate the trip duration based on the pickup location and dropoff location
         # Return the estimated duration in seconds
-        start_x, start_y, end_x, end_y = pickup_dropoff_locations[0], pickup_dropoff_locations[1], pickup_dropoff_locations[0], pickup_dropoff_locations[1]
+        start_x, start_y, end_x, end_y = pickup_dropoff_locations[0], pickup_dropoff_locations[1], \
+            pickup_dropoff_locations[2], pickup_dropoff_locations[3]
         euclidean_distance = np.sqrt((start_x - end_x)**2 + (start_y - end_y)**2) * 10
         trip_duration = np.round(euclidean_distance / driver_speed)
 
@@ -233,6 +225,7 @@ class WeeklySimulation:
         self.D_Requests: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
+        logger = utils.create_logger(self.current_day)
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
         for interval_idx, match_interval in tqdm(enumerate(range(0, 24*60-1, self.match_interval_time))):
             for square_index in range(self.num_subgrids_per_dim ** 2): 
@@ -275,12 +268,12 @@ class WeeklySimulation:
                     if valid_driver==0 or selected_driver.dim()==0:
                         #print('no more valid driver to be matched!')
                         break
+
                     ride_minutes, ride_miles = self.estimate_trip_distance_duration(riders_subblock[valid_request_id][1:5])
                     price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
 
-
-                    rider_acceptance_prob = torch.sigmoid(self.a_r + self.b_r * price_of_ride)
-                    driver_acceptance_prob = torch.sigmoid(self.a_d + self.b_d * price_of_ride)
+                    rider_acceptance_prob = float(torch.sigmoid(self.a_r + self.b_r * price_of_ride))
+                    driver_acceptance_prob = float(torch.sigmoid(self.a_d + self.b_d * price_of_ride))
 
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
@@ -290,25 +283,50 @@ class WeeklySimulation:
 
                     #the rider accepts the trip
                     if rider_acceptance_generator < rider_acceptance_prob:
+                        
                         self.daily_rider_accepts[rider_id] += 1
 
                         #the driver accepts the trip, update the trip info
                         if driver_acceptance_generator < driver_acceptance_prob:
-                            #print(f'selected_driver:{selected_driver}')
+                            #update driver's idle sub-block id to the trip destination
+                            self.S_Drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
+
+                            #update their idle_start_timestamp to request_time+trip_duration 
+                            prev_idle_start_timestamp = self.S_Drivers[driver_idx][0]
+                            self.S_Drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + int(ride_minutes)
+                            #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
+                            self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
+
+                            #print(f'a new trip occurs on sub-block:{square_index}, rider_id:{rider_id}, driver_idx:{driver_idx}')
+                            #log the trip info
+                            # logger.debug(json.dumps({'square_index': square_index}))
+                            # logger.debug(json.dumps({'rider_id': rider_id}))
+                            # logger.debug(json.dumps({'driver_idx': driver_idx}))
+                            # logger.debug(json.dumps({'trip_start_timestamp': int(riders_subblock[valid_request_id][0])}))
+                            # logger.debug(json.dumps({'trip_duration': int(ride_minutes)}))
+                            # logger.debug(json.dumps({'trip_end_timestamp': int(self.S_Drivers[driver_idx][0])}))
+                            # logger.debug(json.dumps({'price_of_ride': float(price_of_ride)}))
+                            # logger.debug(json.dumps({'rider_acceptance_prob': float(rider_acceptance_prob)}))
+                            # logger.debug(json.dumps({'driver_acceptance_prob': float(driver_acceptance_prob)}))
+
+                            log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
+                                         'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': float(ride_minutes), \
+                                         'ride_miles': float(ride_miles), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
+                                         'price_of_ride': float(price_of_ride), 'rider_acceptance_prob': float(rider_acceptance_prob), \
+                                         'driver_acceptance_prob': float(driver_acceptance_prob)}
+                            logger.debug(json.dumps(log_entry))
+
+                            # logger.debug(f'square_index:{square_index}\nrider_id:{rider_id}, driver_idx:{driver_idx}\n')
+                            # logger.debug(f'trip_start_timestamp:{riders_subblock[valid_request_id][0]}, \
+                            #         trip_duration:{ride_minutes}, trip_end_timestamp:{self.S_Drivers[driver_idx][0]}\n')
+                            # logger.debug(f'price_of_ride:{price_of_ride}, rider_acceptance_prob:{rider_acceptance_prob}, \
+                            #              driver_acceptance_prob:{driver_acceptance_prob}\n')
                             
                             #remove the current busy driver in drivers_subblock
                             drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
                             if len(drivers_subblock)==0:
                                 #no more valid drivers, exit the loop right away
                                 break
-                            #update driver's idle sub-block id to the trip destination
-                            self.S_Drivers[driver_idx][5]==riders_subblock[valid_request_id][7]
-
-                            #update their idle_start_timestamp to request_time+trip_duration 
-                            prev_idle_start_timestamp = self.S_Drivers[driver_idx][0]
-                            self.S_Drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + ride_minutes
-                            #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
-                            self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
 
                         #the driver rejects the trip
                         else:
@@ -318,11 +336,6 @@ class WeeklySimulation:
 
                     #the rider rejects the trip, do nothing as we update the accepts only
                     #else:
-                
-                # if len(riders_subblock)!=0 and len(drivers_subblock)!=0:
-                #     #for debugging only, display a non-empty riders_subblock and drivers_subblock
-                #     #print(f'no idle driver in this sub-block:{square_index}')
-                #     break
 
 
     def update_gamma_distns(self):
