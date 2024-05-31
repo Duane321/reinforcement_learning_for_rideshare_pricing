@@ -19,10 +19,10 @@ class WeeklySimulation:
         self.pricing_params = initial_pricing_params
 
         # Initialize acceptance probability parameters
-        self.a_r = 1.0  # Rider acceptance probability parameter
-        self.b_r = -0.1  # Rider acceptance probability parameter
-        self.a_d = 1.0  # Driver acceptance probability parameter
-        self.b_d = -0.05  # Driver acceptance probability parameter
+        self.a_r = 2.5  # Rider acceptance probability parameter
+        self.b_r = -0.02  # Rider acceptance probability parameter
+        self.a_d = 2.5  # Driver acceptance probability parameter
+        self.b_d = -0.01  # Driver acceptance probability parameter
 
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
@@ -33,8 +33,8 @@ class WeeklySimulation:
         self.num_subgrids = self.num_subgrids_per_dim ** 2
         self.subgrid_size = 1.0 / self.num_subgrids_per_dim
 
-        # on avg. a driver can work for 3hrs
-        self.mean_idle_time = 180
+        # on avg. a driver can work for 6hrs
+        self.mean_idle_time = 360
 
         self.match_interval_time = 30
 
@@ -297,30 +297,12 @@ class WeeklySimulation:
                             #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
                             self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
 
-                            #print(f'a new trip occurs on sub-block:{square_index}, rider_id:{rider_id}, driver_idx:{driver_idx}')
-                            #log the trip info
-                            # logger.debug(json.dumps({'square_index': square_index}))
-                            # logger.debug(json.dumps({'rider_id': rider_id}))
-                            # logger.debug(json.dumps({'driver_idx': driver_idx}))
-                            # logger.debug(json.dumps({'trip_start_timestamp': int(riders_subblock[valid_request_id][0])}))
-                            # logger.debug(json.dumps({'trip_duration': int(ride_minutes)}))
-                            # logger.debug(json.dumps({'trip_end_timestamp': int(self.S_Drivers[driver_idx][0])}))
-                            # logger.debug(json.dumps({'price_of_ride': float(price_of_ride)}))
-                            # logger.debug(json.dumps({'rider_acceptance_prob': float(rider_acceptance_prob)}))
-                            # logger.debug(json.dumps({'driver_acceptance_prob': float(driver_acceptance_prob)}))
-
                             log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
-                                         'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': float(ride_minutes), \
-                                         'ride_miles': float(ride_miles), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
-                                         'price_of_ride': float(price_of_ride), 'rider_acceptance_prob': float(rider_acceptance_prob), \
-                                         'driver_acceptance_prob': float(driver_acceptance_prob)}
+                                         'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
+                                         'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
+                                         'price_of_ride': round(float(price_of_ride), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
+                                         'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
                             logger.debug(json.dumps(log_entry))
-
-                            # logger.debug(f'square_index:{square_index}\nrider_id:{rider_id}, driver_idx:{driver_idx}\n')
-                            # logger.debug(f'trip_start_timestamp:{riders_subblock[valid_request_id][0]}, \
-                            #         trip_duration:{ride_minutes}, trip_end_timestamp:{self.S_Drivers[driver_idx][0]}\n')
-                            # logger.debug(f'price_of_ride:{price_of_ride}, rider_acceptance_prob:{rider_acceptance_prob}, \
-                            #              driver_acceptance_prob:{driver_acceptance_prob}\n')
                             
                             #remove the current busy driver in drivers_subblock
                             drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
