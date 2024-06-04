@@ -33,8 +33,8 @@ class WeeklySimulation:
         self.num_subgrids = self.num_subgrids_per_dim ** 2
         self.subgrid_size = 1.0 / self.num_subgrids_per_dim
 
-        # on avg. a driver can work for 6hrs
-        self.mean_idle_time = 360
+        # on avg. a driver can work for 8hrs
+        self.mean_idle_time = 8 * 60
 
         self.match_interval_time = 30
 
@@ -74,6 +74,12 @@ class WeeklySimulation:
             self.gamma_dist_party_goers.sample(),
             self.gamma_dist_sporadic.sample()
         ])
+
+        # self.log_normal_mu = 60
+        # self.log_normal_sigma = 0.5
+        
+        # for idle duration
+        self.exp_shift = 2 * 60
 
         self.daily_driver_rejects = torch.zeros(self.num_drivers)
 
@@ -115,7 +121,7 @@ class WeeklySimulation:
         request_times[self.mask2[rider_indices]] = torch.normal(self.request_times_means[1], self.request_times_stds[1], size=(self.mask2[rider_indices].sum(),))
         request_times[self.mask3[rider_indices]] = torch.normal(self.request_times_means[2], self.request_times_stds[2], size=(self.mask3[rider_indices].sum(),))
 
-        # Resample values outside the valid range, assume always resample from commuter type 1 for simplicity
+        # Resample values outside the valid range, could be costly, assume always resample from commuter type 1 for simplicity
         invalid_mask = (request_times < 0) | (request_times >= 24 * 60)
         while invalid_mask.any():
             request_times[invalid_mask] = torch.normal(self.request_times_means[0], self.request_times_stds[0], size=(invalid_mask.sum(),))
@@ -177,7 +183,18 @@ class WeeklySimulation:
         idle_starttime = torch.multinomial(idle_time_probs, self.num_drivers, replacement=True) * 60
 
         exponential_dist = torch.distributions.exponential.Exponential(torch.tensor(1.0 / self.mean_idle_time))
-        idle_duration = exponential_dist.sample((self.num_drivers,)).clamp(min=1, max=24 * 60).int().long()
+
+        # don't do resampling for now to save runtime, shift the exp var to have a minimum value
+        idle_duration = (exponential_dist.sample((self.num_drivers,)) + self.exp_shift).clamp(min=1
+                                                                                            , max=24 * 60)
+        idle_duration = idle_duration.int().long()
+
+        # Create the log-normal distribution
+        #log_normal_dist = torch.distributions.log_normal.LogNormal(self.log_normal_mu, self.log_normal_sigma)
+
+        # Sample durations from the log-normal distribution
+        #idle_duration = log_normal_dist.sample((self.num_drivers,)).clamp(min=2*60, max=24*60).int().long()
+        
 
         driver_indices = torch.arange(self.num_drivers)
 
@@ -185,8 +202,7 @@ class WeeklySimulation:
                                   , driver_positions, driver_indices.unsqueeze(1)), 1)
         
         self.S_Drivers = torch.concat((self.S_Drivers
-                                 , self.get_subblock_index(self.S_Drivers[:, 2], self.S_Drivers[:, 3]).unsqueeze(1)
-                                    )
+                                 , self.get_subblock_index(self.S_Drivers[:, 2], self.S_Drivers[:, 3]).unsqueeze(1))
                                  , 1)
 
 
@@ -235,6 +251,7 @@ class WeeklySimulation:
                 idle_location_mask = self.S_Drivers[:, 5]==square_index
 
                 drivers_subblock = self.S_Drivers[idle_time_mask_left & idle_time_mask_right & idle_location_mask]
+                #print(f'len(drivers_subblock):{len(drivers_subblock)}')
 
 
                 if len(drivers_subblock)==0:
@@ -295,7 +312,7 @@ class WeeklySimulation:
                             prev_idle_start_timestamp = self.S_Drivers[driver_idx][0]
                             self.S_Drivers[driver_idx][0] = riders_subblock[valid_request_id][0] + int(ride_minutes)
                             #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
-                            self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp)
+                            self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - (self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp))
 
                             log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
                                          'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
