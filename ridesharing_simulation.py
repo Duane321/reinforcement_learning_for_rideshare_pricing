@@ -10,9 +10,11 @@ import torch
 class WeeklySimulation:
 
 
-    def __init__(self, learning_rate, initial_pricing_params):
+    def __init__(self, current_week, learning_rate, initial_pricing_params):
         #self.current_day will be updated on the outer main function
-        self.current_day = 0
+        #self.current_day = 0
+
+        self.current_week = current_week
 
 
         self.lr = learning_rate # lr for SGD
@@ -241,9 +243,10 @@ class WeeklySimulation:
         self.D_Requests: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
-        logger = utils.create_logger(self.current_day)
+        logger = utils.create_logger(self.current_week)
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
-        for interval_idx, match_interval in tqdm(enumerate(range(0, 24*60-1, self.match_interval_time))):
+        # enable tqdm for debugging only
+        for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
             for square_index in range(self.num_subgrids_per_dim ** 2): 
                 #replace idle_status_mask with checking on the idle_time
                 idle_time_mask_left = self.S_Drivers[:, 0]<(interval_idx+1)*self.match_interval_time
