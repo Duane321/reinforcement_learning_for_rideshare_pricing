@@ -233,8 +233,7 @@ class WeeklySimulation:
 
         return trip_duration, euclidean_distance
 
-    ### WIP
-    def request_driver_matching(self):
+    def request_driver_matching(self, verbose=0):
         """
         match requests on drivers for every match_interval_time(30mins) and for each sub-block id
         self.S_Drivers: (num_drivers) * (idle_start_time_timestamps, idle_duration, idle_start_x, idle_start_y, 
@@ -243,7 +242,8 @@ class WeeklySimulation:
         self.D_Requests: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
-        logger = utils.create_logger(self.current_week)
+        if verbose:
+            logger = utils.create_logger(self.current_week)
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
         # enable tqdm for debugging only
         for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
@@ -317,12 +317,13 @@ class WeeklySimulation:
                             #update idle_duration to the original idle_duration minus how much time has passed since the previous idle_start_timestamp to new idle_start_timestamp, (no negative values)
                             self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - (self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp))
 
-                            log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
-                                         'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
-                                         'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
-                                         'price_of_ride': round(float(price_of_ride), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
-                                         'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
-                            logger.debug(json.dumps(log_entry))
+                            if verbose:
+                                log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
+                                            'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
+                                            'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
+                                            'price_of_ride': round(float(price_of_ride), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
+                                            'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
+                                logger.debug(json.dumps(log_entry))
                             
                             #remove the current busy driver in drivers_subblock
                             drivers_subblock = drivers_subblock[drivers_subblock[:, 4]!=driver_idx]
