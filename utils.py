@@ -7,7 +7,7 @@ def create_logger(run_id):
     logger.setLevel(logging.DEBUG)
     
     # Create a unique filename for the log file
-    filename = f'data/logfile_matched_trips_week_{run_id}.log'
+    filename = f'../data/logfile_matched_trips_week_{run_id}.log'
     if not os.path.exists(filename):
         # Create the file if it doesn't exist
         open(filename, 'a').close()
@@ -33,7 +33,7 @@ def create_logger_custom(log_filename):
     logger.setLevel(logging.DEBUG)
     
     # Create a unique filename for the log file
-    filename = f'data/{log_filename}.log'
+    filename = f'../data/{log_filename}.log'
     if not os.path.exists(filename):
         # Create the file if it doesn't exist
         open(filename, 'w').close()

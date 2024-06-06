@@ -21,10 +21,10 @@ class WeeklySimulation:
         self.pricing_params = initial_pricing_params
 
         # Initialize acceptance probability parameters
-        self.a_r = 2.5  # Rider acceptance probability parameter
-        self.b_r = -0.02  # Rider acceptance probability parameter
-        self.a_d = 2.5  # Driver acceptance probability parameter
-        self.b_d = -0.01  # Driver acceptance probability parameter
+        self.a_r = 0.25  # Rider acceptance probability parameter
+        self.b_r = -0.01  # Rider acceptance probability parameter
+        self.a_d = 0.25  # Driver acceptance probability parameter
+        self.b_d = -0.005  # Driver acceptance probability parameter
 
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
