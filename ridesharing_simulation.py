@@ -4,15 +4,15 @@ from tqdm import tqdm
 import json
 import numpy as np
 import utils
-
 import torch
+from scipy.optimize import fsolve
 
 class WeeklySimulation:
 
 
     def __init__(self, current_week, learning_rate, initial_pricing_params):
-        #self.current_day will be updated on the outer main function
-        #self.current_day = 0
+        #self.current_day will be updated in update_gamma_distns
+        self.current_day = 0
 
         self.current_week = current_week
 
@@ -22,7 +22,7 @@ class WeeklySimulation:
 
         # Initialize acceptance probability parameters
         self.a_r = 0.25  # Rider acceptance probability parameter
-        self.b_r = -0.01  # Rider acceptance probability parameter
+        self.b_r = 0.01  # Rider acceptance probability parameter
         self.a_d = 0.25  # Driver acceptance probability parameter
         self.b_d = -0.005  # Driver acceptance probability parameter
 
@@ -97,6 +97,53 @@ class WeeklySimulation:
 
         #self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
         #no need to do so as we update each driver's idle_start_time based on trips
+
+    def set_short_term_demand_elasticity(self, price_per_mile, elasticity=1):
+
+        def sigmoid(z):
+            return 1 / (1 + np.exp(-z))
+        # Define the function f(b_r) to find the root
+        def equation_to_solve(b_r):
+            # Calculate P using the current b_r
+            z = self.a_r + b_r * price_per_mile
+            P = sigmoid(z)
+            
+            # Define the equation based on the derivative expression
+            return b_r * P * (1 - P) - elasticity
+
+        # Initial guess for b_r
+        initial_guess = -1
+
+        # Solve for b_r
+        b_r_solution = fsolve(equation_to_solve, initial_guess)
+
+        self.b_r = b_r_solution
+
+        return self.b_r
+
+    def set_short_term_demand_elasticity_log_space(self, price_per_mile, elasticity=1):
+
+        def sigmoid(z):
+            return 1 / (1 + np.exp(-z))
+        # Define the function f(b_r) to find the root
+        def equation_to_solve(b_r):
+            # Calculate P using the current b_r
+            z = self.a_r + b_r * price_per_mile
+            P = sigmoid(z)
+            
+            # Define the equation based on the derivative expression
+            return b_r * price_per_mile * (1 - P) - elasticity
+
+        # Initial guess for b_r
+        initial_guess = -1
+
+        # Solve for b_r
+        b_r_solution = fsolve(equation_to_solve, initial_guess)
+
+        self.b_r = b_r_solution
+
+        return self.b_r
+
 
     def simulate_demand(self):
         """
@@ -233,7 +280,7 @@ class WeeklySimulation:
 
         return trip_duration, euclidean_distance
 
-    def request_driver_matching(self, verbose=0):
+    def request_driver_matching(self, verbose=0, file_prefix=''):
         """
         match requests on drivers for every match_interval_time(30mins) and for each sub-block id
         self.S_Drivers: (num_drivers) * (idle_start_time_timestamps, idle_duration, idle_start_x, idle_start_y, 
@@ -243,7 +290,7 @@ class WeeklySimulation:
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
         if verbose:
-            logger = utils.create_logger(self.current_week)
+            logger = utils.create_logger(self.current_week, file_prefix)
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
         # enable tqdm for debugging only
         for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
@@ -291,9 +338,12 @@ class WeeklySimulation:
 
                     ride_minutes, ride_miles = self.estimate_trip_distance_duration(riders_subblock[valid_request_id][1:5])
                     price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
+                    
+                    #normalize price_of_ride by ride_miles to ensure a conditional elasticity for short-term demand
+                    normalized_price = price_of_ride/ride_miles if ride_miles>1 else price_of_ride
 
-                    rider_acceptance_prob = float(torch.sigmoid(self.a_r + self.b_r * price_of_ride))
-                    driver_acceptance_prob = float(torch.sigmoid(self.a_d + self.b_d * price_of_ride))
+                    rider_acceptance_prob = float(torch.sigmoid(self.a_r + self.b_r * normalized_price))
+                    driver_acceptance_prob = float(torch.sigmoid(self.a_d + self.b_d * normalized_price))
 
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
@@ -318,10 +368,10 @@ class WeeklySimulation:
                             self.S_Drivers[driver_idx][1] = max(0, self.S_Drivers[driver_idx][1] - (self.S_Drivers[driver_idx][0] - prev_idle_start_timestamp))
 
                             if verbose:
-                                log_entry = {'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
+                                log_entry = {'current_day': self.current_day,'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
                                             'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
                                             'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
-                                            'price_of_ride': round(float(price_of_ride), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
+                                            'distance_normalized_price': round(float(normalized_price), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
                                             'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
                                 logger.debug(json.dumps(log_entry))
                             
@@ -358,4 +408,6 @@ class WeeklySimulation:
         self.gamma_dist_commuters = torch.distributions.Gamma(self.alphas_commuters, self.betas_commuters)
         self.gamma_dist_party_goers = torch.distributions.Gamma(self.alphas_party_goers, self.betas_party_goers)
         self.gamma_dist_sporadic = torch.distributions.Gamma(self.alphas_sporadic, self.betas_sporadic)
+
+        self.current_day += 1
             
