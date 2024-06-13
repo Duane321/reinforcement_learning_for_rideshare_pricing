@@ -20,11 +20,14 @@ class WeeklySimulation:
         self.lr = learning_rate # lr for SGD
         self.pricing_params = initial_pricing_params
 
-        # Initialize acceptance probability parameters
-        self.a_r = 0.25  # Rider acceptance probability parameter
-        self.b_r = 0.01  # Rider acceptance probability parameter
-        self.a_d = 0.25  # Driver acceptance probability parameter
-        self.b_d = -0.005  # Driver acceptance probability parameter
+        # short-term rider's elasticity is around -0.05(i.e. one unit increase of request price
+        # will cause 5% decrease of acceptance prob for riders)
+        self.a_r = 1.5  # Rider acceptance probability parameter
+        self.b_r = -0.2  # Rider acceptance probability parameter
+
+        # short-term driver's elasticity is around -0.05 as well
+        self.a_d = 1.5  # Driver acceptance probability parameter
+        self.b_d = -0.2  # Driver acceptance probability parameter
 
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
@@ -97,53 +100,6 @@ class WeeklySimulation:
 
         #self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
         #no need to do so as we update each driver's idle_start_time based on trips
-
-    def set_short_term_demand_elasticity(self, price_per_mile, elasticity=1):
-
-        def sigmoid(z):
-            return 1 / (1 + np.exp(-z))
-        # Define the function f(b_r) to find the root
-        def equation_to_solve(b_r):
-            # Calculate P using the current b_r
-            z = self.a_r + b_r * price_per_mile
-            P = sigmoid(z)
-            
-            # Define the equation based on the derivative expression
-            return b_r * P * (1 - P) - elasticity
-
-        # Initial guess for b_r
-        initial_guess = -1
-
-        # Solve for b_r
-        b_r_solution = fsolve(equation_to_solve, initial_guess)
-
-        self.b_r = b_r_solution
-
-        return self.b_r
-
-    def set_short_term_demand_elasticity_log_space(self, price_per_mile, elasticity=1):
-
-        def sigmoid(z):
-            return 1 / (1 + np.exp(-z))
-        # Define the function f(b_r) to find the root
-        def equation_to_solve(b_r):
-            # Calculate P using the current b_r
-            z = self.a_r + b_r * price_per_mile
-            P = sigmoid(z)
-            
-            # Define the equation based on the derivative expression
-            return b_r * price_per_mile * (1 - P) - elasticity
-
-        # Initial guess for b_r
-        initial_guess = -1
-
-        # Solve for b_r
-        b_r_solution = fsolve(equation_to_solve, initial_guess)
-
-        self.b_r = b_r_solution
-
-        return self.b_r
-
 
     def simulate_demand(self):
         """
@@ -371,8 +327,8 @@ class WeeklySimulation:
                                 log_entry = {'current_day': self.current_day,'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
                                             'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
                                             'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
-                                            'distance_normalized_price': round(float(normalized_price), 2), 'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), \
-                                            'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
+                                            'price_of_ride': round(float(price_of_ride), 2), 'distance_normalized_price': round(float(normalized_price), 2), \
+                                            'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), 'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
                                 logger.debug(json.dumps(log_entry))
                             
                             #remove the current busy driver in drivers_subblock
