@@ -5,7 +5,6 @@ import json
 import numpy as np
 import utils
 import torch
-from scipy.optimize import fsolve
 
 class WeeklySimulation:
 
@@ -29,7 +28,7 @@ class WeeklySimulation:
         self.a_d = 1.5  # Driver acceptance probability parameter
         self.b_d = -0.2  # Driver acceptance probability parameter
 
-        self.a_lambda = -2
+        self.a_lambda = -0.05
         # avg. daily exposed price over 100 weeks is 22.57
         self.b_lambda = 22.57
 
@@ -78,11 +77,18 @@ class WeeklySimulation:
         self.gamma_dist_sporadic = torch.distributions.Gamma(self.alphas_sporadic, self.betas_sporadic)
 
         #make the lambdas of Poisson sampled from Gamma distributions as conjugate priors for Bayesian updates
-        self.lambda_riders = torch.cat([
-            self.gamma_dist_commuters.sample(),
-            self.gamma_dist_party_goers.sample(),
-            self.gamma_dist_sporadic.sample()
-        ])
+        # self.lambda_riders = torch.cat([
+        #     self.gamma_dist_commuters.sample(),
+        #     self.gamma_dist_party_goers.sample(),
+        #     self.gamma_dist_sporadic.sample()
+        # ])
+        self.lambda_riders = torch.cat(
+        [
+            torch.ones(int(self.num_riders * self.commuter_percentage * 2), ),
+            torch.ones(int(self.num_riders * self.party_goer_percentage), ) * 0.75,
+            torch.ones(int(self.num_riders * self.sporadic_rider_percentage), ) * 0.75
+        ]
+        )
 
         # self.log_normal_mu = 60
         # self.log_normal_sigma = 0.5
@@ -386,10 +392,14 @@ class WeeklySimulation:
 
     def update_lambda_longterm_elasticity(self):
         """
-        daily update on the lambda based on lont-term rider's price elasticity
+        daily update on the lambda based on long-term rider's price elasticity
         """
         exposed_prices_arr = np.array(self.exposed_prices_lst)
         daily_avg_exposed_price = np.mean(exposed_prices_arr)
-        updated_lambda = np.exp(self.a_lambda * daily_avg_exposed_price + self.b_lambda)
-        self.lambda_riders += updated_lambda
+        #updated_lambda = np.exp(self.a_lambda * daily_avg_exposed_price + self.b_lambda)
+        updated_lambda = self.a_lambda * (daily_avg_exposed_price - self.b_lambda)
+        #print(f'daily_avg_exposed_price:{daily_avg_exposed_price}')
+        #print(f'updated_lambda:{updated_lambda}')
+        self.lambda_riders = torch.clamp(self.lambda_riders + updated_lambda, min=0)
+
             
