@@ -98,6 +98,8 @@ class WeeklySimulation:
         self.D_Requests = None
         self.S_Drivers = None
 
+        self.exposed_prices = []
+
         #self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
         #no need to do so as we update each driver's idle_start_time based on trips
 
@@ -301,6 +303,14 @@ class WeeklySimulation:
                     rider_acceptance_prob = float(torch.sigmoid(self.a_r + self.b_r * normalized_price))
                     driver_acceptance_prob = float(torch.sigmoid(self.a_d + self.b_d * normalized_price))
 
+                    self.exposed_prices.append({
+                        'price_of_ride': round(float(price_of_ride), 4),
+                        'distance_normalized_price': round(float(normalized_price), 4),
+                        'trip_duration': round(float(ride_minutes), 4),
+                        'rider_acceptance_prob': round(float(rider_acceptance_prob), 4),
+                        'driver_acceptance_prob': round(float(driver_acceptance_prob), 4)
+                    })
+
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
                     driver_acceptance_generator = np.random.rand()
@@ -325,10 +335,10 @@ class WeeklySimulation:
 
                             if verbose:
                                 log_entry = {'current_day': self.current_day,'square_index': square_index, 'rider_id': rider_id, 'driver_idx': driver_idx, \
-                                            'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 2), \
-                                            'ride_miles': round(float(ride_miles), 2), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
-                                            'price_of_ride': round(float(price_of_ride), 2), 'distance_normalized_price': round(float(normalized_price), 2), \
-                                            'rider_acceptance_prob': round(float(rider_acceptance_prob), 2), 'driver_acceptance_prob': round(float(driver_acceptance_prob), 2)}
+                                            'trip_start_timestamp': int(riders_subblock[valid_request_id][0]), 'trip_duration': round(float(ride_minutes), 4), \
+                                            'ride_miles': round(float(ride_miles), 4), 'trip_end_timestamp': int(self.S_Drivers[driver_idx][0]), \
+                                            'price_of_ride': round(float(price_of_ride), 4), 'distance_normalized_price': round(float(normalized_price), 4), \
+                                            'rider_acceptance_prob': round(float(rider_acceptance_prob), 4), 'driver_acceptance_prob': round(float(driver_acceptance_prob), 4)}
                                 logger.debug(json.dumps(log_entry))
                             
                             #remove the current busy driver in drivers_subblock
