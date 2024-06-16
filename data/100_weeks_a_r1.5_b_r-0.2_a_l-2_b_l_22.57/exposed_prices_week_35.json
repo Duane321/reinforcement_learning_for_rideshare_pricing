@@ -1,0 +1,5931 @@
+[
+    {
+        "price_of_ride": 33.4502,
+        "distance_normalized_price": 4.0078,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6678,
+        "driver_acceptance_prob": 0.6678
+    },
+    {
+        "price_of_ride": 23.6729,
+        "distance_normalized_price": 4.2688,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6562,
+        "driver_acceptance_prob": 0.6562
+    },
+    {
+        "price_of_ride": 23.8512,
+        "distance_normalized_price": 4.2263,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 15.021,
+        "distance_normalized_price": 5.1186,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6169,
+        "driver_acceptance_prob": 0.6169
+    },
+    {
+        "price_of_ride": 41.9691,
+        "distance_normalized_price": 3.856,
+        "trip_duration": 22.0,
+        "rider_acceptance_prob": 0.6745,
+        "driver_acceptance_prob": 0.6745
+    },
+    {
+        "price_of_ride": 28.9264,
+        "distance_normalized_price": 4.0477,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6661,
+        "driver_acceptance_prob": 0.6661
+    },
+    {
+        "price_of_ride": 11.6822,
+        "distance_normalized_price": 5.9687,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.576,
+        "driver_acceptance_prob": 0.576
+    },
+    {
+        "price_of_ride": 18.0785,
+        "distance_normalized_price": 4.8114,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6313,
+        "driver_acceptance_prob": 0.6313
+    },
+    {
+        "price_of_ride": 11.9228,
+        "distance_normalized_price": 5.7062,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5887,
+        "driver_acceptance_prob": 0.5887
+    },
+    {
+        "price_of_ride": 17.2145,
+        "distance_normalized_price": 4.6385,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6393,
+        "driver_acceptance_prob": 0.6393
+    },
+    {
+        "price_of_ride": 13.4443,
+        "distance_normalized_price": 5.3845,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6042,
+        "driver_acceptance_prob": 0.6042
+    },
+    {
+        "price_of_ride": 37.2176,
+        "distance_normalized_price": 3.8934,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6729,
+        "driver_acceptance_prob": 0.6729
+    },
+    {
+        "price_of_ride": 36.8144,
+        "distance_normalized_price": 3.9426,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6707,
+        "driver_acceptance_prob": 0.6707
+    },
+    {
+        "price_of_ride": 11.4244,
+        "distance_normalized_price": 6.2924,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5601,
+        "driver_acceptance_prob": 0.5601
+    },
+    {
+        "price_of_ride": 18.8755,
+        "distance_normalized_price": 4.4992,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6457,
+        "driver_acceptance_prob": 0.6457
+    },
+    {
+        "price_of_ride": 23.4739,
+        "distance_normalized_price": 4.3181,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6539,
+        "driver_acceptance_prob": 0.6539
+    },
+    {
+        "price_of_ride": 30.0195,
+        "distance_normalized_price": 4.1019,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6637,
+        "driver_acceptance_prob": 0.6637
+    },
+    {
+        "price_of_ride": 18.6571,
+        "distance_normalized_price": 4.5781,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6421,
+        "driver_acceptance_prob": 0.6421
+    },
+    {
+        "price_of_ride": 27.0462,
+        "distance_normalized_price": 4.1343,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6622,
+        "driver_acceptance_prob": 0.6622
+    },
+    {
+        "price_of_ride": 13.6736,
+        "distance_normalized_price": 5.2132,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6124,
+        "driver_acceptance_prob": 0.6124
+    },
+    {
+        "price_of_ride": 31.9415,
+        "distance_normalized_price": 4.0199,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 23.9709,
+        "distance_normalized_price": 4.1986,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6593,
+        "driver_acceptance_prob": 0.6593
+    },
+    {
+        "price_of_ride": 30.3754,
+        "distance_normalized_price": 4.0425,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6663,
+        "driver_acceptance_prob": 0.6663
+    },
+    {
+        "price_of_ride": 25.2489,
+        "distance_normalized_price": 4.2202,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6584,
+        "driver_acceptance_prob": 0.6584
+    },
+    {
+        "price_of_ride": 10.1994,
+        "distance_normalized_price": 6.4919,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5502,
+        "driver_acceptance_prob": 0.5502
+    },
+    {
+        "price_of_ride": 21.5291,
+        "distance_normalized_price": 4.4888,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6462,
+        "driver_acceptance_prob": 0.6462
+    },
+    {
+        "price_of_ride": 21.9926,
+        "distance_normalized_price": 4.3542,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6523,
+        "driver_acceptance_prob": 0.6523
+    },
+    {
+        "price_of_ride": 11.6525,
+        "distance_normalized_price": 6.0036,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5743,
+        "driver_acceptance_prob": 0.5743
+    },
+    {
+        "price_of_ride": 28.6668,
+        "distance_normalized_price": 4.0931,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.664,
+        "driver_acceptance_prob": 0.664
+    },
+    {
+        "price_of_ride": 35.7101,
+        "distance_normalized_price": 3.8987,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6727,
+        "driver_acceptance_prob": 0.6727
+    },
+    {
+        "price_of_ride": 19.8725,
+        "distance_normalized_price": 4.6059,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6408,
+        "driver_acceptance_prob": 0.6408
+    },
+    {
+        "price_of_ride": 18.5181,
+        "distance_normalized_price": 4.6307,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6397,
+        "driver_acceptance_prob": 0.6397
+    },
+    {
+        "price_of_ride": 41.8751,
+        "distance_normalized_price": 3.8657,
+        "trip_duration": 22.0,
+        "rider_acceptance_prob": 0.6741,
+        "driver_acceptance_prob": 0.6741
+    },
+    {
+        "price_of_ride": 30.087,
+        "distance_normalized_price": 4.0904,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6642,
+        "driver_acceptance_prob": 0.6642
+    },
+    {
+        "price_of_ride": 18.7518,
+        "distance_normalized_price": 4.5433,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6437,
+        "driver_acceptance_prob": 0.6437
+    },
+    {
+        "price_of_ride": 9.707,
+        "distance_normalized_price": 7.4637,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5018,
+        "driver_acceptance_prob": 0.5018
+    },
+    {
+        "price_of_ride": 13.5217,
+        "distance_normalized_price": 5.3247,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6071,
+        "driver_acceptance_prob": 0.6071
+    },
+    {
+        "price_of_ride": 19.8646,
+        "distance_normalized_price": 4.6087,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6407,
+        "driver_acceptance_prob": 0.6407
+    },
+    {
+        "price_of_ride": 13.7555,
+        "distance_normalized_price": 5.156,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6151,
+        "driver_acceptance_prob": 0.6151
+    },
+    {
+        "price_of_ride": 17.1293,
+        "distance_normalized_price": 4.6745,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6376,
+        "driver_acceptance_prob": 0.6376
+    },
+    {
+        "price_of_ride": 35.3255,
+        "distance_normalized_price": 3.9478,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6705,
+        "driver_acceptance_prob": 0.6705
+    },
+    {
+        "price_of_ride": 38.4361,
+        "distance_normalized_price": 3.922,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6716,
+        "driver_acceptance_prob": 0.6716
+    },
+    {
+        "price_of_ride": 29.9014,
+        "distance_normalized_price": 4.1223,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6627,
+        "driver_acceptance_prob": 0.6627
+    },
+    {
+        "price_of_ride": 18.8225,
+        "distance_normalized_price": 4.5179,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6448,
+        "driver_acceptance_prob": 0.6448
+    },
+    {
+        "price_of_ride": 20.2543,
+        "distance_normalized_price": 4.4768,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6467,
+        "driver_acceptance_prob": 0.6467
+    },
+    {
+        "price_of_ride": 33.9728,
+        "distance_normalized_price": 3.935,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6711,
+        "driver_acceptance_prob": 0.6711
+    },
+    {
+        "price_of_ride": 30.0318,
+        "distance_normalized_price": 4.0998,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6637,
+        "driver_acceptance_prob": 0.6637
+    },
+    {
+        "price_of_ride": 32.4677,
+        "distance_normalized_price": 3.9426,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6707,
+        "driver_acceptance_prob": 0.6707
+    },
+    {
+        "price_of_ride": 34.096,
+        "distance_normalized_price": 3.9186,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6718,
+        "driver_acceptance_prob": 0.6718
+    },
+    {
+        "price_of_ride": 20.3224,
+        "distance_normalized_price": 4.455,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6477,
+        "driver_acceptance_prob": 0.6477
+    },
+    {
+        "price_of_ride": 27.3569,
+        "distance_normalized_price": 4.0755,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6648,
+        "driver_acceptance_prob": 0.6648
+    },
+    {
+        "price_of_ride": 24.8373,
+        "distance_normalized_price": 4.3145,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6541,
+        "driver_acceptance_prob": 0.6541
+    },
+    {
+        "price_of_ride": 32.2585,
+        "distance_normalized_price": 3.9727,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6694,
+        "driver_acceptance_prob": 0.6694
+    },
+    {
+        "price_of_ride": 28.4742,
+        "distance_normalized_price": 4.128,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6625,
+        "driver_acceptance_prob": 0.6625
+    },
+    {
+        "price_of_ride": 13.7985,
+        "distance_normalized_price": 5.1267,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6165,
+        "driver_acceptance_prob": 0.6165
+    },
+    {
+        "price_of_ride": 31.6176,
+        "distance_normalized_price": 4.0703,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6651,
+        "driver_acceptance_prob": 0.6651
+    },
+    {
+        "price_of_ride": 12.0529,
+        "distance_normalized_price": 5.5776,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.595,
+        "driver_acceptance_prob": 0.595
+    },
+    {
+        "price_of_ride": 26.5458,
+        "distance_normalized_price": 4.2358,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6576,
+        "driver_acceptance_prob": 0.6576
+    },
+    {
+        "price_of_ride": 15.2424,
+        "distance_normalized_price": 4.9873,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6231,
+        "driver_acceptance_prob": 0.6231
+    },
+    {
+        "price_of_ride": 19.8133,
+        "distance_normalized_price": 4.6271,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6398,
+        "driver_acceptance_prob": 0.6398
+    },
+    {
+        "price_of_ride": 10.3489,
+        "distance_normalized_price": 6.2598,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5617,
+        "driver_acceptance_prob": 0.5617
+    },
+    {
+        "price_of_ride": 11.6355,
+        "distance_normalized_price": 6.0238,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5733,
+        "driver_acceptance_prob": 0.5733
+    },
+    {
+        "price_of_ride": 21.7408,
+        "distance_normalized_price": 4.4256,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6491,
+        "driver_acceptance_prob": 0.6491
+    },
+    {
+        "price_of_ride": 13.3222,
+        "distance_normalized_price": 5.4829,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5995,
+        "driver_acceptance_prob": 0.5995
+    },
+    {
+        "price_of_ride": 24.8904,
+        "distance_normalized_price": 4.3019,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6547,
+        "driver_acceptance_prob": 0.6547
+    },
+    {
+        "price_of_ride": 17.1353,
+        "distance_normalized_price": 4.6719,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6378,
+        "driver_acceptance_prob": 0.6378
+    },
+    {
+        "price_of_ride": 10.0413,
+        "distance_normalized_price": 6.7653,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5367,
+        "driver_acceptance_prob": 0.5367
+    },
+    {
+        "price_of_ride": 21.9819,
+        "distance_normalized_price": 4.3572,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6522,
+        "driver_acceptance_prob": 0.6522
+    },
+    {
+        "price_of_ride": 30.5988,
+        "distance_normalized_price": 4.0068,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6679,
+        "driver_acceptance_prob": 0.6679
+    },
+    {
+        "price_of_ride": 38.4003,
+        "distance_normalized_price": 3.9263,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6714,
+        "driver_acceptance_prob": 0.6714
+    },
+    {
+        "price_of_ride": 26.5377,
+        "distance_normalized_price": 4.2376,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6576,
+        "driver_acceptance_prob": 0.6576
+    },
+    {
+        "price_of_ride": 42.3763,
+        "distance_normalized_price": 3.815,
+        "trip_duration": 22.0,
+        "rider_acceptance_prob": 0.6763,
+        "driver_acceptance_prob": 0.6763
+    },
+    {
+        "price_of_ride": 16.4302,
+        "distance_normalized_price": 5.0087,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6221,
+        "driver_acceptance_prob": 0.6221
+    },
+    {
+        "price_of_ride": 21.8054,
+        "distance_normalized_price": 4.4069,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6499,
+        "driver_acceptance_prob": 0.6499
+    },
+    {
+        "price_of_ride": 19.7797,
+        "distance_normalized_price": 4.6392,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6393,
+        "driver_acceptance_prob": 0.6393
+    },
+    {
+        "price_of_ride": 17.1361,
+        "distance_normalized_price": 4.6715,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6378,
+        "driver_acceptance_prob": 0.6378
+    },
+    {
+        "price_of_ride": 24.9031,
+        "distance_normalized_price": 4.2989,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6548,
+        "driver_acceptance_prob": 0.6548
+    },
+    {
+        "price_of_ride": 23.2107,
+        "distance_normalized_price": 4.3863,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6508,
+        "driver_acceptance_prob": 0.6508
+    },
+    {
+        "price_of_ride": 18.5346,
+        "distance_normalized_price": 4.6244,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6399,
+        "driver_acceptance_prob": 0.6399
+    },
+    {
+        "price_of_ride": 19.9892,
+        "distance_normalized_price": 4.5651,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6427,
+        "driver_acceptance_prob": 0.6427
+    },
+    {
+        "price_of_ride": 11.66,
+        "distance_normalized_price": 5.9947,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5747,
+        "driver_acceptance_prob": 0.5747
+    },
+    {
+        "price_of_ride": 31.7444,
+        "distance_normalized_price": 4.0503,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.666,
+        "driver_acceptance_prob": 0.666
+    },
+    {
+        "price_of_ride": 29.9156,
+        "distance_normalized_price": 4.1199,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6629,
+        "driver_acceptance_prob": 0.6629
+    },
+    {
+        "price_of_ride": 15.0076,
+        "distance_normalized_price": 5.1269,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6165,
+        "driver_acceptance_prob": 0.6165
+    },
+    {
+        "price_of_ride": 11.5809,
+        "distance_normalized_price": 6.0902,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.57,
+        "driver_acceptance_prob": 0.57
+    },
+    {
+        "price_of_ride": 11.4728,
+        "distance_normalized_price": 6.2278,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5633,
+        "driver_acceptance_prob": 0.5633
+    },
+    {
+        "price_of_ride": 9.6206,
+        "distance_normalized_price": 7.6775,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.4911,
+        "driver_acceptance_prob": 0.4911
+    },
+    {
+        "price_of_ride": 23.8786,
+        "distance_normalized_price": 4.2199,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6584,
+        "driver_acceptance_prob": 0.6584
+    },
+    {
+        "price_of_ride": 28.3568,
+        "distance_normalized_price": 4.1497,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6615,
+        "driver_acceptance_prob": 0.6615
+    },
+    {
+        "price_of_ride": 28.2232,
+        "distance_normalized_price": 4.175,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6604,
+        "driver_acceptance_prob": 0.6604
+    },
+    {
+        "price_of_ride": 15.0918,
+        "distance_normalized_price": 5.0754,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6189,
+        "driver_acceptance_prob": 0.6189
+    },
+    {
+        "price_of_ride": 12.1792,
+        "distance_normalized_price": 5.4607,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.6006,
+        "driver_acceptance_prob": 0.6006
+    },
+    {
+        "price_of_ride": 8.4353,
+        "distance_normalized_price": 8.1865,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4657,
+        "driver_acceptance_prob": 0.4657
+    },
+    {
+        "price_of_ride": 23.6136,
+        "distance_normalized_price": 4.2833,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6555,
+        "driver_acceptance_prob": 0.6555
+    },
+    {
+        "price_of_ride": 14.9945,
+        "distance_normalized_price": 5.135,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6161,
+        "driver_acceptance_prob": 0.6161
+    },
+    {
+        "price_of_ride": 16.8051,
+        "distance_normalized_price": 4.8203,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6309,
+        "driver_acceptance_prob": 0.6309
+    },
+    {
+        "price_of_ride": 20.5491,
+        "distance_normalized_price": 4.3849,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6509,
+        "driver_acceptance_prob": 0.6509
+    },
+    {
+        "price_of_ride": 21.5223,
+        "distance_normalized_price": 4.4908,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6461,
+        "driver_acceptance_prob": 0.6461
+    },
+    {
+        "price_of_ride": 38.9142,
+        "distance_normalized_price": 3.8672,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6741,
+        "driver_acceptance_prob": 0.6741
+    },
+    {
+        "price_of_ride": 37.0831,
+        "distance_normalized_price": 3.9096,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6722,
+        "driver_acceptance_prob": 0.6722
+    },
+    {
+        "price_of_ride": 39.0628,
+        "distance_normalized_price": 3.8507,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6748,
+        "driver_acceptance_prob": 0.6748
+    },
+    {
+        "price_of_ride": 6.7293,
+        "distance_normalized_price": 6.7293,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5385,
+        "driver_acceptance_prob": 0.5385
+    },
+    {
+        "price_of_ride": 11.8204,
+        "distance_normalized_price": 5.8138,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5835,
+        "driver_acceptance_prob": 0.5835
+    },
+    {
+        "price_of_ride": 26.7513,
+        "distance_normalized_price": 4.1931,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6596,
+        "driver_acceptance_prob": 0.6596
+    },
+    {
+        "price_of_ride": 21.5466,
+        "distance_normalized_price": 4.4834,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6464,
+        "driver_acceptance_prob": 0.6464
+    },
+    {
+        "price_of_ride": 16.9077,
+        "distance_normalized_price": 4.7725,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6331,
+        "driver_acceptance_prob": 0.6331
+    },
+    {
+        "price_of_ride": 18.9358,
+        "distance_normalized_price": 4.4782,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6467,
+        "driver_acceptance_prob": 0.6467
+    },
+    {
+        "price_of_ride": 16.4425,
+        "distance_normalized_price": 5.0022,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6224,
+        "driver_acceptance_prob": 0.6224
+    },
+    {
+        "price_of_ride": 14.8664,
+        "distance_normalized_price": 5.2169,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6122,
+        "driver_acceptance_prob": 0.6122
+    },
+    {
+        "price_of_ride": 23.7501,
+        "distance_normalized_price": 4.2502,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.657,
+        "driver_acceptance_prob": 0.657
+    },
+    {
+        "price_of_ride": 10.0707,
+        "distance_normalized_price": 6.7121,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5393,
+        "driver_acceptance_prob": 0.5393
+    },
+    {
+        "price_of_ride": 23.2733,
+        "distance_normalized_price": 4.3698,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6516,
+        "driver_acceptance_prob": 0.6516
+    },
+    {
+        "price_of_ride": 17.2703,
+        "distance_normalized_price": 4.6153,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6404,
+        "driver_acceptance_prob": 0.6404
+    },
+    {
+        "price_of_ride": 18.4437,
+        "distance_normalized_price": 4.6598,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6383,
+        "driver_acceptance_prob": 0.6383
+    },
+    {
+        "price_of_ride": 18.5967,
+        "distance_normalized_price": 4.6007,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.641,
+        "driver_acceptance_prob": 0.641
+    },
+    {
+        "price_of_ride": 16.6679,
+        "distance_normalized_price": 4.8866,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6278,
+        "driver_acceptance_prob": 0.6278
+    },
+    {
+        "price_of_ride": 13.8372,
+        "distance_normalized_price": 5.1008,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6177,
+        "driver_acceptance_prob": 0.6177
+    },
+    {
+        "price_of_ride": 21.5051,
+        "distance_normalized_price": 4.4961,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6458,
+        "driver_acceptance_prob": 0.6458
+    },
+    {
+        "price_of_ride": 31.8012,
+        "distance_normalized_price": 4.0414,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6663,
+        "driver_acceptance_prob": 0.6663
+    },
+    {
+        "price_of_ride": 9.8405,
+        "distance_normalized_price": 7.1624,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5169,
+        "driver_acceptance_prob": 0.5169
+    },
+    {
+        "price_of_ride": 13.1265,
+        "distance_normalized_price": 5.6525,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5913,
+        "driver_acceptance_prob": 0.5913
+    },
+    {
+        "price_of_ride": 26.5388,
+        "distance_normalized_price": 4.2373,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6576,
+        "driver_acceptance_prob": 0.6576
+    },
+    {
+        "price_of_ride": 28.4045,
+        "distance_normalized_price": 4.1408,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6619,
+        "driver_acceptance_prob": 0.6619
+    },
+    {
+        "price_of_ride": 20.2681,
+        "distance_normalized_price": 4.4723,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6469,
+        "driver_acceptance_prob": 0.6469
+    },
+    {
+        "price_of_ride": 25.4349,
+        "distance_normalized_price": 4.1798,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6602,
+        "driver_acceptance_prob": 0.6602
+    },
+    {
+        "price_of_ride": 8.6578,
+        "distance_normalized_price": 7.5112,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4994,
+        "driver_acceptance_prob": 0.4994
+    },
+    {
+        "price_of_ride": 9.6494,
+        "distance_normalized_price": 7.6045,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.4948,
+        "driver_acceptance_prob": 0.4948
+    },
+    {
+        "price_of_ride": 21.5182,
+        "distance_normalized_price": 4.4921,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.646,
+        "driver_acceptance_prob": 0.646
+    },
+    {
+        "price_of_ride": 28.9553,
+        "distance_normalized_price": 4.0428,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6663,
+        "driver_acceptance_prob": 0.6663
+    },
+    {
+        "price_of_ride": 29.9762,
+        "distance_normalized_price": 4.1094,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6633,
+        "driver_acceptance_prob": 0.6633
+    },
+    {
+        "price_of_ride": 12.1253,
+        "distance_normalized_price": 5.5097,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5982,
+        "driver_acceptance_prob": 0.5982
+    },
+    {
+        "price_of_ride": 14.8779,
+        "distance_normalized_price": 5.2094,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6126,
+        "driver_acceptance_prob": 0.6126
+    },
+    {
+        "price_of_ride": 21.4683,
+        "distance_normalized_price": 4.5075,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6453,
+        "driver_acceptance_prob": 0.6453
+    },
+    {
+        "price_of_ride": 19.756,
+        "distance_normalized_price": 4.6479,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6389,
+        "driver_acceptance_prob": 0.6389
+    },
+    {
+        "price_of_ride": 23.143,
+        "distance_normalized_price": 4.4045,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.65,
+        "driver_acceptance_prob": 0.65
+    },
+    {
+        "price_of_ride": 27.3406,
+        "distance_normalized_price": 4.0785,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6647,
+        "driver_acceptance_prob": 0.6647
+    },
+    {
+        "price_of_ride": 33.278,
+        "distance_normalized_price": 4.0329,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6667,
+        "driver_acceptance_prob": 0.6667
+    },
+    {
+        "price_of_ride": 28.6236,
+        "distance_normalized_price": 4.1008,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6637,
+        "driver_acceptance_prob": 0.6637
+    },
+    {
+        "price_of_ride": 37.4244,
+        "distance_normalized_price": 3.8691,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.674,
+        "driver_acceptance_prob": 0.674
+    },
+    {
+        "price_of_ride": 30.4967,
+        "distance_normalized_price": 4.023,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6672,
+        "driver_acceptance_prob": 0.6672
+    },
+    {
+        "price_of_ride": 32.1448,
+        "distance_normalized_price": 3.9894,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6687,
+        "driver_acceptance_prob": 0.6687
+    },
+    {
+        "price_of_ride": 25.4929,
+        "distance_normalized_price": 4.1676,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 13.3449,
+        "distance_normalized_price": 5.4642,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6004,
+        "driver_acceptance_prob": 0.6004
+    },
+    {
+        "price_of_ride": 25.1224,
+        "distance_normalized_price": 4.2484,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6571,
+        "driver_acceptance_prob": 0.6571
+    },
+    {
+        "price_of_ride": 37.0219,
+        "distance_normalized_price": 3.917,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6719,
+        "driver_acceptance_prob": 0.6719
+    },
+    {
+        "price_of_ride": 25.1817,
+        "distance_normalized_price": 4.2351,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6577,
+        "driver_acceptance_prob": 0.6577
+    },
+    {
+        "price_of_ride": 18.855,
+        "distance_normalized_price": 4.5064,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6454,
+        "driver_acceptance_prob": 0.6454
+    },
+    {
+        "price_of_ride": 20.3087,
+        "distance_normalized_price": 4.4593,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6475,
+        "driver_acceptance_prob": 0.6475
+    },
+    {
+        "price_of_ride": 25.0728,
+        "distance_normalized_price": 4.2596,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6566,
+        "driver_acceptance_prob": 0.6566
+    },
+    {
+        "price_of_ride": 15.1396,
+        "distance_normalized_price": 5.0469,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6203,
+        "driver_acceptance_prob": 0.6203
+    },
+    {
+        "price_of_ride": 25.6377,
+        "distance_normalized_price": 4.1374,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6621,
+        "driver_acceptance_prob": 0.6621
+    },
+    {
+        "price_of_ride": 30.5748,
+        "distance_normalized_price": 4.0106,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6677,
+        "driver_acceptance_prob": 0.6677
+    },
+    {
+        "price_of_ride": 17.2637,
+        "distance_normalized_price": 4.618,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6402,
+        "driver_acceptance_prob": 0.6402
+    },
+    {
+        "price_of_ride": 38.4631,
+        "distance_normalized_price": 3.9189,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6718,
+        "driver_acceptance_prob": 0.6718
+    },
+    {
+        "price_of_ride": 18.7251,
+        "distance_normalized_price": 4.553,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6432,
+        "driver_acceptance_prob": 0.6432
+    },
+    {
+        "price_of_ride": 38.4073,
+        "distance_normalized_price": 3.9254,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6715,
+        "driver_acceptance_prob": 0.6715
+    },
+    {
+        "price_of_ride": 23.947,
+        "distance_normalized_price": 4.2041,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6591,
+        "driver_acceptance_prob": 0.6591
+    },
+    {
+        "price_of_ride": 36.7942,
+        "distance_normalized_price": 3.9451,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6706,
+        "driver_acceptance_prob": 0.6706
+    },
+    {
+        "price_of_ride": 13.8352,
+        "distance_normalized_price": 5.1021,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6176,
+        "driver_acceptance_prob": 0.6176
+    },
+    {
+        "price_of_ride": 19.9323,
+        "distance_normalized_price": 4.5849,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6418,
+        "driver_acceptance_prob": 0.6418
+    },
+    {
+        "price_of_ride": 32.0778,
+        "distance_normalized_price": 3.9993,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6682,
+        "driver_acceptance_prob": 0.6682
+    },
+    {
+        "price_of_ride": 40.0528,
+        "distance_normalized_price": 3.9039,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6724,
+        "driver_acceptance_prob": 0.6724
+    },
+    {
+        "price_of_ride": 30.4421,
+        "distance_normalized_price": 4.0318,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6668,
+        "driver_acceptance_prob": 0.6668
+    },
+    {
+        "price_of_ride": 11.9062,
+        "distance_normalized_price": 5.7232,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5879,
+        "driver_acceptance_prob": 0.5879
+    },
+    {
+        "price_of_ride": 24.018,
+        "distance_normalized_price": 4.1879,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6598,
+        "driver_acceptance_prob": 0.6598
+    },
+    {
+        "price_of_ride": 20.6163,
+        "distance_normalized_price": 4.3649,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6518,
+        "driver_acceptance_prob": 0.6518
+    },
+    {
+        "price_of_ride": 22.236,
+        "distance_normalized_price": 4.2888,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6553,
+        "driver_acceptance_prob": 0.6553
+    },
+    {
+        "price_of_ride": 16.7711,
+        "distance_normalized_price": 4.8365,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6301,
+        "driver_acceptance_prob": 0.6301
+    },
+    {
+        "price_of_ride": 14.721,
+        "distance_normalized_price": 5.3149,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6075,
+        "driver_acceptance_prob": 0.6075
+    },
+    {
+        "price_of_ride": 26.8416,
+        "distance_normalized_price": 4.1748,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6604,
+        "driver_acceptance_prob": 0.6604
+    },
+    {
+        "price_of_ride": 25.2188,
+        "distance_normalized_price": 4.2268,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 36.8755,
+        "distance_normalized_price": 3.935,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6711,
+        "driver_acceptance_prob": 0.6711
+    },
+    {
+        "price_of_ride": 35.0512,
+        "distance_normalized_price": 3.9843,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6689,
+        "driver_acceptance_prob": 0.6689
+    },
+    {
+        "price_of_ride": 25.1671,
+        "distance_normalized_price": 4.2383,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6575,
+        "driver_acceptance_prob": 0.6575
+    },
+    {
+        "price_of_ride": 27.2285,
+        "distance_normalized_price": 4.0994,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6638,
+        "driver_acceptance_prob": 0.6638
+    },
+    {
+        "price_of_ride": 35.0136,
+        "distance_normalized_price": 3.9894,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6687,
+        "driver_acceptance_prob": 0.6687
+    },
+    {
+        "price_of_ride": 36.8332,
+        "distance_normalized_price": 3.9403,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6708,
+        "driver_acceptance_prob": 0.6708
+    },
+    {
+        "price_of_ride": 17.1494,
+        "distance_normalized_price": 4.6659,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.638,
+        "driver_acceptance_prob": 0.638
+    },
+    {
+        "price_of_ride": 13.3289,
+        "distance_normalized_price": 5.4773,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5998,
+        "driver_acceptance_prob": 0.5998
+    },
+    {
+        "price_of_ride": 40.7992,
+        "distance_normalized_price": 3.8238,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.676,
+        "driver_acceptance_prob": 0.676
+    },
+    {
+        "price_of_ride": 31.6447,
+        "distance_normalized_price": 4.066,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6653,
+        "driver_acceptance_prob": 0.6653
+    },
+    {
+        "price_of_ride": 22.3483,
+        "distance_normalized_price": 4.2598,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6566,
+        "driver_acceptance_prob": 0.6566
+    },
+    {
+        "price_of_ride": 25.6866,
+        "distance_normalized_price": 4.1274,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6625,
+        "driver_acceptance_prob": 0.6625
+    },
+    {
+        "price_of_ride": 23.9807,
+        "distance_normalized_price": 4.1963,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6594,
+        "driver_acceptance_prob": 0.6594
+    },
+    {
+        "price_of_ride": 23.4998,
+        "distance_normalized_price": 4.3115,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6542,
+        "driver_acceptance_prob": 0.6542
+    },
+    {
+        "price_of_ride": 23.5129,
+        "distance_normalized_price": 4.3083,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6544,
+        "driver_acceptance_prob": 0.6544
+    },
+    {
+        "price_of_ride": 23.5174,
+        "distance_normalized_price": 4.3071,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6544,
+        "driver_acceptance_prob": 0.6544
+    },
+    {
+        "price_of_ride": 21.8667,
+        "distance_normalized_price": 4.3894,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6507,
+        "driver_acceptance_prob": 0.6507
+    },
+    {
+        "price_of_ride": 23.847,
+        "distance_normalized_price": 4.2273,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.658,
+        "driver_acceptance_prob": 0.658
+    },
+    {
+        "price_of_ride": 33.7173,
+        "distance_normalized_price": 3.97,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6695,
+        "driver_acceptance_prob": 0.6695
+    },
+    {
+        "price_of_ride": 23.9304,
+        "distance_normalized_price": 4.2079,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6589,
+        "driver_acceptance_prob": 0.6589
+    },
+    {
+        "price_of_ride": 27.2912,
+        "distance_normalized_price": 4.0877,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6643,
+        "driver_acceptance_prob": 0.6643
+    },
+    {
+        "price_of_ride": 13.4273,
+        "distance_normalized_price": 5.3978,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6036,
+        "driver_acceptance_prob": 0.6036
+    },
+    {
+        "price_of_ride": 20.5478,
+        "distance_normalized_price": 4.3853,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6509,
+        "driver_acceptance_prob": 0.6509
+    },
+    {
+        "price_of_ride": 18.8689,
+        "distance_normalized_price": 4.5015,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6456,
+        "driver_acceptance_prob": 0.6456
+    },
+    {
+        "price_of_ride": 33.4317,
+        "distance_normalized_price": 4.0105,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6677,
+        "driver_acceptance_prob": 0.6677
+    },
+    {
+        "price_of_ride": 30.5139,
+        "distance_normalized_price": 4.0202,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 23.5703,
+        "distance_normalized_price": 4.294,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.655,
+        "driver_acceptance_prob": 0.655
+    },
+    {
+        "price_of_ride": 30.1115,
+        "distance_normalized_price": 4.0863,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6644,
+        "driver_acceptance_prob": 0.6644
+    },
+    {
+        "price_of_ride": 25.5238,
+        "distance_normalized_price": 4.1611,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.661,
+        "driver_acceptance_prob": 0.661
+    },
+    {
+        "price_of_ride": 13.5664,
+        "distance_normalized_price": 5.2912,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6087,
+        "driver_acceptance_prob": 0.6087
+    },
+    {
+        "price_of_ride": 15.1581,
+        "distance_normalized_price": 5.036,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6208,
+        "driver_acceptance_prob": 0.6208
+    },
+    {
+        "price_of_ride": 35.6702,
+        "distance_normalized_price": 3.9037,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6724,
+        "driver_acceptance_prob": 0.6724
+    },
+    {
+        "price_of_ride": 15.5398,
+        "distance_normalized_price": 4.8265,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6306,
+        "driver_acceptance_prob": 0.6306
+    },
+    {
+        "price_of_ride": 32.0014,
+        "distance_normalized_price": 4.0108,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6677,
+        "driver_acceptance_prob": 0.6677
+    },
+    {
+        "price_of_ride": 30.1217,
+        "distance_normalized_price": 4.0845,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6644,
+        "driver_acceptance_prob": 0.6644
+    },
+    {
+        "price_of_ride": 12.1863,
+        "distance_normalized_price": 5.4544,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.6009,
+        "driver_acceptance_prob": 0.6009
+    },
+    {
+        "price_of_ride": 14.7358,
+        "distance_normalized_price": 5.3047,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.608,
+        "driver_acceptance_prob": 0.608
+    },
+    {
+        "price_of_ride": 28.9285,
+        "distance_normalized_price": 4.0473,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6661,
+        "driver_acceptance_prob": 0.6661
+    },
+    {
+        "price_of_ride": 6.6654,
+        "distance_normalized_price": 6.6654,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5416,
+        "driver_acceptance_prob": 0.5416
+    },
+    {
+        "price_of_ride": 27.157,
+        "distance_normalized_price": 4.113,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6632,
+        "driver_acceptance_prob": 0.6632
+    },
+    {
+        "price_of_ride": 18.2027,
+        "distance_normalized_price": 4.7581,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6338,
+        "driver_acceptance_prob": 0.6338
+    },
+    {
+        "price_of_ride": 19.9396,
+        "distance_normalized_price": 4.5823,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6419,
+        "driver_acceptance_prob": 0.6419
+    },
+    {
+        "price_of_ride": 8.1544,
+        "distance_normalized_price": 8.1544,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4673,
+        "driver_acceptance_prob": 0.4673
+    },
+    {
+        "price_of_ride": 11.9195,
+        "distance_normalized_price": 5.7095,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5886,
+        "driver_acceptance_prob": 0.5886
+    },
+    {
+        "price_of_ride": 25.247,
+        "distance_normalized_price": 4.2206,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6583,
+        "driver_acceptance_prob": 0.6583
+    },
+    {
+        "price_of_ride": 8.6994,
+        "distance_normalized_price": 7.4005,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.505,
+        "driver_acceptance_prob": 0.505
+    },
+    {
+        "price_of_ride": 12.2027,
+        "distance_normalized_price": 5.4398,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.6016,
+        "driver_acceptance_prob": 0.6016
+    },
+    {
+        "price_of_ride": 22.016,
+        "distance_normalized_price": 4.3478,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6526,
+        "driver_acceptance_prob": 0.6526
+    },
+    {
+        "price_of_ride": 16.6211,
+        "distance_normalized_price": 4.9099,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6267,
+        "driver_acceptance_prob": 0.6267
+    },
+    {
+        "price_of_ride": 42.5098,
+        "distance_normalized_price": 3.8019,
+        "trip_duration": 22.0,
+        "rider_acceptance_prob": 0.6769,
+        "driver_acceptance_prob": 0.6769
+    },
+    {
+        "price_of_ride": 12.0913,
+        "distance_normalized_price": 5.5413,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5967,
+        "driver_acceptance_prob": 0.5967
+    },
+    {
+        "price_of_ride": 27.1493,
+        "distance_normalized_price": 4.1144,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6631,
+        "driver_acceptance_prob": 0.6631
+    },
+    {
+        "price_of_ride": 16.568,
+        "distance_normalized_price": 4.9368,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6254,
+        "driver_acceptance_prob": 0.6254
+    },
+    {
+        "price_of_ride": 12.0924,
+        "distance_normalized_price": 5.5403,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5968,
+        "driver_acceptance_prob": 0.5968
+    },
+    {
+        "price_of_ride": 40.8493,
+        "distance_normalized_price": 3.8186,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6762,
+        "driver_acceptance_prob": 0.6762
+    },
+    {
+        "price_of_ride": 8.0674,
+        "distance_normalized_price": 8.0674,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4717,
+        "driver_acceptance_prob": 0.4717
+    },
+    {
+        "price_of_ride": 16.7548,
+        "distance_normalized_price": 4.8443,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6298,
+        "driver_acceptance_prob": 0.6298
+    },
+    {
+        "price_of_ride": 25.7251,
+        "distance_normalized_price": 4.1196,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6629,
+        "driver_acceptance_prob": 0.6629
+    },
+    {
+        "price_of_ride": 9.8906,
+        "distance_normalized_price": 7.0574,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5221,
+        "driver_acceptance_prob": 0.5221
+    },
+    {
+        "price_of_ride": 25.0601,
+        "distance_normalized_price": 4.2625,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6564,
+        "driver_acceptance_prob": 0.6564
+    },
+    {
+        "price_of_ride": 10.2593,
+        "distance_normalized_price": 6.396,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.555,
+        "driver_acceptance_prob": 0.555
+    },
+    {
+        "price_of_ride": 13.3801,
+        "distance_normalized_price": 5.4356,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6018,
+        "driver_acceptance_prob": 0.6018
+    },
+    {
+        "price_of_ride": 33.3603,
+        "distance_normalized_price": 4.0208,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 23.4607,
+        "distance_normalized_price": 4.3214,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6538,
+        "driver_acceptance_prob": 0.6538
+    },
+    {
+        "price_of_ride": 21.4805,
+        "distance_normalized_price": 4.5037,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6455,
+        "driver_acceptance_prob": 0.6455
+    },
+    {
+        "price_of_ride": 17.0052,
+        "distance_normalized_price": 4.7286,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6351,
+        "driver_acceptance_prob": 0.6351
+    },
+    {
+        "price_of_ride": 11.7758,
+        "distance_normalized_price": 5.8624,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5812,
+        "driver_acceptance_prob": 0.5812
+    },
+    {
+        "price_of_ride": 15.3603,
+        "distance_normalized_price": 4.9216,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6261,
+        "driver_acceptance_prob": 0.6261
+    },
+    {
+        "price_of_ride": 35.347,
+        "distance_normalized_price": 3.945,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6706,
+        "driver_acceptance_prob": 0.6706
+    },
+    {
+        "price_of_ride": 24.8442,
+        "distance_normalized_price": 4.3128,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6542,
+        "driver_acceptance_prob": 0.6542
+    },
+    {
+        "price_of_ride": 20.2773,
+        "distance_normalized_price": 4.4693,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6471,
+        "driver_acceptance_prob": 0.6471
+    },
+    {
+        "price_of_ride": 30.1936,
+        "distance_normalized_price": 4.0725,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.665,
+        "driver_acceptance_prob": 0.665
+    },
+    {
+        "price_of_ride": 36.8639,
+        "distance_normalized_price": 3.9364,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.671,
+        "driver_acceptance_prob": 0.671
+    },
+    {
+        "price_of_ride": 15.1626,
+        "distance_normalized_price": 5.0334,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6209,
+        "driver_acceptance_prob": 0.6209
+    },
+    {
+        "price_of_ride": 27.1814,
+        "distance_normalized_price": 4.1083,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6634,
+        "driver_acceptance_prob": 0.6634
+    },
+    {
+        "price_of_ride": 13.7857,
+        "distance_normalized_price": 5.1354,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6161,
+        "driver_acceptance_prob": 0.6161
+    },
+    {
+        "price_of_ride": 9.9407,
+        "distance_normalized_price": 6.9566,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5271,
+        "driver_acceptance_prob": 0.5271
+    },
+    {
+        "price_of_ride": 31.9425,
+        "distance_normalized_price": 4.0197,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 18.6195,
+        "distance_normalized_price": 4.5921,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6414,
+        "driver_acceptance_prob": 0.6414
+    },
+    {
+        "price_of_ride": 27.2272,
+        "distance_normalized_price": 4.0997,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6638,
+        "driver_acceptance_prob": 0.6638
+    },
+    {
+        "price_of_ride": 18.2952,
+        "distance_normalized_price": 4.7195,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6355,
+        "driver_acceptance_prob": 0.6355
+    },
+    {
+        "price_of_ride": 6.9264,
+        "distance_normalized_price": 6.9264,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5286,
+        "driver_acceptance_prob": 0.5286
+    },
+    {
+        "price_of_ride": 23.5059,
+        "distance_normalized_price": 4.31,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6543,
+        "driver_acceptance_prob": 0.6543
+    },
+    {
+        "price_of_ride": 16.4004,
+        "distance_normalized_price": 5.0247,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6213,
+        "driver_acceptance_prob": 0.6213
+    },
+    {
+        "price_of_ride": 28.5304,
+        "distance_normalized_price": 4.1177,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.663,
+        "driver_acceptance_prob": 0.663
+    },
+    {
+        "price_of_ride": 20.4756,
+        "distance_normalized_price": 4.4072,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6499,
+        "driver_acceptance_prob": 0.6499
+    },
+    {
+        "price_of_ride": 18.617,
+        "distance_normalized_price": 4.593,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6414,
+        "driver_acceptance_prob": 0.6414
+    },
+    {
+        "price_of_ride": 17.2429,
+        "distance_normalized_price": 4.6266,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6398,
+        "driver_acceptance_prob": 0.6398
+    },
+    {
+        "price_of_ride": 28.8678,
+        "distance_normalized_price": 4.0578,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6656,
+        "driver_acceptance_prob": 0.6656
+    },
+    {
+        "price_of_ride": 21.4459,
+        "distance_normalized_price": 4.5145,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.645,
+        "driver_acceptance_prob": 0.645
+    },
+    {
+        "price_of_ride": 10.2784,
+        "distance_normalized_price": 6.3662,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5564,
+        "driver_acceptance_prob": 0.5564
+    },
+    {
+        "price_of_ride": 20.0986,
+        "distance_normalized_price": 4.5279,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6444,
+        "driver_acceptance_prob": 0.6444
+    },
+    {
+        "price_of_ride": 17.0618,
+        "distance_normalized_price": 4.7036,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6363,
+        "driver_acceptance_prob": 0.6363
+    },
+    {
+        "price_of_ride": 32.0695,
+        "distance_normalized_price": 4.0006,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6682,
+        "driver_acceptance_prob": 0.6682
+    },
+    {
+        "price_of_ride": 30.1892,
+        "distance_normalized_price": 4.0732,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6649,
+        "driver_acceptance_prob": 0.6649
+    },
+    {
+        "price_of_ride": 32.0253,
+        "distance_normalized_price": 4.0072,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6679,
+        "driver_acceptance_prob": 0.6679
+    },
+    {
+        "price_of_ride": 21.6641,
+        "distance_normalized_price": 4.4481,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.648,
+        "driver_acceptance_prob": 0.648
+    },
+    {
+        "price_of_ride": 20.148,
+        "distance_normalized_price": 4.5115,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6451,
+        "driver_acceptance_prob": 0.6451
+    },
+    {
+        "price_of_ride": 21.7977,
+        "distance_normalized_price": 4.4091,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6498,
+        "driver_acceptance_prob": 0.6498
+    },
+    {
+        "price_of_ride": 17.016,
+        "distance_normalized_price": 4.7238,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6354,
+        "driver_acceptance_prob": 0.6354
+    },
+    {
+        "price_of_ride": 22.0332,
+        "distance_normalized_price": 4.3431,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6528,
+        "driver_acceptance_prob": 0.6528
+    },
+    {
+        "price_of_ride": 13.4079,
+        "distance_normalized_price": 5.4133,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6028,
+        "driver_acceptance_prob": 0.6028
+    },
+    {
+        "price_of_ride": 15.3846,
+        "distance_normalized_price": 4.9083,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6268,
+        "driver_acceptance_prob": 0.6268
+    },
+    {
+        "price_of_ride": 28.7055,
+        "distance_normalized_price": 4.0862,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6644,
+        "driver_acceptance_prob": 0.6644
+    },
+    {
+        "price_of_ride": 23.7956,
+        "distance_normalized_price": 4.2394,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6575,
+        "driver_acceptance_prob": 0.6575
+    },
+    {
+        "price_of_ride": 19.8406,
+        "distance_normalized_price": 4.6173,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6403,
+        "driver_acceptance_prob": 0.6403
+    },
+    {
+        "price_of_ride": 21.9232,
+        "distance_normalized_price": 4.3735,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6514,
+        "driver_acceptance_prob": 0.6514
+    },
+    {
+        "price_of_ride": 26.6162,
+        "distance_normalized_price": 4.221,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6583,
+        "driver_acceptance_prob": 0.6583
+    },
+    {
+        "price_of_ride": 19.9967,
+        "distance_normalized_price": 4.5625,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6428,
+        "driver_acceptance_prob": 0.6428
+    },
+    {
+        "price_of_ride": 18.8877,
+        "distance_normalized_price": 4.4949,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6459,
+        "driver_acceptance_prob": 0.6459
+    },
+    {
+        "price_of_ride": 22.0922,
+        "distance_normalized_price": 4.327,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6535,
+        "driver_acceptance_prob": 0.6535
+    },
+    {
+        "price_of_ride": 15.439,
+        "distance_normalized_price": 4.8791,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6281,
+        "driver_acceptance_prob": 0.6281
+    },
+    {
+        "price_of_ride": 43.7844,
+        "distance_normalized_price": 3.823,
+        "trip_duration": 23.0,
+        "rider_acceptance_prob": 0.676,
+        "driver_acceptance_prob": 0.676
+    },
+    {
+        "price_of_ride": 12.1974,
+        "distance_normalized_price": 5.4445,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.6014,
+        "driver_acceptance_prob": 0.6014
+    },
+    {
+        "price_of_ride": 23.8286,
+        "distance_normalized_price": 4.2316,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6578,
+        "driver_acceptance_prob": 0.6578
+    },
+    {
+        "price_of_ride": 18.8261,
+        "distance_normalized_price": 4.5166,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6449,
+        "driver_acceptance_prob": 0.6449
+    },
+    {
+        "price_of_ride": 28.2984,
+        "distance_normalized_price": 4.1607,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.661,
+        "driver_acceptance_prob": 0.661
+    },
+    {
+        "price_of_ride": 12.1291,
+        "distance_normalized_price": 5.5063,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5984,
+        "driver_acceptance_prob": 0.5984
+    },
+    {
+        "price_of_ride": 10.2682,
+        "distance_normalized_price": 6.3822,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5557,
+        "driver_acceptance_prob": 0.5557
+    },
+    {
+        "price_of_ride": 29.0878,
+        "distance_normalized_price": 4.0204,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 33.3707,
+        "distance_normalized_price": 4.0193,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6673,
+        "driver_acceptance_prob": 0.6673
+    },
+    {
+        "price_of_ride": 18.6272,
+        "distance_normalized_price": 4.5892,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6416,
+        "driver_acceptance_prob": 0.6416
+    },
+    {
+        "price_of_ride": 26.9643,
+        "distance_normalized_price": 4.1504,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6615,
+        "driver_acceptance_prob": 0.6615
+    },
+    {
+        "price_of_ride": 14.6903,
+        "distance_normalized_price": 5.3363,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6065,
+        "driver_acceptance_prob": 0.6065
+    },
+    {
+        "price_of_ride": 11.6608,
+        "distance_normalized_price": 5.9937,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5748,
+        "driver_acceptance_prob": 0.5748
+    },
+    {
+        "price_of_ride": 6.772,
+        "distance_normalized_price": 6.772,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5363,
+        "driver_acceptance_prob": 0.5363
+    },
+    {
+        "price_of_ride": 8.5243,
+        "distance_normalized_price": 7.8982,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4801,
+        "driver_acceptance_prob": 0.4801
+    },
+    {
+        "price_of_ride": 20.3838,
+        "distance_normalized_price": 4.4356,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6486,
+        "driver_acceptance_prob": 0.6486
+    },
+    {
+        "price_of_ride": 30.0518,
+        "distance_normalized_price": 4.0964,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6639,
+        "driver_acceptance_prob": 0.6639
+    },
+    {
+        "price_of_ride": 11.8459,
+        "distance_normalized_price": 5.7864,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5849,
+        "driver_acceptance_prob": 0.5849
+    },
+    {
+        "price_of_ride": 16.6073,
+        "distance_normalized_price": 4.9168,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6264,
+        "driver_acceptance_prob": 0.6264
+    },
+    {
+        "price_of_ride": 24.9149,
+        "distance_normalized_price": 4.2961,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6549,
+        "driver_acceptance_prob": 0.6549
+    },
+    {
+        "price_of_ride": 34.9814,
+        "distance_normalized_price": 3.9938,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6685,
+        "driver_acceptance_prob": 0.6685
+    },
+    {
+        "price_of_ride": 15.4386,
+        "distance_normalized_price": 4.8793,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6281,
+        "driver_acceptance_prob": 0.6281
+    },
+    {
+        "price_of_ride": 16.3959,
+        "distance_normalized_price": 5.0271,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6212,
+        "driver_acceptance_prob": 0.6212
+    },
+    {
+        "price_of_ride": 16.8106,
+        "distance_normalized_price": 4.8177,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.631,
+        "driver_acceptance_prob": 0.631
+    },
+    {
+        "price_of_ride": 36.8871,
+        "distance_normalized_price": 3.9336,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6711,
+        "driver_acceptance_prob": 0.6711
+    },
+    {
+        "price_of_ride": 8.2239,
+        "distance_normalized_price": 8.2239,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4639,
+        "driver_acceptance_prob": 0.4639
+    },
+    {
+        "price_of_ride": 13.1659,
+        "distance_normalized_price": 5.617,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5931,
+        "driver_acceptance_prob": 0.5931
+    },
+    {
+        "price_of_ride": 28.6803,
+        "distance_normalized_price": 4.0907,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6642,
+        "driver_acceptance_prob": 0.6642
+    },
+    {
+        "price_of_ride": 17.072,
+        "distance_normalized_price": 4.6992,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6365,
+        "driver_acceptance_prob": 0.6365
+    },
+    {
+        "price_of_ride": 15.0663,
+        "distance_normalized_price": 5.0908,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6182,
+        "driver_acceptance_prob": 0.6182
+    },
+    {
+        "price_of_ride": 30.3039,
+        "distance_normalized_price": 4.0542,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6658,
+        "driver_acceptance_prob": 0.6658
+    },
+    {
+        "price_of_ride": 13.1851,
+        "distance_normalized_price": 5.6001,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5939,
+        "driver_acceptance_prob": 0.5939
+    },
+    {
+        "price_of_ride": 31.7124,
+        "distance_normalized_price": 4.0553,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6657,
+        "driver_acceptance_prob": 0.6657
+    },
+    {
+        "price_of_ride": 20.0816,
+        "distance_normalized_price": 4.5336,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6441,
+        "driver_acceptance_prob": 0.6441
+    },
+    {
+        "price_of_ride": 14.7511,
+        "distance_normalized_price": 5.2942,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6085,
+        "driver_acceptance_prob": 0.6085
+    },
+    {
+        "price_of_ride": 19.8801,
+        "distance_normalized_price": 4.6032,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6409,
+        "driver_acceptance_prob": 0.6409
+    },
+    {
+        "price_of_ride": 21.9339,
+        "distance_normalized_price": 4.3705,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6516,
+        "driver_acceptance_prob": 0.6516
+    },
+    {
+        "price_of_ride": 18.2814,
+        "distance_normalized_price": 4.7252,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6353,
+        "driver_acceptance_prob": 0.6353
+    },
+    {
+        "price_of_ride": 20.5629,
+        "distance_normalized_price": 4.3808,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6511,
+        "driver_acceptance_prob": 0.6511
+    },
+    {
+        "price_of_ride": 11.6573,
+        "distance_normalized_price": 5.9979,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5745,
+        "driver_acceptance_prob": 0.5745
+    },
+    {
+        "price_of_ride": 30.1844,
+        "distance_normalized_price": 4.074,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6649,
+        "driver_acceptance_prob": 0.6649
+    },
+    {
+        "price_of_ride": 26.5985,
+        "distance_normalized_price": 4.2247,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 18.4471,
+        "distance_normalized_price": 4.6584,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6384,
+        "driver_acceptance_prob": 0.6384
+    },
+    {
+        "price_of_ride": 13.2439,
+        "distance_normalized_price": 5.5489,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5963,
+        "driver_acceptance_prob": 0.5963
+    },
+    {
+        "price_of_ride": 13.6843,
+        "distance_normalized_price": 5.2057,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6127,
+        "driver_acceptance_prob": 0.6127
+    },
+    {
+        "price_of_ride": 28.6017,
+        "distance_normalized_price": 4.1047,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6635,
+        "driver_acceptance_prob": 0.6635
+    },
+    {
+        "price_of_ride": 20.2971,
+        "distance_normalized_price": 4.463,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6473,
+        "driver_acceptance_prob": 0.6473
+    },
+    {
+        "price_of_ride": 30.1855,
+        "distance_normalized_price": 4.0738,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6649,
+        "driver_acceptance_prob": 0.6649
+    },
+    {
+        "price_of_ride": 23.1699,
+        "distance_normalized_price": 4.3973,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6503,
+        "driver_acceptance_prob": 0.6503
+    },
+    {
+        "price_of_ride": 13.6298,
+        "distance_normalized_price": 5.2447,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6109,
+        "driver_acceptance_prob": 0.6109
+    },
+    {
+        "price_of_ride": 37.2863,
+        "distance_normalized_price": 3.8853,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6733,
+        "driver_acceptance_prob": 0.6733
+    },
+    {
+        "price_of_ride": 9.77,
+        "distance_normalized_price": 7.3175,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5091,
+        "driver_acceptance_prob": 0.5091
+    },
+    {
+        "price_of_ride": 13.124,
+        "distance_normalized_price": 5.6547,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5912,
+        "driver_acceptance_prob": 0.5912
+    },
+    {
+        "price_of_ride": 18.1818,
+        "distance_normalized_price": 4.7669,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6334,
+        "driver_acceptance_prob": 0.6334
+    },
+    {
+        "price_of_ride": 29.0217,
+        "distance_normalized_price": 4.0315,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6668,
+        "driver_acceptance_prob": 0.6668
+    },
+    {
+        "price_of_ride": 8.4117,
+        "distance_normalized_price": 8.2678,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4617,
+        "driver_acceptance_prob": 0.4617
+    },
+    {
+        "price_of_ride": 18.6839,
+        "distance_normalized_price": 4.5681,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6425,
+        "driver_acceptance_prob": 0.6425
+    },
+    {
+        "price_of_ride": 26.7534,
+        "distance_normalized_price": 4.1927,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6596,
+        "driver_acceptance_prob": 0.6596
+    },
+    {
+        "price_of_ride": 35.7814,
+        "distance_normalized_price": 3.8899,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6731,
+        "driver_acceptance_prob": 0.6731
+    },
+    {
+        "price_of_ride": 20.3543,
+        "distance_normalized_price": 4.4449,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6482,
+        "driver_acceptance_prob": 0.6482
+    },
+    {
+        "price_of_ride": 33.9418,
+        "distance_normalized_price": 3.9392,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6709,
+        "driver_acceptance_prob": 0.6709
+    },
+    {
+        "price_of_ride": 28.2927,
+        "distance_normalized_price": 4.1618,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.661,
+        "driver_acceptance_prob": 0.661
+    },
+    {
+        "price_of_ride": 18.6241,
+        "distance_normalized_price": 4.5904,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6415,
+        "driver_acceptance_prob": 0.6415
+    },
+    {
+        "price_of_ride": 14.9465,
+        "distance_normalized_price": 5.1652,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6147,
+        "driver_acceptance_prob": 0.6147
+    },
+    {
+        "price_of_ride": 20.1679,
+        "distance_normalized_price": 4.5049,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6454,
+        "driver_acceptance_prob": 0.6454
+    },
+    {
+        "price_of_ride": 23.7081,
+        "distance_normalized_price": 4.2603,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6565,
+        "driver_acceptance_prob": 0.6565
+    },
+    {
+        "price_of_ride": 26.6433,
+        "distance_normalized_price": 4.2154,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6586,
+        "driver_acceptance_prob": 0.6586
+    },
+    {
+        "price_of_ride": 26.7792,
+        "distance_normalized_price": 4.1874,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6598,
+        "driver_acceptance_prob": 0.6598
+    },
+    {
+        "price_of_ride": 13.6339,
+        "distance_normalized_price": 5.2417,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.611,
+        "driver_acceptance_prob": 0.611
+    },
+    {
+        "price_of_ride": 26.6069,
+        "distance_normalized_price": 4.223,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6582,
+        "driver_acceptance_prob": 0.6582
+    },
+    {
+        "price_of_ride": 29.9655,
+        "distance_normalized_price": 4.1112,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6632,
+        "driver_acceptance_prob": 0.6632
+    },
+    {
+        "price_of_ride": 43.885,
+        "distance_normalized_price": 3.8134,
+        "trip_duration": 23.0,
+        "rider_acceptance_prob": 0.6764,
+        "driver_acceptance_prob": 0.6764
+    },
+    {
+        "price_of_ride": 25.5363,
+        "distance_normalized_price": 4.1584,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6611,
+        "driver_acceptance_prob": 0.6611
+    },
+    {
+        "price_of_ride": 32.1992,
+        "distance_normalized_price": 3.9814,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.669,
+        "driver_acceptance_prob": 0.669
+    },
+    {
+        "price_of_ride": 30.3655,
+        "distance_normalized_price": 4.0441,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6662,
+        "driver_acceptance_prob": 0.6662
+    },
+    {
+        "price_of_ride": 30.4077,
+        "distance_normalized_price": 4.0373,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6665,
+        "driver_acceptance_prob": 0.6665
+    },
+    {
+        "price_of_ride": 13.2548,
+        "distance_normalized_price": 5.5396,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5968,
+        "driver_acceptance_prob": 0.5968
+    },
+    {
+        "price_of_ride": 30.114,
+        "distance_normalized_price": 4.0858,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6644,
+        "driver_acceptance_prob": 0.6644
+    },
+    {
+        "price_of_ride": 28.271,
+        "distance_normalized_price": 4.1659,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6608,
+        "driver_acceptance_prob": 0.6608
+    },
+    {
+        "price_of_ride": 13.0556,
+        "distance_normalized_price": 5.7179,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5882,
+        "driver_acceptance_prob": 0.5882
+    },
+    {
+        "price_of_ride": 13.8675,
+        "distance_normalized_price": 5.0808,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6187,
+        "driver_acceptance_prob": 0.6187
+    },
+    {
+        "price_of_ride": 24.946,
+        "distance_normalized_price": 4.2888,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6553,
+        "driver_acceptance_prob": 0.6553
+    },
+    {
+        "price_of_ride": 28.3771,
+        "distance_normalized_price": 4.1459,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6617,
+        "driver_acceptance_prob": 0.6617
+    },
+    {
+        "price_of_ride": 28.3926,
+        "distance_normalized_price": 4.143,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6618,
+        "driver_acceptance_prob": 0.6618
+    },
+    {
+        "price_of_ride": 25.4253,
+        "distance_normalized_price": 4.1819,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6601,
+        "driver_acceptance_prob": 0.6601
+    },
+    {
+        "price_of_ride": 16.9362,
+        "distance_normalized_price": 4.7596,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6337,
+        "driver_acceptance_prob": 0.6337
+    },
+    {
+        "price_of_ride": 15.4042,
+        "distance_normalized_price": 4.8977,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6273,
+        "driver_acceptance_prob": 0.6273
+    },
+    {
+        "price_of_ride": 13.4778,
+        "distance_normalized_price": 5.3584,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6055,
+        "driver_acceptance_prob": 0.6055
+    },
+    {
+        "price_of_ride": 35.4978,
+        "distance_normalized_price": 3.9256,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6715,
+        "driver_acceptance_prob": 0.6715
+    },
+    {
+        "price_of_ride": 16.5838,
+        "distance_normalized_price": 4.9287,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6258,
+        "driver_acceptance_prob": 0.6258
+    },
+    {
+        "price_of_ride": 26.882,
+        "distance_normalized_price": 4.1667,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6608,
+        "driver_acceptance_prob": 0.6608
+    },
+    {
+        "price_of_ride": 20.1634,
+        "distance_normalized_price": 4.5064,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6454,
+        "driver_acceptance_prob": 0.6454
+    },
+    {
+        "price_of_ride": 20.5722,
+        "distance_normalized_price": 4.378,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6512,
+        "driver_acceptance_prob": 0.6512
+    },
+    {
+        "price_of_ride": 35.2768,
+        "distance_normalized_price": 3.9542,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6702,
+        "driver_acceptance_prob": 0.6702
+    },
+    {
+        "price_of_ride": 45.2175,
+        "distance_normalized_price": 3.8282,
+        "trip_duration": 24.0,
+        "rider_acceptance_prob": 0.6758,
+        "driver_acceptance_prob": 0.6758
+    },
+    {
+        "price_of_ride": 33.8281,
+        "distance_normalized_price": 3.9547,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6702,
+        "driver_acceptance_prob": 0.6702
+    },
+    {
+        "price_of_ride": 40.9158,
+        "distance_normalized_price": 3.8118,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6765,
+        "driver_acceptance_prob": 0.6765
+    },
+    {
+        "price_of_ride": 48.706,
+        "distance_normalized_price": 3.784,
+        "trip_duration": 26.0,
+        "rider_acceptance_prob": 0.6777,
+        "driver_acceptance_prob": 0.6777
+    },
+    {
+        "price_of_ride": 13.2263,
+        "distance_normalized_price": 5.5641,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5956,
+        "driver_acceptance_prob": 0.5956
+    },
+    {
+        "price_of_ride": 28.266,
+        "distance_normalized_price": 4.1669,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 13.75,
+        "distance_normalized_price": 5.1598,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6149,
+        "driver_acceptance_prob": 0.6149
+    },
+    {
+        "price_of_ride": 14.8261,
+        "distance_normalized_price": 5.2435,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6109,
+        "driver_acceptance_prob": 0.6109
+    },
+    {
+        "price_of_ride": 43.459,
+        "distance_normalized_price": 3.8547,
+        "trip_duration": 23.0,
+        "rider_acceptance_prob": 0.6746,
+        "driver_acceptance_prob": 0.6746
+    },
+    {
+        "price_of_ride": 23.4633,
+        "distance_normalized_price": 4.3207,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6538,
+        "driver_acceptance_prob": 0.6538
+    },
+    {
+        "price_of_ride": 32.1803,
+        "distance_normalized_price": 3.9841,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6689,
+        "driver_acceptance_prob": 0.6689
+    },
+    {
+        "price_of_ride": 23.6434,
+        "distance_normalized_price": 4.276,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6558,
+        "driver_acceptance_prob": 0.6558
+    },
+    {
+        "price_of_ride": 26.6702,
+        "distance_normalized_price": 4.2098,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6588,
+        "driver_acceptance_prob": 0.6588
+    },
+    {
+        "price_of_ride": 21.8398,
+        "distance_normalized_price": 4.397,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6504,
+        "driver_acceptance_prob": 0.6504
+    },
+    {
+        "price_of_ride": 30.5424,
+        "distance_normalized_price": 4.0157,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6675,
+        "driver_acceptance_prob": 0.6675
+    },
+    {
+        "price_of_ride": 27.0704,
+        "distance_normalized_price": 4.1296,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6624,
+        "driver_acceptance_prob": 0.6624
+    },
+    {
+        "price_of_ride": 18.3067,
+        "distance_normalized_price": 4.7148,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6358,
+        "driver_acceptance_prob": 0.6358
+    },
+    {
+        "price_of_ride": 25.6961,
+        "distance_normalized_price": 4.1255,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6626,
+        "driver_acceptance_prob": 0.6626
+    },
+    {
+        "price_of_ride": 20.0668,
+        "distance_normalized_price": 4.5386,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6439,
+        "driver_acceptance_prob": 0.6439
+    },
+    {
+        "price_of_ride": 12.1259,
+        "distance_normalized_price": 5.5091,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5982,
+        "driver_acceptance_prob": 0.5982
+    },
+    {
+        "price_of_ride": 32.0593,
+        "distance_normalized_price": 4.0021,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6681,
+        "driver_acceptance_prob": 0.6681
+    },
+    {
+        "price_of_ride": 14.8087,
+        "distance_normalized_price": 5.2551,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6104,
+        "driver_acceptance_prob": 0.6104
+    },
+    {
+        "price_of_ride": 16.4125,
+        "distance_normalized_price": 5.0182,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6216,
+        "driver_acceptance_prob": 0.6216
+    },
+    {
+        "price_of_ride": 6.9738,
+        "distance_normalized_price": 6.9738,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5263,
+        "driver_acceptance_prob": 0.5263
+    },
+    {
+        "price_of_ride": 35.0919,
+        "distance_normalized_price": 3.9788,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6691,
+        "driver_acceptance_prob": 0.6691
+    },
+    {
+        "price_of_ride": 28.4181,
+        "distance_normalized_price": 4.1383,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.662,
+        "driver_acceptance_prob": 0.662
+    },
+    {
+        "price_of_ride": 20.0725,
+        "distance_normalized_price": 4.5367,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.644,
+        "driver_acceptance_prob": 0.644
+    },
+    {
+        "price_of_ride": 36.6733,
+        "distance_normalized_price": 3.9604,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6699,
+        "driver_acceptance_prob": 0.6699
+    },
+    {
+        "price_of_ride": 19.9702,
+        "distance_normalized_price": 4.5717,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6424,
+        "driver_acceptance_prob": 0.6424
+    },
+    {
+        "price_of_ride": 28.9391,
+        "distance_normalized_price": 4.0455,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6662,
+        "driver_acceptance_prob": 0.6662
+    },
+    {
+        "price_of_ride": 8.4831,
+        "distance_normalized_price": 8.0283,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4736,
+        "driver_acceptance_prob": 0.4736
+    },
+    {
+        "price_of_ride": 13.6255,
+        "distance_normalized_price": 5.2478,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6107,
+        "driver_acceptance_prob": 0.6107
+    },
+    {
+        "price_of_ride": 20.6045,
+        "distance_normalized_price": 4.3684,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6517,
+        "driver_acceptance_prob": 0.6517
+    },
+    {
+        "price_of_ride": 8.2434,
+        "distance_normalized_price": 8.2434,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4629,
+        "driver_acceptance_prob": 0.4629
+    },
+    {
+        "price_of_ride": 16.4696,
+        "distance_normalized_price": 4.9878,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.623,
+        "driver_acceptance_prob": 0.623
+    },
+    {
+        "price_of_ride": 11.6218,
+        "distance_normalized_price": 6.0402,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5725,
+        "driver_acceptance_prob": 0.5725
+    },
+    {
+        "price_of_ride": 33.8946,
+        "distance_normalized_price": 3.9456,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6706,
+        "driver_acceptance_prob": 0.6706
+    },
+    {
+        "price_of_ride": 26.8982,
+        "distance_normalized_price": 4.1635,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6609,
+        "driver_acceptance_prob": 0.6609
+    },
+    {
+        "price_of_ride": 21.4761,
+        "distance_normalized_price": 4.5051,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6454,
+        "driver_acceptance_prob": 0.6454
+    },
+    {
+        "price_of_ride": 6.7618,
+        "distance_normalized_price": 6.7618,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5368,
+        "driver_acceptance_prob": 0.5368
+    },
+    {
+        "price_of_ride": 11.8165,
+        "distance_normalized_price": 5.8179,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5833,
+        "driver_acceptance_prob": 0.5833
+    },
+    {
+        "price_of_ride": 20.4746,
+        "distance_normalized_price": 4.4075,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6499,
+        "driver_acceptance_prob": 0.6499
+    },
+    {
+        "price_of_ride": 30.0376,
+        "distance_normalized_price": 4.0988,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6638,
+        "driver_acceptance_prob": 0.6638
+    },
+    {
+        "price_of_ride": 20.1714,
+        "distance_normalized_price": 4.5038,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6455,
+        "driver_acceptance_prob": 0.6455
+    },
+    {
+        "price_of_ride": 8.3453,
+        "distance_normalized_price": 8.3453,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4578,
+        "driver_acceptance_prob": 0.4578
+    },
+    {
+        "price_of_ride": 22.2936,
+        "distance_normalized_price": 4.2739,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6559,
+        "driver_acceptance_prob": 0.6559
+    },
+    {
+        "price_of_ride": 18.3719,
+        "distance_normalized_price": 4.6884,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.637,
+        "driver_acceptance_prob": 0.637
+    },
+    {
+        "price_of_ride": 27.2956,
+        "distance_normalized_price": 4.0868,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6643,
+        "driver_acceptance_prob": 0.6643
+    },
+    {
+        "price_of_ride": 11.413,
+        "distance_normalized_price": 6.3078,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5593,
+        "driver_acceptance_prob": 0.5593
+    },
+    {
+        "price_of_ride": 18.1606,
+        "distance_normalized_price": 4.7759,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6329,
+        "driver_acceptance_prob": 0.6329
+    },
+    {
+        "price_of_ride": 33.6023,
+        "distance_normalized_price": 3.9861,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6688,
+        "driver_acceptance_prob": 0.6688
+    },
+    {
+        "price_of_ride": 40.1215,
+        "distance_normalized_price": 3.8962,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6728,
+        "driver_acceptance_prob": 0.6728
+    },
+    {
+        "price_of_ride": 17.0482,
+        "distance_normalized_price": 4.7096,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.636,
+        "driver_acceptance_prob": 0.636
+    },
+    {
+        "price_of_ride": 18.6893,
+        "distance_normalized_price": 4.5661,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6426,
+        "driver_acceptance_prob": 0.6426
+    },
+    {
+        "price_of_ride": 21.687,
+        "distance_normalized_price": 4.4414,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6483,
+        "driver_acceptance_prob": 0.6483
+    },
+    {
+        "price_of_ride": 30.0126,
+        "distance_normalized_price": 4.1031,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6636,
+        "driver_acceptance_prob": 0.6636
+    },
+    {
+        "price_of_ride": 12.0014,
+        "distance_normalized_price": 5.6275,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5925,
+        "driver_acceptance_prob": 0.5925
+    },
+    {
+        "price_of_ride": 24.9325,
+        "distance_normalized_price": 4.292,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6551,
+        "driver_acceptance_prob": 0.6551
+    },
+    {
+        "price_of_ride": 11.3322,
+        "distance_normalized_price": 6.4208,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5538,
+        "driver_acceptance_prob": 0.5538
+    },
+    {
+        "price_of_ride": 25.4628,
+        "distance_normalized_price": 4.1739,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6604,
+        "driver_acceptance_prob": 0.6604
+    },
+    {
+        "price_of_ride": 26.8402,
+        "distance_normalized_price": 4.1751,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6604,
+        "driver_acceptance_prob": 0.6604
+    },
+    {
+        "price_of_ride": 18.551,
+        "distance_normalized_price": 4.6181,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6402,
+        "driver_acceptance_prob": 0.6402
+    },
+    {
+        "price_of_ride": 40.0515,
+        "distance_normalized_price": 3.904,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6724,
+        "driver_acceptance_prob": 0.6724
+    },
+    {
+        "price_of_ride": 36.9015,
+        "distance_normalized_price": 3.9318,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6712,
+        "driver_acceptance_prob": 0.6712
+    },
+    {
+        "price_of_ride": 24.9621,
+        "distance_normalized_price": 4.2851,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6554,
+        "driver_acceptance_prob": 0.6554
+    },
+    {
+        "price_of_ride": 26.7918,
+        "distance_normalized_price": 4.1849,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6599,
+        "driver_acceptance_prob": 0.6599
+    },
+    {
+        "price_of_ride": 11.3998,
+        "distance_normalized_price": 6.3259,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5584,
+        "driver_acceptance_prob": 0.5584
+    },
+    {
+        "price_of_ride": 20.0359,
+        "distance_normalized_price": 4.5491,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6434,
+        "driver_acceptance_prob": 0.6434
+    },
+    {
+        "price_of_ride": 8.3237,
+        "distance_normalized_price": 8.3237,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4589,
+        "driver_acceptance_prob": 0.4589
+    },
+    {
+        "price_of_ride": 12.0821,
+        "distance_normalized_price": 5.5499,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5963,
+        "driver_acceptance_prob": 0.5963
+    },
+    {
+        "price_of_ride": 19.7621,
+        "distance_normalized_price": 4.6456,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.639,
+        "driver_acceptance_prob": 0.639
+    },
+    {
+        "price_of_ride": 23.8521,
+        "distance_normalized_price": 4.2261,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 16.9274,
+        "distance_normalized_price": 4.7636,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6335,
+        "driver_acceptance_prob": 0.6335
+    },
+    {
+        "price_of_ride": 24.9017,
+        "distance_normalized_price": 4.2992,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6548,
+        "driver_acceptance_prob": 0.6548
+    },
+    {
+        "price_of_ride": 12.1574,
+        "distance_normalized_price": 5.4803,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5996,
+        "driver_acceptance_prob": 0.5996
+    },
+    {
+        "price_of_ride": 18.9029,
+        "distance_normalized_price": 4.4896,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6461,
+        "driver_acceptance_prob": 0.6461
+    },
+    {
+        "price_of_ride": 25.2231,
+        "distance_normalized_price": 4.2259,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 17.0289,
+        "distance_normalized_price": 4.7181,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6356,
+        "driver_acceptance_prob": 0.6356
+    },
+    {
+        "price_of_ride": 30.3472,
+        "distance_normalized_price": 4.0471,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6661,
+        "driver_acceptance_prob": 0.6661
+    },
+    {
+        "price_of_ride": 16.766,
+        "distance_normalized_price": 4.8389,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.63,
+        "driver_acceptance_prob": 0.63
+    },
+    {
+        "price_of_ride": 21.4754,
+        "distance_normalized_price": 4.5053,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6454,
+        "driver_acceptance_prob": 0.6454
+    },
+    {
+        "price_of_ride": 16.9897,
+        "distance_normalized_price": 4.7355,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6348,
+        "driver_acceptance_prob": 0.6348
+    },
+    {
+        "price_of_ride": 9.8953,
+        "distance_normalized_price": 7.0478,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5226,
+        "driver_acceptance_prob": 0.5226
+    },
+    {
+        "price_of_ride": 17.2085,
+        "distance_normalized_price": 4.6409,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6392,
+        "driver_acceptance_prob": 0.6392
+    },
+    {
+        "price_of_ride": 25.4528,
+        "distance_normalized_price": 4.176,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6603,
+        "driver_acceptance_prob": 0.6603
+    },
+    {
+        "price_of_ride": 13.4944,
+        "distance_normalized_price": 5.3456,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6061,
+        "driver_acceptance_prob": 0.6061
+    },
+    {
+        "price_of_ride": 13.7498,
+        "distance_normalized_price": 5.16,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6149,
+        "driver_acceptance_prob": 0.6149
+    },
+    {
+        "price_of_ride": 9.9232,
+        "distance_normalized_price": 6.9914,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5254,
+        "driver_acceptance_prob": 0.5254
+    },
+    {
+        "price_of_ride": 25.4041,
+        "distance_normalized_price": 4.1864,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6599,
+        "driver_acceptance_prob": 0.6599
+    },
+    {
+        "price_of_ride": 30.5234,
+        "distance_normalized_price": 4.0187,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6674,
+        "driver_acceptance_prob": 0.6674
+    },
+    {
+        "price_of_ride": 18.1666,
+        "distance_normalized_price": 4.7734,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6331,
+        "driver_acceptance_prob": 0.6331
+    },
+    {
+        "price_of_ride": 30.7358,
+        "distance_normalized_price": 3.9855,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6688,
+        "driver_acceptance_prob": 0.6688
+    },
+    {
+        "price_of_ride": 21.8994,
+        "distance_normalized_price": 4.3802,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6511,
+        "driver_acceptance_prob": 0.6511
+    },
+    {
+        "price_of_ride": 35.8265,
+        "distance_normalized_price": 3.8843,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6733,
+        "driver_acceptance_prob": 0.6733
+    },
+    {
+        "price_of_ride": 30.3385,
+        "distance_normalized_price": 4.0486,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.666,
+        "driver_acceptance_prob": 0.666
+    },
+    {
+        "price_of_ride": 18.1416,
+        "distance_normalized_price": 4.7841,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6326,
+        "driver_acceptance_prob": 0.6326
+    },
+    {
+        "price_of_ride": 14.7051,
+        "distance_normalized_price": 5.3259,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.607,
+        "driver_acceptance_prob": 0.607
+    },
+    {
+        "price_of_ride": 9.8671,
+        "distance_normalized_price": 7.1063,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5197,
+        "driver_acceptance_prob": 0.5197
+    },
+    {
+        "price_of_ride": 18.8792,
+        "distance_normalized_price": 4.4979,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6458,
+        "driver_acceptance_prob": 0.6458
+    },
+    {
+        "price_of_ride": 8.3793,
+        "distance_normalized_price": 8.3793,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4561,
+        "driver_acceptance_prob": 0.4561
+    },
+    {
+        "price_of_ride": 16.7917,
+        "distance_normalized_price": 4.8266,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6306,
+        "driver_acceptance_prob": 0.6306
+    },
+    {
+        "price_of_ride": 14.7713,
+        "distance_normalized_price": 5.2803,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6092,
+        "driver_acceptance_prob": 0.6092
+    },
+    {
+        "price_of_ride": 28.7553,
+        "distance_normalized_price": 4.0774,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6647,
+        "driver_acceptance_prob": 0.6647
+    },
+    {
+        "price_of_ride": 15.3152,
+        "distance_normalized_price": 4.9463,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.625,
+        "driver_acceptance_prob": 0.625
+    },
+    {
+        "price_of_ride": 25.034,
+        "distance_normalized_price": 4.2685,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6562,
+        "driver_acceptance_prob": 0.6562
+    },
+    {
+        "price_of_ride": 19.7923,
+        "distance_normalized_price": 4.6347,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6395,
+        "driver_acceptance_prob": 0.6395
+    },
+    {
+        "price_of_ride": 14.8618,
+        "distance_normalized_price": 5.2199,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6121,
+        "driver_acceptance_prob": 0.6121
+    },
+    {
+        "price_of_ride": 21.9423,
+        "distance_normalized_price": 4.3681,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6517,
+        "driver_acceptance_prob": 0.6517
+    },
+    {
+        "price_of_ride": 8.2544,
+        "distance_normalized_price": 8.2544,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4624,
+        "driver_acceptance_prob": 0.4624
+    },
+    {
+        "price_of_ride": 20.6497,
+        "distance_normalized_price": 4.355,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6523,
+        "driver_acceptance_prob": 0.6523
+    },
+    {
+        "price_of_ride": 13.7286,
+        "distance_normalized_price": 5.1746,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6142,
+        "driver_acceptance_prob": 0.6142
+    },
+    {
+        "price_of_ride": 20.3894,
+        "distance_normalized_price": 4.4338,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6487,
+        "driver_acceptance_prob": 0.6487
+    },
+    {
+        "price_of_ride": 21.8955,
+        "distance_normalized_price": 4.3813,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6511,
+        "driver_acceptance_prob": 0.6511
+    },
+    {
+        "price_of_ride": 30.0287,
+        "distance_normalized_price": 4.1003,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6637,
+        "driver_acceptance_prob": 0.6637
+    },
+    {
+        "price_of_ride": 11.6452,
+        "distance_normalized_price": 6.0122,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5738,
+        "driver_acceptance_prob": 0.5738
+    },
+    {
+        "price_of_ride": 23.8046,
+        "distance_normalized_price": 4.2373,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6576,
+        "driver_acceptance_prob": 0.6576
+    },
+    {
+        "price_of_ride": 24.0145,
+        "distance_normalized_price": 4.1887,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6598,
+        "driver_acceptance_prob": 0.6598
+    },
+    {
+        "price_of_ride": 22.1573,
+        "distance_normalized_price": 4.3096,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6543,
+        "driver_acceptance_prob": 0.6543
+    },
+    {
+        "price_of_ride": 21.6124,
+        "distance_normalized_price": 4.4636,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6473,
+        "driver_acceptance_prob": 0.6473
+    },
+    {
+        "price_of_ride": 11.5761,
+        "distance_normalized_price": 6.0961,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5697,
+        "driver_acceptance_prob": 0.5697
+    },
+    {
+        "price_of_ride": 21.6815,
+        "distance_normalized_price": 4.443,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6483,
+        "driver_acceptance_prob": 0.6483
+    },
+    {
+        "price_of_ride": 18.8359,
+        "distance_normalized_price": 4.5131,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6451,
+        "driver_acceptance_prob": 0.6451
+    },
+    {
+        "price_of_ride": 13.084,
+        "distance_normalized_price": 5.6914,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5895,
+        "driver_acceptance_prob": 0.5895
+    },
+    {
+        "price_of_ride": 27.1402,
+        "distance_normalized_price": 4.1162,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.663,
+        "driver_acceptance_prob": 0.663
+    },
+    {
+        "price_of_ride": 28.4579,
+        "distance_normalized_price": 4.1309,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6624,
+        "driver_acceptance_prob": 0.6624
+    },
+    {
+        "price_of_ride": 22.2778,
+        "distance_normalized_price": 4.2779,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6557,
+        "driver_acceptance_prob": 0.6557
+    },
+    {
+        "price_of_ride": 6.8427,
+        "distance_normalized_price": 6.8427,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5328,
+        "driver_acceptance_prob": 0.5328
+    },
+    {
+        "price_of_ride": 27.3255,
+        "distance_normalized_price": 4.0813,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6646,
+        "driver_acceptance_prob": 0.6646
+    },
+    {
+        "price_of_ride": 14.6878,
+        "distance_normalized_price": 5.3381,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6064,
+        "driver_acceptance_prob": 0.6064
+    },
+    {
+        "price_of_ride": 25.3531,
+        "distance_normalized_price": 4.1974,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6594,
+        "driver_acceptance_prob": 0.6594
+    },
+    {
+        "price_of_ride": 33.9279,
+        "distance_normalized_price": 3.9411,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6708,
+        "driver_acceptance_prob": 0.6708
+    },
+    {
+        "price_of_ride": 11.523,
+        "distance_normalized_price": 6.1628,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5665,
+        "driver_acceptance_prob": 0.5665
+    },
+    {
+        "price_of_ride": 11.6555,
+        "distance_normalized_price": 6.0,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5744,
+        "driver_acceptance_prob": 0.5744
+    },
+    {
+        "price_of_ride": 35.5436,
+        "distance_normalized_price": 3.9197,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6717,
+        "driver_acceptance_prob": 0.6717
+    },
+    {
+        "price_of_ride": 18.6066,
+        "distance_normalized_price": 4.597,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6412,
+        "driver_acceptance_prob": 0.6412
+    },
+    {
+        "price_of_ride": 13.8686,
+        "distance_normalized_price": 5.0801,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6187,
+        "driver_acceptance_prob": 0.6187
+    },
+    {
+        "price_of_ride": 14.7251,
+        "distance_normalized_price": 5.312,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6077,
+        "driver_acceptance_prob": 0.6077
+    },
+    {
+        "price_of_ride": 20.5593,
+        "distance_normalized_price": 4.3818,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.651,
+        "driver_acceptance_prob": 0.651
+    },
+    {
+        "price_of_ride": 13.5953,
+        "distance_normalized_price": 5.2698,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6097,
+        "driver_acceptance_prob": 0.6097
+    },
+    {
+        "price_of_ride": 18.8013,
+        "distance_normalized_price": 4.5255,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6445,
+        "driver_acceptance_prob": 0.6445
+    },
+    {
+        "price_of_ride": 33.4741,
+        "distance_normalized_price": 4.0044,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.668,
+        "driver_acceptance_prob": 0.668
+    },
+    {
+        "price_of_ride": 35.4414,
+        "distance_normalized_price": 3.9328,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6712,
+        "driver_acceptance_prob": 0.6712
+    },
+    {
+        "price_of_ride": 30.0462,
+        "distance_normalized_price": 4.0973,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6639,
+        "driver_acceptance_prob": 0.6639
+    },
+    {
+        "price_of_ride": 22.0487,
+        "distance_normalized_price": 4.3388,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.653,
+        "driver_acceptance_prob": 0.653
+    },
+    {
+        "price_of_ride": 31.8986,
+        "distance_normalized_price": 4.0264,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.667,
+        "driver_acceptance_prob": 0.667
+    },
+    {
+        "price_of_ride": 23.3114,
+        "distance_normalized_price": 4.3598,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.652,
+        "driver_acceptance_prob": 0.652
+    },
+    {
+        "price_of_ride": 27.0214,
+        "distance_normalized_price": 4.1391,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.662,
+        "driver_acceptance_prob": 0.662
+    },
+    {
+        "price_of_ride": 33.8797,
+        "distance_normalized_price": 3.9476,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6705,
+        "driver_acceptance_prob": 0.6705
+    },
+    {
+        "price_of_ride": 8.1251,
+        "distance_normalized_price": 8.1251,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4688,
+        "driver_acceptance_prob": 0.4688
+    },
+    {
+        "price_of_ride": 11.9815,
+        "distance_normalized_price": 5.6471,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5916,
+        "driver_acceptance_prob": 0.5916
+    },
+    {
+        "price_of_ride": 28.9978,
+        "distance_normalized_price": 4.0355,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6666,
+        "driver_acceptance_prob": 0.6666
+    },
+    {
+        "price_of_ride": 21.9058,
+        "distance_normalized_price": 4.3784,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6512,
+        "driver_acceptance_prob": 0.6512
+    },
+    {
+        "price_of_ride": 18.8758,
+        "distance_normalized_price": 4.4991,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6457,
+        "driver_acceptance_prob": 0.6457
+    },
+    {
+        "price_of_ride": 23.858,
+        "distance_normalized_price": 4.2247,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6581,
+        "driver_acceptance_prob": 0.6581
+    },
+    {
+        "price_of_ride": 28.3977,
+        "distance_normalized_price": 4.1421,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6619,
+        "driver_acceptance_prob": 0.6619
+    },
+    {
+        "price_of_ride": 32.0407,
+        "distance_normalized_price": 4.0049,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.668,
+        "driver_acceptance_prob": 0.668
+    },
+    {
+        "price_of_ride": 35.3752,
+        "distance_normalized_price": 3.9414,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6708,
+        "driver_acceptance_prob": 0.6708
+    },
+    {
+        "price_of_ride": 25.5652,
+        "distance_normalized_price": 4.1524,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6614,
+        "driver_acceptance_prob": 0.6614
+    },
+    {
+        "price_of_ride": 10.0849,
+        "distance_normalized_price": 6.6868,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5406,
+        "driver_acceptance_prob": 0.5406
+    },
+    {
+        "price_of_ride": 8.5421,
+        "distance_normalized_price": 7.8434,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4828,
+        "driver_acceptance_prob": 0.4828
+    },
+    {
+        "price_of_ride": 30.6156,
+        "distance_normalized_price": 4.0042,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.668,
+        "driver_acceptance_prob": 0.668
+    },
+    {
+        "price_of_ride": 8.3865,
+        "distance_normalized_price": 8.3566,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4573,
+        "driver_acceptance_prob": 0.4573
+    },
+    {
+        "price_of_ride": 16.6034,
+        "distance_normalized_price": 4.9188,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6263,
+        "driver_acceptance_prob": 0.6263
+    },
+    {
+        "price_of_ride": 13.3267,
+        "distance_normalized_price": 5.4792,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5997,
+        "driver_acceptance_prob": 0.5997
+    },
+    {
+        "price_of_ride": 23.6857,
+        "distance_normalized_price": 4.2657,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6563,
+        "driver_acceptance_prob": 0.6563
+    },
+    {
+        "price_of_ride": 8.7831,
+        "distance_normalized_price": 7.1906,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.5155,
+        "driver_acceptance_prob": 0.5155
+    },
+    {
+        "price_of_ride": 28.8498,
+        "distance_normalized_price": 4.0609,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6655,
+        "driver_acceptance_prob": 0.6655
+    },
+    {
+        "price_of_ride": 11.5164,
+        "distance_normalized_price": 6.1712,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5661,
+        "driver_acceptance_prob": 0.5661
+    },
+    {
+        "price_of_ride": 26.968,
+        "distance_normalized_price": 4.1496,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6615,
+        "driver_acceptance_prob": 0.6615
+    },
+    {
+        "price_of_ride": 16.9969,
+        "distance_normalized_price": 4.7323,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.635,
+        "driver_acceptance_prob": 0.635
+    },
+    {
+        "price_of_ride": 13.7497,
+        "distance_normalized_price": 5.16,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6149,
+        "driver_acceptance_prob": 0.6149
+    },
+    {
+        "price_of_ride": 18.1289,
+        "distance_normalized_price": 4.7895,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6323,
+        "driver_acceptance_prob": 0.6323
+    },
+    {
+        "price_of_ride": 8.7652,
+        "distance_normalized_price": 7.2341,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.5133,
+        "driver_acceptance_prob": 0.5133
+    },
+    {
+        "price_of_ride": 13.5003,
+        "distance_normalized_price": 5.341,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6063,
+        "driver_acceptance_prob": 0.6063
+    },
+    {
+        "price_of_ride": 16.4235,
+        "distance_normalized_price": 5.0123,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6219,
+        "driver_acceptance_prob": 0.6219
+    },
+    {
+        "price_of_ride": 7.9559,
+        "distance_normalized_price": 7.9559,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4772,
+        "driver_acceptance_prob": 0.4772
+    },
+    {
+        "price_of_ride": 25.6689,
+        "distance_normalized_price": 4.131,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6624,
+        "driver_acceptance_prob": 0.6624
+    },
+    {
+        "price_of_ride": 13.8038,
+        "distance_normalized_price": 5.1231,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6167,
+        "driver_acceptance_prob": 0.6167
+    },
+    {
+        "price_of_ride": 15.5642,
+        "distance_normalized_price": 4.814,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6312,
+        "driver_acceptance_prob": 0.6312
+    },
+    {
+        "price_of_ride": 23.6974,
+        "distance_normalized_price": 4.2629,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6564,
+        "driver_acceptance_prob": 0.6564
+    },
+    {
+        "price_of_ride": 26.8577,
+        "distance_normalized_price": 4.1716,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6605,
+        "driver_acceptance_prob": 0.6605
+    },
+    {
+        "price_of_ride": 39.0153,
+        "distance_normalized_price": 3.8559,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6745,
+        "driver_acceptance_prob": 0.6745
+    },
+    {
+        "price_of_ride": 26.6373,
+        "distance_normalized_price": 4.2166,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6585,
+        "driver_acceptance_prob": 0.6585
+    },
+    {
+        "price_of_ride": 14.9468,
+        "distance_normalized_price": 5.165,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6147,
+        "driver_acceptance_prob": 0.6147
+    },
+    {
+        "price_of_ride": 13.4817,
+        "distance_normalized_price": 5.3554,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6056,
+        "driver_acceptance_prob": 0.6056
+    },
+    {
+        "price_of_ride": 24.8471,
+        "distance_normalized_price": 4.3121,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6542,
+        "driver_acceptance_prob": 0.6542
+    },
+    {
+        "price_of_ride": 18.1886,
+        "distance_normalized_price": 4.764,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6335,
+        "driver_acceptance_prob": 0.6335
+    },
+    {
+        "price_of_ride": 25.4899,
+        "distance_normalized_price": 4.1682,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 23.1632,
+        "distance_normalized_price": 4.3991,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6503,
+        "driver_acceptance_prob": 0.6503
+    },
+    {
+        "price_of_ride": 24.8781,
+        "distance_normalized_price": 4.3048,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6545,
+        "driver_acceptance_prob": 0.6545
+    },
+    {
+        "price_of_ride": 25.5174,
+        "distance_normalized_price": 4.1624,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6609,
+        "driver_acceptance_prob": 0.6609
+    },
+    {
+        "price_of_ride": 13.04,
+        "distance_normalized_price": 5.7326,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5875,
+        "driver_acceptance_prob": 0.5875
+    },
+    {
+        "price_of_ride": 16.554,
+        "distance_normalized_price": 4.9439,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6251,
+        "driver_acceptance_prob": 0.6251
+    },
+    {
+        "price_of_ride": 20.5746,
+        "distance_normalized_price": 4.3773,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6513,
+        "driver_acceptance_prob": 0.6513
+    },
+    {
+        "price_of_ride": 28.7191,
+        "distance_normalized_price": 4.0838,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6645,
+        "driver_acceptance_prob": 0.6645
+    },
+    {
+        "price_of_ride": 38.6088,
+        "distance_normalized_price": 3.9019,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6725,
+        "driver_acceptance_prob": 0.6725
+    },
+    {
+        "price_of_ride": 23.2766,
+        "distance_normalized_price": 4.3689,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6516,
+        "driver_acceptance_prob": 0.6516
+    },
+    {
+        "price_of_ride": 11.6169,
+        "distance_normalized_price": 6.0461,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5722,
+        "driver_acceptance_prob": 0.5722
+    },
+    {
+        "price_of_ride": 6.7678,
+        "distance_normalized_price": 6.7678,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5365,
+        "driver_acceptance_prob": 0.5365
+    },
+    {
+        "price_of_ride": 16.7898,
+        "distance_normalized_price": 4.8276,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6305,
+        "driver_acceptance_prob": 0.6305
+    },
+    {
+        "price_of_ride": 26.9472,
+        "distance_normalized_price": 4.1537,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6613,
+        "driver_acceptance_prob": 0.6613
+    },
+    {
+        "price_of_ride": 26.5843,
+        "distance_normalized_price": 4.2277,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.658,
+        "driver_acceptance_prob": 0.658
+    },
+    {
+        "price_of_ride": 15.4306,
+        "distance_normalized_price": 4.8836,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6279,
+        "driver_acceptance_prob": 0.6279
+    },
+    {
+        "price_of_ride": 17.1308,
+        "distance_normalized_price": 4.6738,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6377,
+        "driver_acceptance_prob": 0.6377
+    },
+    {
+        "price_of_ride": 12.1745,
+        "distance_normalized_price": 5.4649,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.6004,
+        "driver_acceptance_prob": 0.6004
+    },
+    {
+        "price_of_ride": 37.1231,
+        "distance_normalized_price": 3.9047,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6724,
+        "driver_acceptance_prob": 0.6724
+    },
+    {
+        "price_of_ride": 23.621,
+        "distance_normalized_price": 4.2815,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6556,
+        "driver_acceptance_prob": 0.6556
+    },
+    {
+        "price_of_ride": 30.3816,
+        "distance_normalized_price": 4.0415,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6663,
+        "driver_acceptance_prob": 0.6663
+    },
+    {
+        "price_of_ride": 11.641,
+        "distance_normalized_price": 6.0172,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5736,
+        "driver_acceptance_prob": 0.5736
+    },
+    {
+        "price_of_ride": 30.1247,
+        "distance_normalized_price": 4.084,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6645,
+        "driver_acceptance_prob": 0.6645
+    },
+    {
+        "price_of_ride": 33.9143,
+        "distance_normalized_price": 3.9429,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6707,
+        "driver_acceptance_prob": 0.6707
+    },
+    {
+        "price_of_ride": 28.2188,
+        "distance_normalized_price": 4.1759,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6603,
+        "driver_acceptance_prob": 0.6603
+    },
+    {
+        "price_of_ride": 16.4528,
+        "distance_normalized_price": 4.9967,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6226,
+        "driver_acceptance_prob": 0.6226
+    },
+    {
+        "price_of_ride": 13.3408,
+        "distance_normalized_price": 5.4675,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6002,
+        "driver_acceptance_prob": 0.6002
+    },
+    {
+        "price_of_ride": 20.3861,
+        "distance_normalized_price": 4.4349,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6486,
+        "driver_acceptance_prob": 0.6486
+    },
+    {
+        "price_of_ride": 33.9958,
+        "distance_normalized_price": 3.932,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6712,
+        "driver_acceptance_prob": 0.6712
+    },
+    {
+        "price_of_ride": 29.0072,
+        "distance_normalized_price": 4.034,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6667,
+        "driver_acceptance_prob": 0.6667
+    },
+    {
+        "price_of_ride": 21.7147,
+        "distance_normalized_price": 4.4332,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6487,
+        "driver_acceptance_prob": 0.6487
+    },
+    {
+        "price_of_ride": 20.6553,
+        "distance_normalized_price": 4.3534,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6523,
+        "driver_acceptance_prob": 0.6523
+    },
+    {
+        "price_of_ride": 18.7722,
+        "distance_normalized_price": 4.5359,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.644,
+        "driver_acceptance_prob": 0.644
+    },
+    {
+        "price_of_ride": 18.3836,
+        "distance_normalized_price": 4.6837,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6372,
+        "driver_acceptance_prob": 0.6372
+    },
+    {
+        "price_of_ride": 30.4747,
+        "distance_normalized_price": 4.0265,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.667,
+        "driver_acceptance_prob": 0.667
+    },
+    {
+        "price_of_ride": 11.8972,
+        "distance_normalized_price": 5.7326,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5875,
+        "driver_acceptance_prob": 0.5875
+    },
+    {
+        "price_of_ride": 8.6878,
+        "distance_normalized_price": 7.431,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.5034,
+        "driver_acceptance_prob": 0.5034
+    },
+    {
+        "price_of_ride": 27.3582,
+        "distance_normalized_price": 4.0752,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6648,
+        "driver_acceptance_prob": 0.6648
+    },
+    {
+        "price_of_ride": 13.7659,
+        "distance_normalized_price": 5.1489,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6154,
+        "driver_acceptance_prob": 0.6154
+    },
+    {
+        "price_of_ride": 21.462,
+        "distance_normalized_price": 4.5095,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6452,
+        "driver_acceptance_prob": 0.6452
+    },
+    {
+        "price_of_ride": 19.9592,
+        "distance_normalized_price": 4.5755,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6422,
+        "driver_acceptance_prob": 0.6422
+    },
+    {
+        "price_of_ride": 28.258,
+        "distance_normalized_price": 4.1684,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 32.2831,
+        "distance_normalized_price": 3.9691,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6696,
+        "driver_acceptance_prob": 0.6696
+    },
+    {
+        "price_of_ride": 20.4386,
+        "distance_normalized_price": 4.4186,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6494,
+        "driver_acceptance_prob": 0.6494
+    },
+    {
+        "price_of_ride": 33.8405,
+        "distance_normalized_price": 3.953,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6703,
+        "driver_acceptance_prob": 0.6703
+    },
+    {
+        "price_of_ride": 21.6835,
+        "distance_normalized_price": 4.4424,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6483,
+        "driver_acceptance_prob": 0.6483
+    },
+    {
+        "price_of_ride": 23.3015,
+        "distance_normalized_price": 4.3624,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6519,
+        "driver_acceptance_prob": 0.6519
+    },
+    {
+        "price_of_ride": 21.6125,
+        "distance_normalized_price": 4.4635,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6473,
+        "driver_acceptance_prob": 0.6473
+    },
+    {
+        "price_of_ride": 25.6349,
+        "distance_normalized_price": 4.138,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.662,
+        "driver_acceptance_prob": 0.662
+    },
+    {
+        "price_of_ride": 36.787,
+        "distance_normalized_price": 3.946,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6706,
+        "driver_acceptance_prob": 0.6706
+    },
+    {
+        "price_of_ride": 14.9356,
+        "distance_normalized_price": 5.1721,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6143,
+        "driver_acceptance_prob": 0.6143
+    },
+    {
+        "price_of_ride": 20.4744,
+        "distance_normalized_price": 4.4076,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6499,
+        "driver_acceptance_prob": 0.6499
+    },
+    {
+        "price_of_ride": 13.143,
+        "distance_normalized_price": 5.6376,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5921,
+        "driver_acceptance_prob": 0.5921
+    },
+    {
+        "price_of_ride": 26.8515,
+        "distance_normalized_price": 4.1728,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6605,
+        "driver_acceptance_prob": 0.6605
+    },
+    {
+        "price_of_ride": 26.9328,
+        "distance_normalized_price": 4.1566,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6612,
+        "driver_acceptance_prob": 0.6612
+    },
+    {
+        "price_of_ride": 27.3186,
+        "distance_normalized_price": 4.0826,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6645,
+        "driver_acceptance_prob": 0.6645
+    },
+    {
+        "price_of_ride": 25.5135,
+        "distance_normalized_price": 4.1632,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6609,
+        "driver_acceptance_prob": 0.6609
+    },
+    {
+        "price_of_ride": 33.5999,
+        "distance_normalized_price": 3.9864,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6688,
+        "driver_acceptance_prob": 0.6688
+    },
+    {
+        "price_of_ride": 8.712,
+        "distance_normalized_price": 7.3679,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.5066,
+        "driver_acceptance_prob": 0.5066
+    },
+    {
+        "price_of_ride": 33.7585,
+        "distance_normalized_price": 3.9643,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6698,
+        "driver_acceptance_prob": 0.6698
+    },
+    {
+        "price_of_ride": 26.9543,
+        "distance_normalized_price": 4.1523,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6614,
+        "driver_acceptance_prob": 0.6614
+    },
+    {
+        "price_of_ride": 26.7453,
+        "distance_normalized_price": 4.1943,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6595,
+        "driver_acceptance_prob": 0.6595
+    },
+    {
+        "price_of_ride": 24.994,
+        "distance_normalized_price": 4.2777,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6558,
+        "driver_acceptance_prob": 0.6558
+    },
+    {
+        "price_of_ride": 8.0178,
+        "distance_normalized_price": 8.0178,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4741,
+        "driver_acceptance_prob": 0.4741
+    },
+    {
+        "price_of_ride": 28.5076,
+        "distance_normalized_price": 4.1218,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6628,
+        "driver_acceptance_prob": 0.6628
+    },
+    {
+        "price_of_ride": 25.1416,
+        "distance_normalized_price": 4.2441,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6573,
+        "driver_acceptance_prob": 0.6573
+    },
+    {
+        "price_of_ride": 40.0696,
+        "distance_normalized_price": 3.902,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6725,
+        "driver_acceptance_prob": 0.6725
+    },
+    {
+        "price_of_ride": 12.0341,
+        "distance_normalized_price": 5.5957,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5941,
+        "driver_acceptance_prob": 0.5941
+    },
+    {
+        "price_of_ride": 16.748,
+        "distance_normalized_price": 4.8475,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6296,
+        "driver_acceptance_prob": 0.6296
+    },
+    {
+        "price_of_ride": 23.6661,
+        "distance_normalized_price": 4.2705,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6561,
+        "driver_acceptance_prob": 0.6561
+    },
+    {
+        "price_of_ride": 34.9827,
+        "distance_normalized_price": 3.9936,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6685,
+        "driver_acceptance_prob": 0.6685
+    },
+    {
+        "price_of_ride": 15.4548,
+        "distance_normalized_price": 4.8708,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6285,
+        "driver_acceptance_prob": 0.6285
+    },
+    {
+        "price_of_ride": 21.6774,
+        "distance_normalized_price": 4.4442,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6482,
+        "driver_acceptance_prob": 0.6482
+    },
+    {
+        "price_of_ride": 16.4477,
+        "distance_normalized_price": 4.9994,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6225,
+        "driver_acceptance_prob": 0.6225
+    },
+    {
+        "price_of_ride": 15.114,
+        "distance_normalized_price": 5.0621,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6195,
+        "driver_acceptance_prob": 0.6195
+    },
+    {
+        "price_of_ride": 19.9587,
+        "distance_normalized_price": 4.5757,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6422,
+        "driver_acceptance_prob": 0.6422
+    },
+    {
+        "price_of_ride": 16.418,
+        "distance_normalized_price": 5.0152,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6217,
+        "driver_acceptance_prob": 0.6217
+    },
+    {
+        "price_of_ride": 25.4918,
+        "distance_normalized_price": 4.1678,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 18.7774,
+        "distance_normalized_price": 4.534,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6441,
+        "driver_acceptance_prob": 0.6441
+    },
+    {
+        "price_of_ride": 33.3998,
+        "distance_normalized_price": 4.0151,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6675,
+        "driver_acceptance_prob": 0.6675
+    },
+    {
+        "price_of_ride": 19.768,
+        "distance_normalized_price": 4.6435,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6391,
+        "driver_acceptance_prob": 0.6391
+    },
+    {
+        "price_of_ride": 26.6335,
+        "distance_normalized_price": 4.2174,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6585,
+        "driver_acceptance_prob": 0.6585
+    },
+    {
+        "price_of_ride": 13.8776,
+        "distance_normalized_price": 5.0742,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.619,
+        "driver_acceptance_prob": 0.619
+    },
+    {
+        "price_of_ride": 22.2813,
+        "distance_normalized_price": 4.277,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6558,
+        "driver_acceptance_prob": 0.6558
+    },
+    {
+        "price_of_ride": 18.4406,
+        "distance_normalized_price": 4.661,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6383,
+        "driver_acceptance_prob": 0.6383
+    },
+    {
+        "price_of_ride": 28.3775,
+        "distance_normalized_price": 4.1459,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6617,
+        "driver_acceptance_prob": 0.6617
+    },
+    {
+        "price_of_ride": 37.0015,
+        "distance_normalized_price": 3.9195,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6717,
+        "driver_acceptance_prob": 0.6717
+    },
+    {
+        "price_of_ride": 37.4503,
+        "distance_normalized_price": 3.866,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6741,
+        "driver_acceptance_prob": 0.6741
+    },
+    {
+        "price_of_ride": 32.3864,
+        "distance_normalized_price": 3.9542,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6702,
+        "driver_acceptance_prob": 0.6702
+    },
+    {
+        "price_of_ride": 14.7115,
+        "distance_normalized_price": 5.3215,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6072,
+        "driver_acceptance_prob": 0.6072
+    },
+    {
+        "price_of_ride": 9.9955,
+        "distance_normalized_price": 6.8506,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5324,
+        "driver_acceptance_prob": 0.5324
+    },
+    {
+        "price_of_ride": 37.068,
+        "distance_normalized_price": 3.9114,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6721,
+        "driver_acceptance_prob": 0.6721
+    },
+    {
+        "price_of_ride": 30.3791,
+        "distance_normalized_price": 4.0419,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6663,
+        "driver_acceptance_prob": 0.6663
+    },
+    {
+        "price_of_ride": 21.994,
+        "distance_normalized_price": 4.3538,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6523,
+        "driver_acceptance_prob": 0.6523
+    },
+    {
+        "price_of_ride": 38.9605,
+        "distance_normalized_price": 3.862,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6743,
+        "driver_acceptance_prob": 0.6743
+    },
+    {
+        "price_of_ride": 10.519,
+        "distance_normalized_price": 6.0221,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5734,
+        "driver_acceptance_prob": 0.5734
+    },
+    {
+        "price_of_ride": 22.0682,
+        "distance_normalized_price": 4.3335,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6532,
+        "driver_acceptance_prob": 0.6532
+    },
+    {
+        "price_of_ride": 25.0273,
+        "distance_normalized_price": 4.27,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6561,
+        "driver_acceptance_prob": 0.6561
+    },
+    {
+        "price_of_ride": 13.5852,
+        "distance_normalized_price": 5.2773,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6093,
+        "driver_acceptance_prob": 0.6093
+    },
+    {
+        "price_of_ride": 24.9368,
+        "distance_normalized_price": 4.291,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6552,
+        "driver_acceptance_prob": 0.6552
+    },
+    {
+        "price_of_ride": 18.7889,
+        "distance_normalized_price": 4.5299,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6443,
+        "driver_acceptance_prob": 0.6443
+    },
+    {
+        "price_of_ride": 25.2852,
+        "distance_normalized_price": 4.2122,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6587,
+        "driver_acceptance_prob": 0.6587
+    },
+    {
+        "price_of_ride": 25.6196,
+        "distance_normalized_price": 4.1411,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6619,
+        "driver_acceptance_prob": 0.6619
+    },
+    {
+        "price_of_ride": 20.6251,
+        "distance_normalized_price": 4.3623,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6519,
+        "driver_acceptance_prob": 0.6519
+    },
+    {
+        "price_of_ride": 28.6997,
+        "distance_normalized_price": 4.0872,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6643,
+        "driver_acceptance_prob": 0.6643
+    },
+    {
+        "price_of_ride": 27.1013,
+        "distance_normalized_price": 4.1237,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6627,
+        "driver_acceptance_prob": 0.6627
+    },
+    {
+        "price_of_ride": 11.7124,
+        "distance_normalized_price": 5.9338,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5777,
+        "driver_acceptance_prob": 0.5777
+    },
+    {
+        "price_of_ride": 18.8107,
+        "distance_normalized_price": 4.5221,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6446,
+        "driver_acceptance_prob": 0.6446
+    },
+    {
+        "price_of_ride": 25.0703,
+        "distance_normalized_price": 4.2602,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6566,
+        "driver_acceptance_prob": 0.6566
+    },
+    {
+        "price_of_ride": 15.2653,
+        "distance_normalized_price": 4.9743,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6237,
+        "driver_acceptance_prob": 0.6237
+    },
+    {
+        "price_of_ride": 34.1505,
+        "distance_normalized_price": 3.9114,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6721,
+        "driver_acceptance_prob": 0.6721
+    },
+    {
+        "price_of_ride": 23.2119,
+        "distance_normalized_price": 4.386,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6509,
+        "driver_acceptance_prob": 0.6509
+    },
+    {
+        "price_of_ride": 23.3616,
+        "distance_normalized_price": 4.3467,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6526,
+        "driver_acceptance_prob": 0.6526
+    },
+    {
+        "price_of_ride": 25.5511,
+        "distance_normalized_price": 4.1554,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6613,
+        "driver_acceptance_prob": 0.6613
+    },
+    {
+        "price_of_ride": 30.0909,
+        "distance_normalized_price": 4.0897,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6642,
+        "driver_acceptance_prob": 0.6642
+    },
+    {
+        "price_of_ride": 20.2392,
+        "distance_normalized_price": 4.4816,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6465,
+        "driver_acceptance_prob": 0.6465
+    },
+    {
+        "price_of_ride": 18.5609,
+        "distance_normalized_price": 4.6143,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6404,
+        "driver_acceptance_prob": 0.6404
+    },
+    {
+        "price_of_ride": 24.9606,
+        "distance_normalized_price": 4.2855,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6554,
+        "driver_acceptance_prob": 0.6554
+    },
+    {
+        "price_of_ride": 18.8936,
+        "distance_normalized_price": 4.4928,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.646,
+        "driver_acceptance_prob": 0.646
+    },
+    {
+        "price_of_ride": 40.7873,
+        "distance_normalized_price": 3.825,
+        "trip_duration": 21.0,
+        "rider_acceptance_prob": 0.6759,
+        "driver_acceptance_prob": 0.6759
+    },
+    {
+        "price_of_ride": 30.7223,
+        "distance_normalized_price": 3.9876,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6687,
+        "driver_acceptance_prob": 0.6687
+    },
+    {
+        "price_of_ride": 12.1349,
+        "distance_normalized_price": 5.5009,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5986,
+        "driver_acceptance_prob": 0.5986
+    },
+    {
+        "price_of_ride": 35.3495,
+        "distance_normalized_price": 3.9447,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6706,
+        "driver_acceptance_prob": 0.6706
+    },
+    {
+        "price_of_ride": 22.0516,
+        "distance_normalized_price": 4.3381,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.653,
+        "driver_acceptance_prob": 0.653
+    },
+    {
+        "price_of_ride": 8.039,
+        "distance_normalized_price": 8.039,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4731,
+        "driver_acceptance_prob": 0.4731
+    },
+    {
+        "price_of_ride": 32.4799,
+        "distance_normalized_price": 3.9409,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6708,
+        "driver_acceptance_prob": 0.6708
+    },
+    {
+        "price_of_ride": 20.4955,
+        "distance_normalized_price": 4.4011,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6502,
+        "driver_acceptance_prob": 0.6502
+    },
+    {
+        "price_of_ride": 31.8731,
+        "distance_normalized_price": 4.0303,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6668,
+        "driver_acceptance_prob": 0.6668
+    },
+    {
+        "price_of_ride": 31.8924,
+        "distance_normalized_price": 4.0274,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.667,
+        "driver_acceptance_prob": 0.667
+    },
+    {
+        "price_of_ride": 18.4339,
+        "distance_normalized_price": 4.6636,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6381,
+        "driver_acceptance_prob": 0.6381
+    },
+    {
+        "price_of_ride": 20.3183,
+        "distance_normalized_price": 4.4562,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6477,
+        "driver_acceptance_prob": 0.6477
+    },
+    {
+        "price_of_ride": 18.6326,
+        "distance_normalized_price": 4.5872,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6417,
+        "driver_acceptance_prob": 0.6417
+    },
+    {
+        "price_of_ride": 37.4569,
+        "distance_normalized_price": 3.8653,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6741,
+        "driver_acceptance_prob": 0.6741
+    },
+    {
+        "price_of_ride": 27.2963,
+        "distance_normalized_price": 4.0867,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6643,
+        "driver_acceptance_prob": 0.6643
+    },
+    {
+        "price_of_ride": 13.3721,
+        "distance_normalized_price": 5.442,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6015,
+        "driver_acceptance_prob": 0.6015
+    },
+    {
+        "price_of_ride": 21.8664,
+        "distance_normalized_price": 4.3895,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6507,
+        "driver_acceptance_prob": 0.6507
+    },
+    {
+        "price_of_ride": 13.427,
+        "distance_normalized_price": 5.3981,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6036,
+        "driver_acceptance_prob": 0.6036
+    },
+    {
+        "price_of_ride": 6.6944,
+        "distance_normalized_price": 6.6944,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5402,
+        "driver_acceptance_prob": 0.5402
+    },
+    {
+        "price_of_ride": 11.5319,
+        "distance_normalized_price": 6.1514,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.567,
+        "driver_acceptance_prob": 0.567
+    },
+    {
+        "price_of_ride": 21.8325,
+        "distance_normalized_price": 4.3991,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6503,
+        "driver_acceptance_prob": 0.6503
+    },
+    {
+        "price_of_ride": 28.2606,
+        "distance_normalized_price": 4.1679,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 13.634,
+        "distance_normalized_price": 5.2416,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.611,
+        "driver_acceptance_prob": 0.611
+    },
+    {
+        "price_of_ride": 14.9956,
+        "distance_normalized_price": 5.1343,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6161,
+        "driver_acceptance_prob": 0.6161
+    },
+    {
+        "price_of_ride": 15.0576,
+        "distance_normalized_price": 5.0961,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6179,
+        "driver_acceptance_prob": 0.6179
+    },
+    {
+        "price_of_ride": 32.2091,
+        "distance_normalized_price": 3.9799,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6691,
+        "driver_acceptance_prob": 0.6691
+    },
+    {
+        "price_of_ride": 26.8002,
+        "distance_normalized_price": 4.1831,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.66,
+        "driver_acceptance_prob": 0.66
+    },
+    {
+        "price_of_ride": 21.9663,
+        "distance_normalized_price": 4.3615,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.652,
+        "driver_acceptance_prob": 0.652
+    },
+    {
+        "price_of_ride": 13.409,
+        "distance_normalized_price": 5.4123,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6029,
+        "driver_acceptance_prob": 0.6029
+    },
+    {
+        "price_of_ride": 8.6146,
+        "distance_normalized_price": 7.6309,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4935,
+        "driver_acceptance_prob": 0.4935
+    },
+    {
+        "price_of_ride": 11.5558,
+        "distance_normalized_price": 6.1213,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5685,
+        "driver_acceptance_prob": 0.5685
+    },
+    {
+        "price_of_ride": 20.4979,
+        "distance_normalized_price": 4.4004,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6502,
+        "driver_acceptance_prob": 0.6502
+    },
+    {
+        "price_of_ride": 11.3448,
+        "distance_normalized_price": 6.4028,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5546,
+        "driver_acceptance_prob": 0.5546
+    },
+    {
+        "price_of_ride": 36.8087,
+        "distance_normalized_price": 3.9433,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6707,
+        "driver_acceptance_prob": 0.6707
+    },
+    {
+        "price_of_ride": 18.1269,
+        "distance_normalized_price": 4.7904,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6323,
+        "driver_acceptance_prob": 0.6323
+    },
+    {
+        "price_of_ride": 11.3527,
+        "distance_normalized_price": 6.3915,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5552,
+        "driver_acceptance_prob": 0.5552
+    },
+    {
+        "price_of_ride": 19.8788,
+        "distance_normalized_price": 4.6037,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6409,
+        "driver_acceptance_prob": 0.6409
+    },
+    {
+        "price_of_ride": 27.1433,
+        "distance_normalized_price": 4.1156,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.663,
+        "driver_acceptance_prob": 0.663
+    },
+    {
+        "price_of_ride": 28.708,
+        "distance_normalized_price": 4.0858,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6644,
+        "driver_acceptance_prob": 0.6644
+    },
+    {
+        "price_of_ride": 16.7546,
+        "distance_normalized_price": 4.8444,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6297,
+        "driver_acceptance_prob": 0.6297
+    },
+    {
+        "price_of_ride": 32.3399,
+        "distance_normalized_price": 3.9609,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6699,
+        "driver_acceptance_prob": 0.6699
+    },
+    {
+        "price_of_ride": 13.9038,
+        "distance_normalized_price": 5.0571,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6198,
+        "driver_acceptance_prob": 0.6198
+    },
+    {
+        "price_of_ride": 20.3364,
+        "distance_normalized_price": 4.4505,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6479,
+        "driver_acceptance_prob": 0.6479
+    },
+    {
+        "price_of_ride": 26.7097,
+        "distance_normalized_price": 4.2016,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6592,
+        "driver_acceptance_prob": 0.6592
+    },
+    {
+        "price_of_ride": 30.2977,
+        "distance_normalized_price": 4.0552,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6657,
+        "driver_acceptance_prob": 0.6657
+    },
+    {
+        "price_of_ride": 25.6806,
+        "distance_normalized_price": 4.1286,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6625,
+        "driver_acceptance_prob": 0.6625
+    },
+    {
+        "price_of_ride": 18.5646,
+        "distance_normalized_price": 4.6129,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6405,
+        "driver_acceptance_prob": 0.6405
+    },
+    {
+        "price_of_ride": 6.8051,
+        "distance_normalized_price": 6.8051,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5347,
+        "driver_acceptance_prob": 0.5347
+    },
+    {
+        "price_of_ride": 11.7098,
+        "distance_normalized_price": 5.9368,
+        "trip_duration": 4.0,
+        "rider_acceptance_prob": 0.5775,
+        "driver_acceptance_prob": 0.5775
+    },
+    {
+        "price_of_ride": 26.7884,
+        "distance_normalized_price": 4.1855,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6599,
+        "driver_acceptance_prob": 0.6599
+    },
+    {
+        "price_of_ride": 26.9223,
+        "distance_normalized_price": 4.1587,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6611,
+        "driver_acceptance_prob": 0.6611
+    },
+    {
+        "price_of_ride": 8.4513,
+        "distance_normalized_price": 8.1326,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4684,
+        "driver_acceptance_prob": 0.4684
+    },
+    {
+        "price_of_ride": 9.876,
+        "distance_normalized_price": 7.0878,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5206,
+        "driver_acceptance_prob": 0.5206
+    },
+    {
+        "price_of_ride": 32.1816,
+        "distance_normalized_price": 3.984,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6689,
+        "driver_acceptance_prob": 0.6689
+    },
+    {
+        "price_of_ride": 22.1287,
+        "distance_normalized_price": 4.3172,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.654,
+        "driver_acceptance_prob": 0.654
+    },
+    {
+        "price_of_ride": 23.2429,
+        "distance_normalized_price": 4.3778,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6512,
+        "driver_acceptance_prob": 0.6512
+    },
+    {
+        "price_of_ride": 20.0847,
+        "distance_normalized_price": 4.5326,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6442,
+        "driver_acceptance_prob": 0.6442
+    },
+    {
+        "price_of_ride": 27.2282,
+        "distance_normalized_price": 4.0995,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6638,
+        "driver_acceptance_prob": 0.6638
+    },
+    {
+        "price_of_ride": 16.4864,
+        "distance_normalized_price": 4.9789,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6234,
+        "driver_acceptance_prob": 0.6234
+    },
+    {
+        "price_of_ride": 20.1617,
+        "distance_normalized_price": 4.507,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6453,
+        "driver_acceptance_prob": 0.6453
+    },
+    {
+        "price_of_ride": 24.9788,
+        "distance_normalized_price": 4.2812,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6556,
+        "driver_acceptance_prob": 0.6556
+    },
+    {
+        "price_of_ride": 33.635,
+        "distance_normalized_price": 3.9815,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.669,
+        "driver_acceptance_prob": 0.669
+    },
+    {
+        "price_of_ride": 25.7227,
+        "distance_normalized_price": 4.1201,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6628,
+        "driver_acceptance_prob": 0.6628
+    },
+    {
+        "price_of_ride": 16.6701,
+        "distance_normalized_price": 4.8855,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6278,
+        "driver_acceptance_prob": 0.6278
+    },
+    {
+        "price_of_ride": 8.0731,
+        "distance_normalized_price": 8.0731,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4714,
+        "driver_acceptance_prob": 0.4714
+    },
+    {
+        "price_of_ride": 33.8633,
+        "distance_normalized_price": 3.9499,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6704,
+        "driver_acceptance_prob": 0.6704
+    },
+    {
+        "price_of_ride": 15.032,
+        "distance_normalized_price": 5.1118,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6172,
+        "driver_acceptance_prob": 0.6172
+    },
+    {
+        "price_of_ride": 35.3784,
+        "distance_normalized_price": 3.9409,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6708,
+        "driver_acceptance_prob": 0.6708
+    },
+    {
+        "price_of_ride": 15.4404,
+        "distance_normalized_price": 4.8784,
+        "trip_duration": 6.0,
+        "rider_acceptance_prob": 0.6282,
+        "driver_acceptance_prob": 0.6282
+    },
+    {
+        "price_of_ride": 8.5331,
+        "distance_normalized_price": 7.8709,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4815,
+        "driver_acceptance_prob": 0.4815
+    },
+    {
+        "price_of_ride": 20.1825,
+        "distance_normalized_price": 4.5001,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6457,
+        "driver_acceptance_prob": 0.6457
+    },
+    {
+        "price_of_ride": 20.4593,
+        "distance_normalized_price": 4.4122,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6497,
+        "driver_acceptance_prob": 0.6497
+    },
+    {
+        "price_of_ride": 33.4362,
+        "distance_normalized_price": 4.0098,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6678,
+        "driver_acceptance_prob": 0.6678
+    },
+    {
+        "price_of_ride": 37.3602,
+        "distance_normalized_price": 3.8766,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6736,
+        "driver_acceptance_prob": 0.6736
+    },
+    {
+        "price_of_ride": 21.9223,
+        "distance_normalized_price": 4.3737,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6514,
+        "driver_acceptance_prob": 0.6514
+    },
+    {
+        "price_of_ride": 28.6157,
+        "distance_normalized_price": 4.1022,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6636,
+        "driver_acceptance_prob": 0.6636
+    },
+    {
+        "price_of_ride": 20.4098,
+        "distance_normalized_price": 4.4275,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.649,
+        "driver_acceptance_prob": 0.649
+    },
+    {
+        "price_of_ride": 42.1357,
+        "distance_normalized_price": 3.839,
+        "trip_duration": 22.0,
+        "rider_acceptance_prob": 0.6753,
+        "driver_acceptance_prob": 0.6753
+    },
+    {
+        "price_of_ride": 31.8785,
+        "distance_normalized_price": 4.0295,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6669,
+        "driver_acceptance_prob": 0.6669
+    },
+    {
+        "price_of_ride": 25.473,
+        "distance_normalized_price": 4.1718,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6605,
+        "driver_acceptance_prob": 0.6605
+    },
+    {
+        "price_of_ride": 18.3337,
+        "distance_normalized_price": 4.7038,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6363,
+        "driver_acceptance_prob": 0.6363
+    },
+    {
+        "price_of_ride": 23.2451,
+        "distance_normalized_price": 4.3772,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6513,
+        "driver_acceptance_prob": 0.6513
+    },
+    {
+        "price_of_ride": 8.7405,
+        "distance_normalized_price": 7.2954,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.5102,
+        "driver_acceptance_prob": 0.5102
+    },
+    {
+        "price_of_ride": 22.3241,
+        "distance_normalized_price": 4.266,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6563,
+        "driver_acceptance_prob": 0.6563
+    },
+    {
+        "price_of_ride": 13.7617,
+        "distance_normalized_price": 5.1518,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6153,
+        "driver_acceptance_prob": 0.6153
+    },
+    {
+        "price_of_ride": 22.2763,
+        "distance_normalized_price": 4.2783,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6557,
+        "driver_acceptance_prob": 0.6557
+    },
+    {
+        "price_of_ride": 23.5413,
+        "distance_normalized_price": 4.3012,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6547,
+        "driver_acceptance_prob": 0.6547
+    },
+    {
+        "price_of_ride": 30.0626,
+        "distance_normalized_price": 4.0946,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.664,
+        "driver_acceptance_prob": 0.664
+    },
+    {
+        "price_of_ride": 27.2024,
+        "distance_normalized_price": 4.1043,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6635,
+        "driver_acceptance_prob": 0.6635
+    },
+    {
+        "price_of_ride": 13.8291,
+        "distance_normalized_price": 5.1062,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6175,
+        "driver_acceptance_prob": 0.6175
+    },
+    {
+        "price_of_ride": 23.9036,
+        "distance_normalized_price": 4.2141,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6586,
+        "driver_acceptance_prob": 0.6586
+    },
+    {
+        "price_of_ride": 34.1183,
+        "distance_normalized_price": 3.9156,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6719,
+        "driver_acceptance_prob": 0.6719
+    },
+    {
+        "price_of_ride": 25.5587,
+        "distance_normalized_price": 4.1538,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6613,
+        "driver_acceptance_prob": 0.6613
+    },
+    {
+        "price_of_ride": 18.4144,
+        "distance_normalized_price": 4.6714,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6378,
+        "driver_acceptance_prob": 0.6378
+    },
+    {
+        "price_of_ride": 16.7557,
+        "distance_normalized_price": 4.8439,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6298,
+        "driver_acceptance_prob": 0.6298
+    },
+    {
+        "price_of_ride": 30.269,
+        "distance_normalized_price": 4.06,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6655,
+        "driver_acceptance_prob": 0.6655
+    },
+    {
+        "price_of_ride": 10.3026,
+        "distance_normalized_price": 6.3291,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5583,
+        "driver_acceptance_prob": 0.5583
+    },
+    {
+        "price_of_ride": 36.9998,
+        "distance_normalized_price": 3.9197,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6717,
+        "driver_acceptance_prob": 0.6717
+    },
+    {
+        "price_of_ride": 16.7993,
+        "distance_normalized_price": 4.8231,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6307,
+        "driver_acceptance_prob": 0.6307
+    },
+    {
+        "price_of_ride": 8.4112,
+        "distance_normalized_price": 8.2694,
+        "trip_duration": 2.0,
+        "rider_acceptance_prob": 0.4616,
+        "driver_acceptance_prob": 0.4616
+    },
+    {
+        "price_of_ride": 23.7887,
+        "distance_normalized_price": 4.241,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6574,
+        "driver_acceptance_prob": 0.6574
+    },
+    {
+        "price_of_ride": 13.7019,
+        "distance_normalized_price": 5.1932,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6133,
+        "driver_acceptance_prob": 0.6133
+    },
+    {
+        "price_of_ride": 13.2233,
+        "distance_normalized_price": 5.5667,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5955,
+        "driver_acceptance_prob": 0.5955
+    },
+    {
+        "price_of_ride": 13.6727,
+        "distance_normalized_price": 5.2139,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.6124,
+        "driver_acceptance_prob": 0.6124
+    },
+    {
+        "price_of_ride": 29.1051,
+        "distance_normalized_price": 4.0175,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6674,
+        "driver_acceptance_prob": 0.6674
+    },
+    {
+        "price_of_ride": 10.0827,
+        "distance_normalized_price": 6.6907,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5404,
+        "driver_acceptance_prob": 0.5404
+    },
+    {
+        "price_of_ride": 28.9422,
+        "distance_normalized_price": 4.045,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.6662,
+        "driver_acceptance_prob": 0.6662
+    },
+    {
+        "price_of_ride": 13.1887,
+        "distance_normalized_price": 5.5969,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.594,
+        "driver_acceptance_prob": 0.594
+    },
+    {
+        "price_of_ride": 17.103,
+        "distance_normalized_price": 4.6857,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6371,
+        "driver_acceptance_prob": 0.6371
+    },
+    {
+        "price_of_ride": 25.1947,
+        "distance_normalized_price": 4.2322,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6578,
+        "driver_acceptance_prob": 0.6578
+    },
+    {
+        "price_of_ride": 35.1087,
+        "distance_normalized_price": 3.9765,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6692,
+        "driver_acceptance_prob": 0.6692
+    },
+    {
+        "price_of_ride": 28.4111,
+        "distance_normalized_price": 4.1396,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.662,
+        "driver_acceptance_prob": 0.662
+    },
+    {
+        "price_of_ride": 16.9418,
+        "distance_normalized_price": 4.757,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6338,
+        "driver_acceptance_prob": 0.6338
+    },
+    {
+        "price_of_ride": 20.5464,
+        "distance_normalized_price": 4.3857,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6509,
+        "driver_acceptance_prob": 0.6509
+    },
+    {
+        "price_of_ride": 27.3229,
+        "distance_normalized_price": 4.0818,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6646,
+        "driver_acceptance_prob": 0.6646
+    },
+    {
+        "price_of_ride": 18.9669,
+        "distance_normalized_price": 4.4675,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6471,
+        "driver_acceptance_prob": 0.6471
+    },
+    {
+        "price_of_ride": 10.4503,
+        "distance_normalized_price": 6.1151,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5688,
+        "driver_acceptance_prob": 0.5688
+    },
+    {
+        "price_of_ride": 38.6015,
+        "distance_normalized_price": 3.9027,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6725,
+        "driver_acceptance_prob": 0.6725
+    },
+    {
+        "price_of_ride": 39.0525,
+        "distance_normalized_price": 3.8518,
+        "trip_duration": 20.0,
+        "rider_acceptance_prob": 0.6747,
+        "driver_acceptance_prob": 0.6747
+    },
+    {
+        "price_of_ride": 32.1947,
+        "distance_normalized_price": 3.982,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.669,
+        "driver_acceptance_prob": 0.669
+    },
+    {
+        "price_of_ride": 19.8256,
+        "distance_normalized_price": 4.6227,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.64,
+        "driver_acceptance_prob": 0.64
+    },
+    {
+        "price_of_ride": 35.1085,
+        "distance_normalized_price": 3.9766,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6692,
+        "driver_acceptance_prob": 0.6692
+    },
+    {
+        "price_of_ride": 30.0121,
+        "distance_normalized_price": 4.1032,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6636,
+        "driver_acceptance_prob": 0.6636
+    },
+    {
+        "price_of_ride": 28.7846,
+        "distance_normalized_price": 4.0723,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.665,
+        "driver_acceptance_prob": 0.665
+    },
+    {
+        "price_of_ride": 22.323,
+        "distance_normalized_price": 4.2663,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6563,
+        "driver_acceptance_prob": 0.6563
+    },
+    {
+        "price_of_ride": 35.2568,
+        "distance_normalized_price": 3.9568,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6701,
+        "driver_acceptance_prob": 0.6701
+    },
+    {
+        "price_of_ride": 20.5858,
+        "distance_normalized_price": 4.3739,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6514,
+        "driver_acceptance_prob": 0.6514
+    },
+    {
+        "price_of_ride": 34.0147,
+        "distance_normalized_price": 3.9294,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6713,
+        "driver_acceptance_prob": 0.6713
+    },
+    {
+        "price_of_ride": 20.6645,
+        "distance_normalized_price": 4.3507,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6525,
+        "driver_acceptance_prob": 0.6525
+    },
+    {
+        "price_of_ride": 29.9904,
+        "distance_normalized_price": 4.1069,
+        "trip_duration": 15.0,
+        "rider_acceptance_prob": 0.6634,
+        "driver_acceptance_prob": 0.6634
+    },
+    {
+        "price_of_ride": 10.0842,
+        "distance_normalized_price": 6.688,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5405,
+        "driver_acceptance_prob": 0.5405
+    },
+    {
+        "price_of_ride": 16.4581,
+        "distance_normalized_price": 4.9939,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6227,
+        "driver_acceptance_prob": 0.6227
+    },
+    {
+        "price_of_ride": 22.1633,
+        "distance_normalized_price": 4.308,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6544,
+        "driver_acceptance_prob": 0.6544
+    },
+    {
+        "price_of_ride": 22.2159,
+        "distance_normalized_price": 4.2941,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.655,
+        "driver_acceptance_prob": 0.655
+    },
+    {
+        "price_of_ride": 27.3357,
+        "distance_normalized_price": 4.0794,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.6647,
+        "driver_acceptance_prob": 0.6647
+    },
+    {
+        "price_of_ride": 22.273,
+        "distance_normalized_price": 4.2792,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6557,
+        "driver_acceptance_prob": 0.6557
+    },
+    {
+        "price_of_ride": 35.276,
+        "distance_normalized_price": 3.9543,
+        "trip_duration": 18.0,
+        "rider_acceptance_prob": 0.6702,
+        "driver_acceptance_prob": 0.6702
+    },
+    {
+        "price_of_ride": 18.4033,
+        "distance_normalized_price": 4.6758,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6376,
+        "driver_acceptance_prob": 0.6376
+    },
+    {
+        "price_of_ride": 18.5105,
+        "distance_normalized_price": 4.6337,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6395,
+        "driver_acceptance_prob": 0.6395
+    },
+    {
+        "price_of_ride": 21.8946,
+        "distance_normalized_price": 4.3815,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6511,
+        "driver_acceptance_prob": 0.6511
+    },
+    {
+        "price_of_ride": 6.2667,
+        "distance_normalized_price": 6.2667,
+        "trip_duration": 1.0,
+        "rider_acceptance_prob": 0.5614,
+        "driver_acceptance_prob": 0.5614
+    },
+    {
+        "price_of_ride": 17.2677,
+        "distance_normalized_price": 4.6164,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6403,
+        "driver_acceptance_prob": 0.6403
+    },
+    {
+        "price_of_ride": 13.0171,
+        "distance_normalized_price": 5.7543,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5864,
+        "driver_acceptance_prob": 0.5864
+    },
+    {
+        "price_of_ride": 10.4736,
+        "distance_normalized_price": 6.0831,
+        "trip_duration": 3.0,
+        "rider_acceptance_prob": 0.5704,
+        "driver_acceptance_prob": 0.5704
+    },
+    {
+        "price_of_ride": 32.1797,
+        "distance_normalized_price": 3.9842,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6689,
+        "driver_acceptance_prob": 0.6689
+    },
+    {
+        "price_of_ride": 12.9961,
+        "distance_normalized_price": 5.7745,
+        "trip_duration": 5.0,
+        "rider_acceptance_prob": 0.5854,
+        "driver_acceptance_prob": 0.5854
+    },
+    {
+        "price_of_ride": 25.0212,
+        "distance_normalized_price": 4.2714,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.656,
+        "driver_acceptance_prob": 0.656
+    },
+    {
+        "price_of_ride": 36.7468,
+        "distance_normalized_price": 3.9511,
+        "trip_duration": 19.0,
+        "rider_acceptance_prob": 0.6704,
+        "driver_acceptance_prob": 0.6704
+    },
+    {
+        "price_of_ride": 20.6372,
+        "distance_normalized_price": 4.3587,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6521,
+        "driver_acceptance_prob": 0.6521
+    },
+    {
+        "price_of_ride": 33.8129,
+        "distance_normalized_price": 3.9568,
+        "trip_duration": 17.0,
+        "rider_acceptance_prob": 0.6701,
+        "driver_acceptance_prob": 0.6701
+    },
+    {
+        "price_of_ride": 32.0543,
+        "distance_normalized_price": 4.0029,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6681,
+        "driver_acceptance_prob": 0.6681
+    },
+    {
+        "price_of_ride": 16.9631,
+        "distance_normalized_price": 4.7474,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6343,
+        "driver_acceptance_prob": 0.6343
+    },
+    {
+        "price_of_ride": 20.3598,
+        "distance_normalized_price": 4.4431,
+        "trip_duration": 9.0,
+        "rider_acceptance_prob": 0.6483,
+        "driver_acceptance_prob": 0.6483
+    },
+    {
+        "price_of_ride": 18.5656,
+        "distance_normalized_price": 4.6125,
+        "trip_duration": 8.0,
+        "rider_acceptance_prob": 0.6405,
+        "driver_acceptance_prob": 0.6405
+    },
+    {
+        "price_of_ride": 21.8094,
+        "distance_normalized_price": 4.4057,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.65,
+        "driver_acceptance_prob": 0.65
+    },
+    {
+        "price_of_ride": 16.8134,
+        "distance_normalized_price": 4.8164,
+        "trip_duration": 7.0,
+        "rider_acceptance_prob": 0.6311,
+        "driver_acceptance_prob": 0.6311
+    },
+    {
+        "price_of_ride": 21.9592,
+        "distance_normalized_price": 4.3635,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6519,
+        "driver_acceptance_prob": 0.6519
+    },
+    {
+        "price_of_ride": 22.0962,
+        "distance_normalized_price": 4.326,
+        "trip_duration": 10.0,
+        "rider_acceptance_prob": 0.6536,
+        "driver_acceptance_prob": 0.6536
+    },
+    {
+        "price_of_ride": 23.8213,
+        "distance_normalized_price": 4.2333,
+        "trip_duration": 11.0,
+        "rider_acceptance_prob": 0.6578,
+        "driver_acceptance_prob": 0.6578
+    },
+    {
+        "price_of_ride": 25.4901,
+        "distance_normalized_price": 4.1682,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.6607,
+        "driver_acceptance_prob": 0.6607
+    },
+    {
+        "price_of_ride": 25.4148,
+        "distance_normalized_price": 4.1842,
+        "trip_duration": 12.0,
+        "rider_acceptance_prob": 0.66,
+        "driver_acceptance_prob": 0.66
+    },
+    {
+        "price_of_ride": 28.5425,
+        "distance_normalized_price": 4.1155,
+        "trip_duration": 14.0,
+        "rider_acceptance_prob": 0.663,
+        "driver_acceptance_prob": 0.663
+    },
+    {
+        "price_of_ride": 27.3718,
+        "distance_normalized_price": 4.0727,
+        "trip_duration": 13.0,
+        "rider_acceptance_prob": 0.665,
+        "driver_acceptance_prob": 0.665
+    },
+    {
+        "price_of_ride": 32.2142,
+        "distance_normalized_price": 3.9792,
+        "trip_duration": 16.0,
+        "rider_acceptance_prob": 0.6691,
+        "driver_acceptance_prob": 0.6691
+    }
+]

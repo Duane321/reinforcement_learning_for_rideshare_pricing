@@ -29,6 +29,10 @@ class WeeklySimulation:
         self.a_d = 1.5  # Driver acceptance probability parameter
         self.b_d = -0.2  # Driver acceptance probability parameter
 
+        self.a_lambda = -2
+        # avg. daily exposed price over 100 weeks is 22.57
+        self.b_lambda = 22.57
+
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
         self.daily_max_requests = 5
@@ -99,6 +103,7 @@ class WeeklySimulation:
         self.S_Drivers = None
 
         self.exposed_prices = []
+        self.exposed_prices_lst = []
 
         #self.busy_drivers = {} # idx of drivers on a trip(maybe add sub-block of the driver): trip ending timestamp
         #no need to do so as we update each driver's idle_start_time based on trips
@@ -311,6 +316,8 @@ class WeeklySimulation:
                         'driver_acceptance_prob': round(float(driver_acceptance_prob), 4)
                     })
 
+                    self.exposed_prices_lst.append(round(float(price_of_ride), 4))
+
                     # Determine if the ride is accepted by both rider and driver
                     rider_acceptance_generator = np.random.rand()
                     driver_acceptance_generator = np.random.rand()
@@ -376,4 +383,13 @@ class WeeklySimulation:
         self.gamma_dist_sporadic = torch.distributions.Gamma(self.alphas_sporadic, self.betas_sporadic)
 
         self.current_day += 1
+
+    def update_lambda_longterm_elasticity(self):
+        """
+        daily update on the lambda based on lont-term rider's price elasticity
+        """
+        exposed_prices_arr = np.array(self.exposed_prices_lst)
+        daily_avg_exposed_price = np.mean(exposed_prices_arr)
+        updated_lambda = np.exp(self.a_lambda * daily_avg_exposed_price + self.b_lambda)
+        self.lambda_riders += updated_lambda
             
