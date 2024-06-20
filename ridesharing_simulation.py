@@ -26,11 +26,11 @@ class WeeklySimulation:
 
         # short-term driver's elasticity is around -0.05 as well
         self.a_d = 1.5  # Driver acceptance probability parameter
-        self.b_d = -0.2  # Driver acceptance probability parameter
+        self.b_d = -0.3  # Driver acceptance probability parameter
 
-        self.a_lambda = -0.05
-        # avg. daily exposed price over 100 weeks is 22.57
-        self.b_lambda = 22.57
+        self.a_lambda = -0.01
+        # avg. daily exposed price over 100 weeks is 22.5672
+        self.b_lambda = 22.5672
 
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
