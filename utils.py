@@ -2,12 +2,12 @@ import os
 import logging
 from pythonjsonlogger import jsonlogger
 
-def create_logger(run_id, file_prefix):
+def create_logger(run_id, file_prefix, save_path):
     logger = logging.getLogger(f'logger_{run_id}')
     logger.setLevel(logging.DEBUG)
     
     # Create a unique filename for the log file
-    filename = f'../data/100_weeks_a_r1.5_b_r-0.2_b_d_-0.3_a_l-0.0001_b_l_22.5672/logfile_matched_trips_week_{run_id}_'+file_prefix+'.log'
+    filename = os.path.join(save_path, f'logfile_matched_trips_week_{run_id}_'+file_prefix+'.log')
     if not os.path.exists(filename):
         # Create the file if it doesn't exist
         open(filename, 'a').close()

@@ -9,7 +9,7 @@ import torch
 class WeeklySimulation:
 
 
-    def __init__(self, current_week, learning_rate, initial_pricing_params):
+    def __init__(self, current_week, learning_rate, initial_pricing_params, elasticity_params_dict, log_save_path):
         #self.current_day will be updated in update_gamma_distns
         self.current_day = 0
 
@@ -21,16 +21,30 @@ class WeeklySimulation:
 
         # short-term rider's elasticity is around -0.05(i.e. one unit increase of request price
         # will cause 5% decrease of acceptance prob for riders)
-        self.a_r = 1.5  # Rider acceptance probability parameter
-        self.b_r = -0.2  # Rider acceptance probability parameter
+        if not elasticity_params_dict:
+            self.a_r = 1.5  # Rider acceptance probability parameter
+            self.b_r = -0.2  # Rider acceptance probability parameter
 
-        # short-term driver's elasticity is around -0.05 as well
-        self.a_d = 1.5  # Driver acceptance probability parameter
-        self.b_d = -0.3  # Driver acceptance probability parameter
+            # short-term driver's elasticity is around -0.05 as well
+            self.a_d = 1.5  # Driver acceptance probability parameter
+            self.b_d = -0.3  # Driver acceptance probability parameter
 
-        self.a_lambda = -0.01
-        # avg. daily exposed price over 100 weeks is 22.5672
-        self.b_lambda = 22.5672
+            self.a_lambda = -0.001
+            # avg. daily exposed price over 100 weeks is 22.5672
+            self.b_lambda = 22.5672
+        else:
+            self.a_r = elasticity_params_dict['a_r']
+            self.b_r = elasticity_params_dict['b_r']
+
+            # short-term driver's elasticity is around -0.05 as well
+            self.a_d = elasticity_params_dict['a_d']
+            self.b_d = elasticity_params_dict['b_d']
+
+            self.a_lambda = elasticity_params_dict['a_lambda']
+            # avg. daily exposed price over 100 weeks is 22.5672
+            self.b_lambda = elasticity_params_dict['b_lambda']
+
+        self.log_save_path = log_save_path
 
         self.num_riders = 1000
         self.part_size = self.num_riders // 4
@@ -259,7 +273,7 @@ class WeeklySimulation:
                                         rider_idx, req_start_subblock_id, req_end_subblock_id)
         """
         if verbose:
-            logger = utils.create_logger(self.current_week, file_prefix)
+            logger = utils.create_logger(self.current_week, file_prefix, self.log_save_path)
         # TODO - figure out how to speed up, may do parallelization on the sub-blocks
         # enable tqdm for debugging only
         for interval_idx, match_interval in enumerate(range(0, 24*60-1, self.match_interval_time)):
