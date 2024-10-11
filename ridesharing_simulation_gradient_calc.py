@@ -138,7 +138,13 @@ class WeeklySimulation:
         D[:, 5] gives each request's rider_idx which could be used to indicate the rider type.
         D[:,6] gives the sub-block id for each request trip start position
         D[:,7] gives the sub-block id for each request trip end position
+        D[:,8] gives a 0 or 1 flag to indicate if the request has been matched already
+        D[:,9] gives a 0-indexed request id
         """
+        #reset riders every day
+        self.D_Requests = None
+        self.exposed_prices = []
+        self.exposed_prices_lst = []
         # each rider's number of request on this day e.g. [0., 2., 1.]
         self.daily_num_requests = torch.poisson(self.lambda_riders)
         # sequential ID for total number of rides
@@ -175,6 +181,13 @@ class WeeklySimulation:
                                 , self.get_subblock_index(self.D_Requests[:, 1], self.D_Requests[:, 2]).unsqueeze(1)
                                 , self.get_subblock_index(self.D_Requests[:, 3], self.D_Requests[:, 4]).unsqueeze(1))
                                 , 1)
+        
+        self.D_Requests = torch.concat((self.D_Requests
+                                , torch.zeros(len(request_indices)).unsqueeze(1)
+                                , torch.arange(len(request_indices)).unsqueeze(1))
+                                , 1)
+        
+        #print("self.D_Requests:", self.D_Requests)
 
         return self.D_Requests
     
@@ -189,7 +202,10 @@ class WeeklySimulation:
         S[:,4] gives the driver index(0 to 99)
         S[:,5] gives the sub-block id for each idle start position
         """
-
+        #reset drivers every day
+        self.S_Drivers = None
+        self.exposed_prices = []
+        self.exposed_prices_lst = []
         # Assign each driver to a subgrid
         driver_subgrids = torch.randint(0, self.num_subgrids, (self.num_drivers,))
 
@@ -271,7 +287,7 @@ class WeeklySimulation:
                                         driver_idx, idle_start_subblock_id)
 
         self.D_Requests: (num_requests) * (request_timestamps, req_start_x, req_start_y, req_end_x, req_end_y, 
-                                        rider_idx, req_start_subblock_id, req_end_subblock_id)
+                                        rider_idx, req_start_subblock_id, req_end_subblock_id, matched_flag)
         """
         if verbose:
             logger = utils.create_logger(self.current_week, file_prefix, self.log_save_path)
@@ -299,9 +315,12 @@ class WeeklySimulation:
                 request_time_mask_left = interval_idx*self.match_interval_time<=self.D_Requests[:, 0]
                 request_time_mask_right = self.D_Requests[:, 0]<(interval_idx+1)*self.match_interval_time
                 request_location_mask = self.D_Requests[:, 6]==square_index
+                matched_flag = self.D_Requests[:, 8]==0
 
                 riders_subblock = self.D_Requests[request_time_mask_left & request_time_mask_right \
-                                                & request_location_mask]
+                                                & request_location_mask & matched_flag]
+                
+                #print("len(riders_subblock):", len(riders_subblock))
                 
                 if len(riders_subblock)==0:
                     #print(f'no idle driver in this sub-block:{square_index}')
@@ -314,12 +333,21 @@ class WeeklySimulation:
 
                 for valid_request_id in range(riders_subblock.shape[0]):
                     valid_driver = drivers_subblock.shape[0]
+
+                    selected_driver_idx = torch.randint(0, valid_driver, (1,)).item()
+                    selected_driver = drivers_subblock[selected_driver_idx, :] if valid_driver>1 else drivers_subblock[0]
+                    # if valid_driver>1:
+                    #     print("selected_driver_idx:", selected_driver_idx)
+                    #     print("selected_driver:", selected_driver)
+                    #     print("selected_driver.dim():", selected_driver.dim())
+                        #print("drivers_subblock[selected_driver_idx, :]:", drivers_subblock[selected_driver_idx, :])
                     
-                    selected_driver = drivers_subblock[torch.randint(0, valid_driver, (1,)).item(), :][0] if valid_driver>1 else drivers_subblock[0]
                     if valid_driver==0 or selected_driver.dim()==0:
                         #print('no more valid driver to be matched!')
                         break
-
+                    
+                    
+                    #ride_timestamp = riders_subblock[valid_request_id][0]
                     ride_minutes, ride_miles = self.estimate_trip_distance_duration(riders_subblock[valid_request_id][1:5])
                     price_of_ride = self.pricing_params[0] + self.pricing_params[1] * ride_minutes + self.pricing_params[2] * ride_miles
                     
@@ -358,6 +386,9 @@ class WeeklySimulation:
 
                         #the driver accepts the trip, update the trip info
                         if driver_acceptance_generator < driver_acceptance_prob:
+                            #update the matched_flag in the self.D_Requests for this current request
+                            self.D_Requests[riders_subblock[valid_request_id][9].int().item()][8]=1
+                            
                             #update the acceptance flag if both accepted
                             self.exposed_prices[-1]['both_accepted'] = 1
                             
